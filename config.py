@@ -53,19 +53,14 @@ TAGS = {
 KEYWORDS = [
     "neural operator", "fourier neural operator", "deeponet", "operator learning",
     "physics-informed", "physics informed", "pinn", "pino", "deep energy method",
-    "pde", "partial differential equation", "differential equation",
-    "surrogate model",
-    "differentiable simulation", "differentiable physics", "differentiable solver",
+    "differentiable simulation",
     "scientific machine learning", "scientific computing",
     "numerical method", "finite element",
-    "preconditioner", "linear solver",
-    "symbolic regression", "sindy", "equation discovery", "neural ode",
+    "preconditioner", "linear solver", "neural ode",
     "inverse problem",
-    "uncertainty quantification", "gaussian process", "phase field modeling of fracture",
-    "diffusion model", "generative model", "brittle fracture", "phase field modeling of brittle fracture",
-    "foundation model", "large language model", " llm", "llm coding benchmark", "finite element agent",
-    "markov chain", "in-context learning",
-    "approximation theory", "convergence rate", "neural network",
+    "uncertainty quantification", "gaussian process",
+    "brittle fracture", "phase field modeling of fracture",
+    "foundation model", "large language model", " llm", "llm coding benchmark", "finite element agent"
 ]
 
 SITE_TITLE = "SciML Daily"
