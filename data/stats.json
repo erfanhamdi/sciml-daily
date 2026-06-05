@@ -50,5 +50,18 @@
   "balance_before": "CNY 18.91",
   "balance_after": "CNY 18.81",
   "total_papers": 109
+ },
+ {
+  "date": "2026-06-05",
+  "fetched": 642,
+  "new": 581,
+  "candidates": 248,
+  "classified": 248,
+  "in_scope": 39,
+  "deferred": 0,
+  "requests": 13,
+  "balance_before": "tokens in=0 out=0",
+  "balance_after": "tokens in=108142 out=33340",
+  "total_papers": 148
  }
 ]
