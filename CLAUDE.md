@@ -12,16 +12,17 @@ Dual purpose:
 
 ## Hard constraints
 
-- **Low cost, budget-monitored.** The only paid dependency is the LLM: **DeepSeek V4 Flash**, a
-  cheap paid API (a full day costs fractions of a cent). Every run logs requests used + account
-  balance to a maintainer-only file so spend stays visible. Hosting/runner stay free.
+- **Low cost, budget-monitored.** The only paid dependency is the LLM: **DeepSeek-R1 on AWS
+  Bedrock**, called via the Bedrock **Converse** API. Every run logs requests used + cumulative
+  **token usage** to a maintainer-only file so spend stays visible. Hosting/runner stay free.
 - **Runs in the cloud, daily, unattended** — must keep working when the laptop is closed.
   Target runner: **GitHub Actions scheduled workflow** (free *and unlimited* for public
   repos). No always-on server, no VPS.
-- **Open-source friendly:** one secret (`DEEPSEEK_API_KEY`) so anyone can fork and run it.
+- **Open-source friendly:** two AWS secrets (`AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`) so a
+  forker with Bedrock access can run it. (Forks need their own AWS account with DeepSeek-R1 enabled.)
 - **Keep it simple and clean.** Minimal options/config, no premature abstraction, no
-  provider-swapping layers. DeepSeek is the only model. One source of truth for the
-  taxonomy/keywords/categories. Favor a few small, focused modules over flexibility nobody asked for.
+  provider-swapping layers. **Bedrock-hosted DeepSeek-R1 is the only model.** One source of truth
+  for the taxonomy/keywords/categories. Favor a few small, focused modules over flexibility nobody asked for.
 
 ## Decisions locked in
 
@@ -39,15 +40,16 @@ Dual purpose:
 - **Scope style:** *wide net within the methods space, with per-paper subfield tags*
   ("wide but tag subfields"). Each paper gets one or more subfield tags so the site can
   filter/collapse by subfield.
-- **Classification:** **DeepSeek V4 Flash** (currently `deepseek-v4-flash`; the exact model name
-  lives in the one config file, so version bumps are a one-line change), called via the OpenAI
-  SDK against `https://api.deepseek.com`. The **one and only** LLM — not swappable, no provider
-  abstraction (keep it simple). **No embeddings.** A cheap paid API: ~60–180 papers/day costs a
-  fraction of a cent. (LLM task spec below.)
-- **API key handling:** key is **never committed**. Stored as a **GitHub Actions encrypted
-  secret** (`DEEPSEEK_API_KEY`), injected at runtime via `env: ${{ secrets.DEEPSEEK_API_KEY }}`,
-  auto-masked in logs. Forks/outside PRs do not receive it. Local runs read it from a
-  **`.gitignore`d `.env`** file. (Add `.env` to `.gitignore` from day one.)
+- **Classification:** **DeepSeek-R1 on AWS Bedrock** (currently inference profile `us.deepseek.r1-v1:0`
+  in `AWS_REGION`; both live in the one config file, so version/region bumps are a one-line change),
+  called via boto3's Bedrock **Converse** API. R1 is a reasoning model, so we read only the answer
+  `text` blocks (dropping its reasoningContent) and use a smaller `BATCH_SIZE` (20) so reasoning
+  tokens don't truncate the JSON. The **one and only** LLM — not swappable, no provider abstraction
+  (keep it simple). **No embeddings.** (LLM task spec below.)
+- **Credentials handling:** keys are **never committed**. Stored as **GitHub Actions encrypted
+  secrets** (`AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`), injected at runtime via `env:`,
+  auto-masked in logs. Forks/outside PRs do not receive them. boto3 picks them up automatically;
+  local runs read them from a **`.gitignore`d `.env`** file. (Add `.env` to `.gitignore` from day one.)
 - **Gray-zone rule (method applied to a science domain):** **include on any methods overlap.**
   Keep a paper if it touches SciML / applied-math / scientific-computing **methods** at all,
   even when demonstrated on a domain (e.g. a neural operator tested on weather). The broad
@@ -113,47 +115,48 @@ background). No ranking or rewriting beyond that summary.
 - **Fixed instruction (system prompt, identical every call):** scope definition + gray-zone rule
   ("include on any methods overlap") + out-of-scope domain list + the **allowed subfield tag list**
   (model must pick only from these).
-- **Output (JSON mode — guaranteed parseable):**
+- **Output (JSON, prompt-enforced; tolerant parser handles fences/wrappers):**
   ```json
   { "in_scope": true,
     "tags": ["operator-learning", "pde-foundation-models"],
     "summary": "Solving many PDE families with one model is hard. Introduces a neural operator pretrained across PDE families and fine-tunable to new ones." }
   ```
   `tags` empty when `in_scope` is false. `summary` = two sentences, shown as the site card blurb.
-- **Execution (batched):** classify **N papers per request** (batch size in config, e.g. 30) — the
+- **Execution (batched):** classify **N papers per request** (batch size in config, e.g. 20) — the
   user message is a numbered list, the output a JSON **array** of `{id, in_scope, tags, summary}`.
   Latency is irrelevant to us, so batching is pure upside: it cuts requests ~N× and ~N× the cost
-  (≈100–200 candidates/day → ~4–7 requests). JSON mode for reliable parsing. Sequential with a
-  small delay; balance/rate-limit-aware stop/resume. (See "BATCH MODE" in `prompts/classify.md`.)
+  (≈100–200 candidates/day → ~5–10 requests). The tolerant parser strips code fences / wrapper
+  objects. Sequential with a small delay; throttling-aware stop/resume. (See "BATCH MODE" in `prompts/classify.md`.)
 
 ## LLM cost & monitoring (cheap, and watched)
 
-DeepSeek V4 Flash is a cheap paid API. The design keeps spend tiny and **visible to the maintainer**:
+Bedrock bills per token. The design keeps spend tiny and **visible to the maintainer**:
 
 - **Classify once, ever.** Persist each classification keyed by paper ID (arXiv id / OpenReview id).
   Daily runs call the LLM only on *new, unseen* papers — overlapping categories and re-runs never
-  re-classify. Steady-state requests = new papers that day.
+  re-classify. Steady-state requests = new papers that day. (The seen-store is `data/papers.json`;
+  `main.run` diffs fetched ids against it, so no paper is ever sent to Bedrock twice.)
 - **Prefilter before the LLM.** Category + keyword prefilter cuts the firehose ~5–10× before any
   API call; only plausible candidates are classified.
-- **Batched.** ~100–200 candidates/day → batches of ~30 → ~4–7 requests, a fraction of a cent.
+- **Batched.** ~100–200 candidates/day → batches of ~20 → ~5–10 requests.
 - **Maintainer-only run log.** Every run appends a record to `data/stats.json` and prints a summary:
-  fetched / candidates / classified / in-scope / deferred, **requests used**, and **account balance
-  before→after** (queried from DeepSeek's `/user/balance`). This is the daily budget monitor — it is
-  **not** rendered on the public site. (Note: in a public repo, the run log and Actions output are
-  world-readable; keep the repo private if the balance should stay hidden.)
+  fetched / candidates / classified / in-scope / deferred, **requests used**, and **cumulative token
+  usage (in/out)** for the run (Bedrock has no balance endpoint, so token count is the spend signal;
+  accumulated in `classify._USAGE`). This is the daily budget monitor — it is **not** rendered on the
+  public site. (Note: in a public repo, the run log and Actions output are world-readable.)
 - **Per-run safety cap** `MAX_REQUESTS` (config, ≈200) so a conference-deadline spike can't run up
   the bill in one run. Overflow is **carried to the next day** (unseen papers stay queued; a daily
   feed loses nothing by deferring). Log how many were deferred.
-- **Pacing:** a small delay between calls (config `REQUEST_DELAY`); DeepSeek allows fast sequential use.
-- **Clean stop/resume:** the runner catches **balance/rate-limit errors** (HTTP 402/429) and halts
-  cleanly, leaving the rest *unseen* so they retry next run. A spike or an empty balance only delays
-  papers; it never loses them or silently overspends.
+- **Pacing:** a small delay between calls (config `REQUEST_DELAY`) to avoid Bedrock throttling.
+- **Clean stop/resume:** the runner catches **throttling/quota errors** (HTTP 429, ThrottlingException)
+  and halts cleanly, leaving the rest *unseen* so they retry next run. A spike only delays papers;
+  it never loses them or silently overspends.
 
 **Daily volume funnel (measured 2026-06):** ~400–600 papers *fetched* from the generous category
 set (cheap API pulls, seconds) → ~400–600 *new after dedup + seen-filter* → ~100–200 *candidates*
-(keyword prefilter) → **batched ~30/request → ~4–7 LLM requests** → ~40–120 *in-scope* shown on
+(keyword prefilter) → **batched ~20/request → ~5–10 LLM requests** → ~40–120 *in-scope* shown on
 the site, each tagged so you can narrow to the subfields you care about. Total runner time ≈ 5–10
-min/day. Only the LLM calls cost money, and batching keeps a typical day to a fraction of a cent.
+min/day. Only the Bedrock calls cost money, billed per token.
 
 The prompt itself lives in `prompts/classify.md` (approved separately).
 
@@ -163,4 +166,4 @@ The prompt itself lives in `prompts/classify.md` (approved separately).
 in/out + assign subfield tags + write a two-sentence summary → store daily set → render the
 single-page web app (index.html shell + data.json, browsable by date strip + search) → deploy to
 GitHub Pages` — all orchestrated by a daily GitHub Actions cron, for the cost
-of a few cheap DeepSeek calls (free hosting/runner).
+of a few Bedrock (DeepSeek-R1) calls (free hosting/runner).

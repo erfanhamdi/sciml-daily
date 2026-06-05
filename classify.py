@@ -1,6 +1,5 @@
 # classify.py
 import json
-import os
 import time
 import config
 
@@ -45,7 +44,8 @@ def _index(item, pos):
 
 def _is_quota_error(e):
     s = str(e).lower()
-    return any(k in s for k in ("insufficient balance", "402", "429", "rate limit", "quota"))
+    return any(k in s for k in ("insufficient balance", "402", "429", "rate limit", "quota",
+                                "throttl", "too many requests", "serviceunavailable"))
 
 def classify(papers, generate, instruction=None, sleep=time.sleep):
     """Classify papers in batches. Returns (results, requests_used).
@@ -79,36 +79,27 @@ def classify(papers, generate, instruction=None, sleep=time.sleep):
         sleep(config.REQUEST_DELAY)
     return done, used
 
-def deepseek_generate(instruction, message):
-    """Real DeepSeek call (not exercised by unit tests)."""
-    from openai import OpenAI
-    client = OpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url=config.DEEPSEEK_BASE_URL)
-    resp = client.chat.completions.create(
-        model=config.DEEPSEEK_MODEL,
-        messages=[{"role": "system", "content": instruction},
-                  {"role": "user", "content": message}],
-        stream=False, temperature=0.0, max_tokens=config.MAX_TOKENS,
-        response_format={"type": "json_object"})
-    return resp.choices[0].message.content
+# Bedrock has no account-balance endpoint, so the maintainer cost signal is token usage instead:
+# bedrock_generate accumulates per-call usage here, and bedrock_usage() reports the running total.
+_USAGE = {"in": 0, "out": 0}
 
-def deepseek_balance():
-    """Best-effort account balance for the maintainer log. Returns a short string or None."""
-    import urllib.request
-    try:
-        req = urllib.request.Request(
-            config.DEEPSEEK_BASE_URL + "/user/balance",
-            headers={"Authorization": "Bearer " + os.environ["DEEPSEEK_API_KEY"]})
-        info = json.loads(urllib.request.urlopen(req, timeout=15).read().decode())
-        infos = info.get("balance_infos") or [{}]
-        funded = [b for b in infos if _to_float(b.get("total_balance")) > 0]
-        b = (funded or infos)[0]
-        return f"{b.get('currency', '?')} {b.get('total_balance', '?')}"
-    except Exception as e:
-        print(f"[balance] unavailable: {str(e)[:80]}")
-        return None
+def bedrock_generate(instruction, message):
+    """Real Bedrock call via the Converse API (not exercised by unit tests).
+    DeepSeek-R1 returns its chain-of-thought as separate reasoningContent blocks; we keep only the
+    final `text` blocks, which carry the JSON answer the prompt asks for."""
+    import boto3
+    client = boto3.client("bedrock-runtime", region_name=config.AWS_REGION)
+    resp = client.converse(
+        modelId=config.BEDROCK_MODEL,
+        system=[{"text": instruction}],
+        messages=[{"role": "user", "content": [{"text": message}]}],
+        inferenceConfig={"maxTokens": config.MAX_TOKENS, "temperature": 0.0})
+    u = resp.get("usage") or {}
+    _USAGE["in"] += u.get("inputTokens", 0)
+    _USAGE["out"] += u.get("outputTokens", 0)
+    blocks = resp["output"]["message"]["content"]
+    return "".join(b["text"] for b in blocks if "text" in b)
 
-def _to_float(x):
-    try:
-        return float(x)
-    except (TypeError, ValueError):
-        return 0.0
+def bedrock_usage():
+    """Running token total for the maintainer log (Bedrock's stand-in for a balance reading)."""
+    return f"tokens in={_USAGE['in']} out={_USAGE['out']}"

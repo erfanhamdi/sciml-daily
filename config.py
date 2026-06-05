@@ -17,7 +17,7 @@ ARXIV_CATEGORIES = [
     "math.NA", "math.OC", "math.DS", "math.AP", "math.PR", "math-ph",
     "physics.comp-ph", "physics.flu-dyn", "eess.SY",
 ]
-USER_AGENT = "sciml-daily/1.0 (+https://github.com/qile-j/sciml-daily; mailto:qile.jiang@outlook.com)"
+USER_AGENT = "sciml-daily/1.0 (+https://github.com/erfanhamdi/sciml-daily; mailto:erfan@bu.edu)"
 # OpenReview-only date window (days): its notes span all submissions ever, so we keep only those
 # created in the last couple days. arXiv needs no window — its RSS feed is already today's mailing.
 FETCH_WINDOW_DAYS = 2
@@ -26,13 +26,13 @@ FETCH_WINDOW_DAYS = 2
 OPENREVIEW = False
 OPENREVIEW_VENUES = ["ICLR.cc/2026/Conference", "NeurIPS.cc/2025/Conference"]
 
-# DeepSeek — the only model (cheap paid API). Bump this one line for new versions.
-DEEPSEEK_MODEL = "deepseek-v4-flash"
-DEEPSEEK_BASE_URL = "https://api.deepseek.com"
-BATCH_SIZE = 30                            # papers per request (batched to cut latency + cost)
+# Bedrock — the only model (AWS-hosted DeepSeek via the Converse API). Bump these for new versions.
+BEDROCK_MODEL = "us.deepseek.r1-v1:0"      # cross-region inference profile id (DeepSeek-R1 on Bedrock)
+AWS_REGION = "us-east-1"                    # Bedrock region; must have the model enabled in the console
+BATCH_SIZE = 20                            # papers per request (smaller than DeepSeek-direct: R1 reasoning eats output tokens)
 MAX_TOKENS = 8192                          # generous output cap so a full batch is never truncated
 MAX_REQUESTS = 200                         # per-run safety cap so a spike can't run up the bill
-REQUEST_DELAY = 1.0                        # small gap between calls (DeepSeek allows fast sequential use)
+REQUEST_DELAY = 1.0                        # small gap between calls (avoids Bedrock throttling)
 
 # Subfield tags: slug -> (display name, pill color). Keep slugs in sync with prompts/classify.md.
 TAGS = {
@@ -54,21 +54,20 @@ KEYWORDS = [
     "neural operator", "fourier neural operator", "deeponet", "operator learning",
     "physics-informed", "physics informed", "pinn", "pino", "deep energy method",
     "pde", "partial differential equation", "differential equation",
-    "surrogate model", "reduced-order", "reduced order model", "emulator",
+    "surrogate model",
     "differentiable simulation", "differentiable physics", "differentiable solver",
     "scientific machine learning", "scientific computing",
-    "numerical method", "numerical analysis", "finite element", "finite difference",
-    "spectral method", "preconditioner", "linear solver",
-    "symbolic regression", "sindy", "equation discovery", "koopman", "neural ode",
-    "dynamical system", "data assimilation", "inverse problem",
-    "uncertainty quantification", "gaussian process",
-    "diffusion model", "generative model", "turbulence", "navier-stokes",
-    "foundation model", "large language model", " llm", "transformer", "attention",
-    "autoformalization", "theorem proving", "mean-field", "mean field",
-    "markov chain", "generalization bound", "in-context learning", "expressivity",
+    "numerical method", "finite element",
+    "preconditioner", "linear solver",
+    "symbolic regression", "sindy", "equation discovery", "neural ode",
+    "inverse problem",
+    "uncertainty quantification", "gaussian process", "phase field modeling of fracture",
+    "diffusion model", "generative model", "brittle fracture", "phase field modeling of brittle fracture",
+    "foundation model", "large language model", " llm", "llm coding benchmark", "finite element agent",
+    "markov chain", "in-context learning",
     "approximation theory", "convergence rate", "neural network",
 ]
 
 SITE_TITLE = "SciML Daily"
 SITE_TAGLINE = "New papers in Scientific ML, AI for Scientific Computing & Applied Math — every morning."
-SITE_URL = "https://qile-j.github.io/sciml-daily"   # your Pages URL (canonical link)
+SITE_URL = "https://erfanhamdi.github.io/sciml-daily"   # your Pages URL (canonical link)

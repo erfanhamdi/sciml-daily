@@ -5,7 +5,8 @@ from datetime import date, timedelta
 import config, scrape, classify, build
 
 def _load_env():
-    """Read a local .env (KEY=VALUE) if present, so local runs find DEEPSEEK_API_KEY. No-op in CI."""
+    """Read a local .env (KEY=VALUE) if present, so local runs find the AWS creds boto3 needs
+    (AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY). No-op in CI, where they come from the env."""
     env = config.ROOT / ".env"
     if env.exists():
         for line in env.read_text().splitlines():
@@ -28,8 +29,8 @@ def _log_run(record):
 def run(today=None, generate=None, balance=None):
     _load_env()
     today = today or date.today().isoformat()
-    generate = generate or classify.deepseek_generate
-    balance = balance or classify.deepseek_balance
+    generate = generate or classify.bedrock_generate
+    balance = balance or classify.bedrock_usage
 
     bal_start = balance()
     since = (date.fromisoformat(today) - timedelta(days=config.FETCH_WINDOW_DAYS)).isoformat()
@@ -58,8 +59,8 @@ def run(today=None, generate=None, balance=None):
     print("[main] ───── run summary ─────")
     print(f"[main] candidates {len(candidates)} · classified {len(classified)} · "
           f"in-scope {len(in_scope)} · deferred {deferred}")
-    print(f"[main] DeepSeek requests this run: {used}")
-    print(f"[main] balance: {bal_start} -> {bal_end}")
+    print(f"[main] Bedrock requests this run: {used}")
+    print(f"[main] usage: {bal_start} -> {bal_end}")
     print(f"[main] site now lists {len(papers)} papers. done.")
 
 if __name__ == "__main__":
