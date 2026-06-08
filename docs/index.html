@@ -16,6 +16,7 @@
   <nav class="tabs">
     <button class="tab active" data-view="daily">Daily</button>
     <button class="tab" data-view="search">Search</button>
+    <button class="tab" data-view="starred">Starred</button>
   </nav>
 </header>
 
@@ -38,6 +39,15 @@
     <p class="count" id="search-count"></p>
     <div class="grid" id="search-grid"></div>
     <p class="empty" id="search-empty" hidden>No papers match.</p>
+  </section>
+
+  <section id="starred-view" hidden>
+    <div class="dayhead">
+      <h1>Starred Papers</h1>
+      <span class="count" id="starred-count"></span>
+    </div>
+    <div id="starred-groups"></div>
+    <p class="empty" id="starred-empty" hidden>No starred papers yet. Click ☆ on any paper to save it here.</p>
   </section>
 </main>
 
