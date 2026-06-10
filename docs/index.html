@@ -17,6 +17,7 @@
     <button class="tab active" data-view="daily">Daily</button>
     <button class="tab" data-view="search">Search</button>
     <button class="tab" data-view="starred">Starred</button>
+    <button class="tab" data-view="notes">Notes</button>
   </nav>
 </header>
 
@@ -47,7 +48,16 @@
       <span class="count" id="starred-count"></span>
     </div>
     <div id="starred-groups"></div>
-    <p class="empty" id="starred-empty" hidden>No starred papers yet. Click ☆ on any paper to save it here.</p>
+    <p class="empty" id="starred-empty" hidden>No starred papers yet. Click the star on any paper to save it here.</p>
+  </section>
+
+  <section id="notes-view" hidden>
+    <div class="dayhead">
+      <h1>Notes</h1>
+      <span class="count" id="notes-count"></span>
+    </div>
+    <div id="notes-groups"></div>
+    <p class="empty" id="notes-empty" hidden>No notes yet. Click the pencil icon on any paper to add a note.</p>
   </section>
 </main>
 

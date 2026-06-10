@@ -40,8 +40,10 @@ main{max-width:1500px;margin:0 auto;padding:24px clamp(16px,4vw,40px) 80px}
 .dayhead h1{font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.02em;margin:0}
 .count{color:var(--muted);font-size:14px;font-weight:500}
 
+/* ── grid ── */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;align-items:start}
 
+/* ── card ── */
 .card{display:flex;flex-direction:column;background:var(--surface);
   border:1px solid var(--line);border-top:3px solid var(--accent);
   border-radius:var(--radius);padding:18px 18px 16px;box-shadow:var(--shadow);
@@ -50,10 +52,6 @@ main{max-width:1500px;margin:0 auto;padding:24px clamp(16px,4vw,40px) 80px}
 .card-top{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px}
 .card-top h2{flex:1;font-size:16.5px;font-weight:700;line-height:1.32;letter-spacing:-.01em;margin:0}
 .card-top h2 a:hover{color:var(--accent)}
-.star-btn{flex:0 0 auto;border:0;background:none;font-size:20px;line-height:1;cursor:pointer;
-  padding:0 2px;color:var(--muted);transition:color .15s,transform .15s}
-.star-btn:hover{color:#f59e0b;transform:scale(1.2)}
-.star-btn.starred{color:#f59e0b}
 .summary{margin:0 0 12px;font-size:14px;color:var(--ink);opacity:.86}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .tag{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;
@@ -64,11 +62,55 @@ main{max-width:1500px;margin:0 auto;padding:24px clamp(16px,4vw,40px) 80px}
   padding:2px 7px;border-radius:6px;background:var(--chip);color:var(--muted)}
 .card-date{font-weight:600}
 .authors{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.abstract-toggle{align-self:flex-start;margin-top:12px;border:0;background:none;color:var(--accent);
+
+/* ── card actions row (abstract + notes) ── */
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:12px}
+.abstract-toggle{border:0;background:none;color:var(--accent);
   font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:0}
-.abstract{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line);
+.abstract{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line);
   color:var(--muted);font-size:13.5px;line-height:1.6}
 
+/* ── star button ── */
+.star-btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;
+  border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  font:inherit;font-size:12px;font-weight:700;line-height:1;
+  padding:3px 8px;border-radius:999px;cursor:pointer;
+  transition:color .15s,background .15s,border-color .15s}
+.star-btn:hover{color:#f59e0b;border-color:#f59e0b}
+.star-btn.starred{color:#fff;background:#f59e0b;border-color:#f59e0b}
+
+/* ── notes button ── */
+.notes-btn{display:inline-flex;align-items:center;gap:4px;
+  border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  font:inherit;font-size:12px;font-weight:600;line-height:1;
+  padding:3px 9px;border-radius:999px;cursor:pointer;
+  transition:color .15s,background .15s,border-color .15s}
+.notes-btn:hover{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.notes-btn.has-note{color:var(--accent);
+  border-color:color-mix(in srgb,var(--accent) 45%,var(--line));
+  background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.notes-btn span{font-size:11.5px}
+
+/* ── notes panel (inline on card) ── */
+.notes-panel{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.notes-input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;
+  background:var(--bg);color:var(--ink);font:inherit;font-size:13px;
+  line-height:1.55;resize:vertical;outline:none;
+  transition:border-color .15s,box-shadow .15s}
+.notes-input:focus{border-color:color-mix(in srgb,var(--accent) 50%,var(--line));
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
+.notes-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.notes-save{border:0;background:var(--accent);color:#fff;
+  font:inherit;font-size:12px;font-weight:600;
+  padding:5px 16px;border-radius:999px;cursor:pointer;transition:opacity .15s}
+.notes-save:hover{opacity:.85}
+.notes-discard{border:1px solid var(--line);background:none;color:var(--muted);
+  font:inherit;font-size:12px;font-weight:600;
+  padding:5px 14px;border-radius:999px;cursor:pointer;
+  transition:color .15s,border-color .15s}
+.notes-discard:hover{color:var(--ink);border-color:var(--muted)}
+
+/* ── search ── */
 .searchbar{margin:6px 0 14px}
 #search-input{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:12px;
   background:var(--surface);color:var(--ink);font:inherit;font-size:15px;outline:none;
@@ -82,15 +124,32 @@ main{max-width:1500px;margin:0 auto;padding:24px clamp(16px,4vw,40px) 80px}
 .pill:hover{color:var(--ink);border-color:color-mix(in srgb,var(--c,var(--accent)) 50%,var(--line))}
 .pill.active{color:#fff;background:var(--c,var(--accent));border-color:var(--c,var(--accent))}
 
-.starred-group{margin-bottom:44px}
-.starred-group-header{display:flex;align-items:center;gap:10px;margin:0 0 16px;
+/* ── shared section groups (Starred + Notes tabs) ── */
+.section-group{margin-bottom:44px}
+.section-group-header{display:flex;align-items:center;gap:10px;margin:0 0 16px;
   padding-bottom:12px;border-bottom:2px solid var(--line)}
-.starred-group-dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
-.starred-group-title{font-size:clamp(18px,2.5vw,22px);font-weight:700;letter-spacing:-.02em;margin:0}
+.section-group-dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
+.section-group-title{font-size:clamp(18px,2.5vw,22px);font-weight:700;letter-spacing:-.02em;margin:0}
+
+/* ── notes tab ── */
+.notes-list{display:flex;flex-direction:column;gap:10px}
+.note-entry{background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px 18px}
+.note-entry-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.note-entry-title{flex:1;font-size:15px;font-weight:700;line-height:1.4;letter-spacing:-.01em}
+.note-entry-title:hover{color:var(--accent)}
+.note-entry-date{flex:0 0 auto;font-size:12px;font-weight:600;color:var(--muted);padding-top:2px}
+.note-text{margin:10px 0 0;font-size:13.5px;line-height:1.65;color:var(--ink);white-space:pre-wrap}
+.note-entry-edit{margin-top:10px}
+.note-edit-btn{margin-top:10px;border:0;background:none;color:var(--accent);
+  font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;padding:0;
+  opacity:.75;transition:opacity .15s}
+.note-edit-btn:hover{opacity:1}
 
 .empty{color:var(--muted);text-align:center;padding:60px 0;font-size:15px}
 
 @media (max-width:520px){
   .grid{grid-template-columns:1fr}
   .topbar{gap:12px}
+  .tab{padding:7px 13px}
 }
