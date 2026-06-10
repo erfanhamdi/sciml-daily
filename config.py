@@ -60,7 +60,8 @@ KEYWORDS = [
     "inverse problem",
     "uncertainty quantification", "gaussian process",
     "brittle fracture", "phase field modeling of fracture",
-    "foundation model", "large language model", " llm", "llm coding benchmark", "finite element agent"
+    "foundation model", "large language model", " llm", "llm coding benchmark", "finite element agent",
+    "FEniCS", "FEniCSx", "Dolfinx", "JAX-FEM", "gridapp.jl"
 ]
 
 SITE_TITLE = "SciML Daily"
