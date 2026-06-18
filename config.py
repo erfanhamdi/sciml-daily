@@ -47,6 +47,7 @@ TAGS = {
     "uq-inverse-problems":                  ("UQ & Inverse Problems",     "#3b82f6"),
     "foundations":                          ("Foundations",               "#64748b"),
     "mathematical-analysis-of-llm":         ("Math Analysis of LLMs",     "#a855f7"),
+    "finite-element-methods":               ("Finite Element Method",     "#0b9ff5"),
 }
 
 # Prefilter keywords (lowercased substring match; recall-first, the LLM enforces precision).

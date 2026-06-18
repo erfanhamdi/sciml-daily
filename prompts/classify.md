@@ -39,6 +39,8 @@ Representative in-scope themes (not exhaustive):
 - **Mathematical analysis of LLMs / neural networks** — applied-math / theory studies of LLMs and deep nets: training & attention dynamics, mean-field and interacting-particle-system views, expressivity, approximation, convergence, stability, generalization bounds, geometry of in-context learning. **IN because of the mathematical contribution — not because the paper involves LLMs.**
 - **UQ & inverse problems** — uncertainty quantification, Bayesian SciML, inverse problems, data assimilation.
 - **Foundations** — Gaussian processes for scientific computing, AI–HPC hybridization.
+- **Finite element method** - Innovations in Finite element method, solvers on CPU and GPU or any other processing unit
+- **Fracture mechanics** - Phase field modeling of brittle fracture
 
 ### What is OUT of scope
 - Pure **"AI for Science" domain-application** papers whose contribution is applying *existing*
@@ -47,7 +49,7 @@ Representative in-scope themes (not exhaustive):
 - **Generic ML / deep-learning / LLM** papers with no scientific-computing or applied-math angle
   (e.g., a chatbot, a vision model, a generic LLM fine-tune, a recommender system).
 - **Empirical / engineering / application LLM & AI** papers — training recipes, scaling-law
-  curves, alignment/RLHF, prompting, retrieval, agents for non-scientific tasks, benchmarks,
+  curves, alignment/RLHF, prompting, retrieval, agents for non-scientific tasks,
   systems — **even when they contain equations or quantitative analysis**. Numbers and math
   notation alone do not make a paper in scope; the *core contribution* must be mathematical
   theory of the model (dynamics, expressivity, convergence, stability, generalization, etc.).
@@ -79,6 +81,7 @@ If the paper is in scope but no tag fits well, pick the closest single tag.
 - `uq-inverse-problems` — uncertainty quantification, Bayesian SciML, inverse problems, data assimilation.
 - `foundations` — enabling methods: Gaussian processes for scientific computing, AI–HPC hybridization, other core techniques.
 - `mathematical-analysis-of-llm` — mathematical/numerical analysis of LLMs, including dynamics, expressivity, convergence, stability, etc.
+- `finite-element-method` - innovations in finite element method, parallelization, etc.
 
 ### Output
 Return ONLY a JSON object (no markdown fences, no commentary) with this exact shape:
