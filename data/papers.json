@@ -15607,5 +15607,696 @@
   ],
   "summary": "Designing quantum LDPC codes via discrete algebraic optimization is challenging. The paper introduces structured concept evolution (SCE), pairing LLMs with algebraic mutation grammars to discover lifted-product code families for quantum error correction.",
   "added": "2026-06-24"
+ },
+ {
+  "id": "arxiv:2606.24964",
+  "source": "arXiv",
+  "title": "Evidence for feature-specific error correction in LLMs",
+  "abstract": "Understanding the features of large language models (LLMs) is a central goal of interpretability. LLMs are commonly assumed to use superposition to represent more features than they have dimensions. They may not only represent features in superposition but also perform computation in superposition. Theory predicts that computing in superposition requires error correction that privileges feature directions over generic ones, but this prediction has not been tested empirically. We propose an empirical test of error correction in LLMs based on activation perturbations. Perturbing residual-stream activations, we find that they are robust to small perturbations--forming activation plateaus consistent with error correction--but less robust along candidate feature directions (\"pure\" directions, constructed from contrastive prompt pairs) than along mixtures of two such directions, indicating that the pure directions are privileged. We quantify this privilegedness by modeling the perturbation effect as a function of the $L^p$-norm of its decomposition into feature components. For $p=2$ the response is a quadratic form with at most as many nonzero eigenvalues as the residual-stream dimension, which cannot privilege the many feature directions superposition requires. $p>2$ lifts this constraint and is consistent with feature-specific error correction. We find $p>2$ for contrastive, MELBO, and SAE-decoder directions, and $p\\approx2$ for random and PCA directions (controls). These results replicate across Gemma-2-9B, Qwen3-1.7B, Llama-3.1-8B, Mistral-7B-v0.3, Aya-Expanse-8B, and Yi-1.5-9B. We further validate our method on a toy model of error correction with known ground-truth features, recovering $p>2$ for true feature directions, degrading toward $2$ as we rotate away from them.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Francisco Ferreira da Silva",
+   "Stefan Heimersheim"
+  ],
+  "url": "https://arxiv.org/abs/2606.24964",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Understanding how LLMs perform feature-specific error correction in superposition. The paper analyzes activation perturbations to show error correction privileges feature directions via L^p-norm response modeling, revealing a geometric structure.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.24967",
+  "source": "arXiv",
+  "title": "What Do Language Priors Contribute to Darcy-Flow Inversion? A Mechanistic Audit",
+  "abstract": "In ill-posed inverse problems, the recovered solution depends as much on the prior as on the data, yet much of the engineering knowledge that could serve as that prior is recorded qualitatively rather than in formal mathematical form. Here we test whether sentence embeddings can act as an inference-time interface for injecting geological descriptions into a learned Darcy-flow inverse solver. Across six synthetic geological classes and an exploratory transfer to a benchmark reservoir model (SPE10), we vary only the conditioning representation and find that text conditioning reduces reconstruction error by 81 % relative to a no-text counterfactual. Most of this gain comes from a categorical, class-level constraint whose value concentrates where the hydraulic head leaves the conductivity field underdetermined, while within-class geometric detail is secondary and pattern-dependent. Compared with a discrete class label, sentence embeddings add little dense-observation accuracy but improve training stability and enable paraphrase-based sensitivity analysis and open-vocabulary inputs. These results show that language priors can serve as an engineering-informatics interface for injecting geological knowledge into learned inverse solvers, while clarifying when they help and what signal they actually carry.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Taiga Saito",
+   "Yu Otake",
+   "Daijiro Mizutani",
+   "Sopheakpolin Mom"
+  ],
+  "url": "https://arxiv.org/abs/2606.24967",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Injecting geological language priors into Darcy-flow inverse solvers. The paper shows text conditioning reduces reconstruction error by 81%, primarily via categorical constraints where hydraulic head leaves conductivity underdetermined.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.24993",
+  "source": "arXiv",
+  "title": "The Geometry of Sequential Learning: Lie-Bracket Prediction of Transfer Order",
+  "abstract": "Sequential learning is order-dependent: from Pile-style next-token domain adaptation to instruction-SFT and DPO, N candidate sources induce N! possible curricula. We show that the local order effect is governed by a computable geometric quantity, the Lie-bracket commutator of gradient update fields, yielding a pairwise score for whether A->B or B->A is better for a target domain. The pairwise bracket primitive also defines a Lie-Bracket Tournament: with a shared theta_0 target-gradient reference, Hessian symmetry gives Borda/row-sum scores from one Hessian-vector product per source, O(N) dot products, and an O(N log N) sort, without materializing the O(N^2) edge matrix. Empirically, the planner reaches 98.1%/98.9% pairwise accuracy at k=1 for instruction-SFT/DPO, remains at 73.1%/72.2% at k=20, and preserves the original pretraining-domain evidence with 82.4-92.0% accuracy across four LLMs and 91.1% on diffusion. At curriculum scale, it recovers the best of all 3! schedules in 87.5% of trials, ranks 85 Stack programming-language source domains for a Python target in the 99th sampled percentile, and reaches the 99.0-99.6th sampled percentile on 56 MMLU subjects, sharply above the reported descending gradient-norm baseline. These results reframe sequential learning as a geometric tournament problem: commutators provide both local pairwise order information and a scalable primitive for many-domain schedules.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "John Sweeney"
+  ],
+  "url": "https://arxiv.org/abs/2606.24993",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Sequential learning order effects governed by gradient commutators. The paper derives a Lie-bracket-based pairwise score to predict curriculum order and scales it via tournaments, reframing learning as geometric optimization.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.24999",
+  "source": "arXiv",
+  "title": "A Zeroth-Order Deep Learning Method for Fully Nonlinear Parabolic Partial Differential Equations with Unknown Coefficients",
+  "abstract": "High-dimensional partial differential equations (PDEs) with unknown coefficients arise widely in scientific machine learning, including continuous-time reinforcement learning, yet solving them efficiently in a data-driven way remains challenging. Existing deep learning solvers often rely on repeated automatic differentiation to evaluate differential operators, which can cause instability and amplify derivative errors in high dimensions, while probabilistic methods based on stochastic representations require explicit knowledge of the data-generating dynamics and therefore do not apply to black-box environments. We introduce two types of simulators as data-generating mechanisms, and take a ``representing-then-learning\" approach that learns the solutions and their derivatives under settings where the underlying PDE operators are accessible only through simulations and pointwise evaluations. Our representation of derivatives relies on the zeroth-order derivative (ZOD) estimators derived from perturbed Monte Carlo trajectories. This fully model-free approach generates targets for the gradient and Hessian networks using only function evaluations. We provide a statistical learning analysis of the proposed approach, including a bias--variance tradeoff for ZODs. Assuming a standard contraction property of the underlying operator, we establish a non-asymptotic error bound that decomposes the total error into discretization error, approximation error, statistical error, and ZOD bias. Crucially, we derive the sample complexity of the learned representations in (weighted) Sobolev space, characterizing the error up to second-order derivatives. Numerical experiments illustrate the competitive performance of the method in moderate and high dimensions.",
+  "categories": [
+   "cs.LG",
+   "math.OC"
+  ],
+  "authors": [
+   "Yanwei Jia",
+   "Du Ouyang",
+   "Huy\\^en Pham",
+   "Xun Yu Zhou"
+  ],
+  "url": "https://arxiv.org/abs/2606.24999",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Solving high-dimensional PDEs with unknown coefficients via zeroth-order deep learning. The method uses perturbed Monte Carlo trajectories to estimate derivatives without differentiation, analyzed via Sobolev-space sample complexity.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25008",
+  "source": "arXiv",
+  "title": "Neural Scaling Universality: If Exponents Are Fixed, Time to Understand Coefficients",
+  "abstract": "Neural scaling laws describe how pre-training loss decays as power laws with training time, model size, and compute. This position paper argues that the exponents of these power laws are fixed by generic mechanisms: a one-third time scaling due to the strong nonlinearity of Softmax, an inverse width scaling due to representational superposition, and an inverse depth scaling due to ensemble averaging of Transformer layers. These mechanisms are robust to a wide range of data structures and architectural details, placing current large language models in a universality class with fixed exponents. The coefficients, however, are expected to be sensitive to data and architecture details, and directly determine practical quantities such as the optimal model shape and the compute-optimal frontier. We therefore argue that understanding the coefficients is the key to near-term performance improvements, and that a closer examination of the current universality class may reveal pathways to better universality classes.",
+  "categories": [
+   "cs.LG",
+   "cs.CL"
+  ],
+  "authors": [
+   "Yizhou Liu",
+   "Jeff Gore"
+  ],
+  "url": "https://arxiv.org/abs/2606.25008",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Neural scaling laws are characterized by fixed exponents and variable coefficients. The paper argues that the exponents are determined by generic mechanisms (Softmax nonlinearity, superposition, ensemble averaging) and that understanding coefficients is key to practical improvements.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25039",
+  "source": "arXiv",
+  "title": "LLM-ACES: Closed-Loop Discovery of Dynamical Systems with LLM-Guided Adaptive Search",
+  "abstract": "Recovering governing Ordinary Differential Equations (ODEs) from data is a central challenge in modeling dynamical systems across scientific domains. Existing approaches cast discovery as a static inference problem over fixed datasets, assuming that the observed trajectories are sufficiently informative. However, dynamical systems evolve over large state spaces, and limited data can make multiple equations observationally indistinguishable, leading to identifiability gaps and the recovery of incorrect governing equations. To address this, we introduce LLM-ACES, or LLM-guided Active Closed-loop Equation Search, a closed-loop framework that jointly optimizes symbolic hypothesis construction and adaptive data acquisition. In LLM-ACES, a large language model (LLM) proposes operator priors that partition the large search space into distinct regions, within which candidate equations are fit to the observed data. The disagreement among these candidates guides the acquisition of informative trajectories, creating a feedback loop that iteratively refines both the hypothesis space and the discovered dynamics. On 122 ODE systems spanning ODEBench and ODEBase, LLM-ACES achieves the lowest median NMSE, outperforming state-of-the-art baselines by several orders of magnitude while achieving a high symbolic accuracy of 46.2% and 52.4%, respectively. Our analysis further shows that LLM-ACES is sample-efficient, achieving better performance with one-tenth the data. Furthermore, LLM-ACES's feedback-driven data acquisition makes it robust to noise and recovers the correct symbolic structure, while baselines introduce spurious terms that fit the data locally but obscure the true governing relationships.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "cs.CL",
+   "math.DS"
+  ],
+  "authors": [
+   "Nikhil Abhyankar",
+   "Sha Li",
+   "Sanchit Kabra",
+   "Naren Ramakrishnan",
+   "Yulia Gel",
+   "Chandan K. Reddy"
+  ],
+  "url": "https://arxiv.org/abs/2606.25039",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Recovering governing ODEs from limited data faces identifiability gaps. The paper introduces LLM-ACES, a closed-loop framework where an LLM proposes operator priors and guides adaptive data acquisition to resolve ambiguities in dynamical systems.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25075",
+  "source": "arXiv",
+  "title": "Solver Exactness, Learned Flexibility: Equivariant Boundary-Correction Operators for Stokes Flow",
+  "abstract": "The drag and mobility of bodies in viscous (Stokes) flow govern problems in shape design, suspensions, or microorganism swimming. Classical solvers compute them accurately but expensively; purely learned surrogates are fast but unreliable off their training data. We combine both: a solver's exactness for the part of the solution operator known in closed form, and learning for the part that is not. For incompressible Stokes flow the elliptic-core kernel is already known: in free space the Leray projector is a single rotation-equivariant Stokeslet with no free parameters, and the boundary-integral solver built on it is exact to machine precision at $O(N)$. The one object with no closed form is the boundary correction. We split the operator: fix the core exactly and equivariantly, and learn only that correction, as a well-conditioned second-kind operator. On a Stokes testbed where the exact solve is ground truth, the split gives a working solver ($2 \\times 10^{-3}$ end-to-end, $5$-$16\\times$ more data-efficient than a black-box DeepONet) and overturns three expectations. (i) Conditioning is not the bottleneck: a $10^{16}$-conditioned first-kind and a bounded second-kind operator give the same error. (ii) Cross-shape generalization is governed by the descriptor's equivariance, not capacity: a noninvariant descriptor degrades by $>10^5\\times$ under rotation, while canonicalization restores near-machine transfer. (iii) Coverage, not expressivity, is the lever; a local equivariant kernel removes the heavy out-of-distribution tail, cutting worst-case interior error from $O(10)$ to $\\sim 10^{-7}$. We then open the central exterior problem in 3D: a completed double layer, made exact by quadrature by expansion, is second-kind well-conditioned and $SO(3)$-equivariant, reproduces the analytic drag of spheres and ellipsoids, and composes across bodies.",
+  "categories": [
+   "physics.flu-dyn",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Denis Gueyffier (Direction Scientifique G\\'en\\'erale",
+   "ONERA",
+   "Institut Polytechnique de Paris",
+   "Palaiseau",
+   "France)"
+  ],
+  "url": "https://arxiv.org/abs/2606.25075",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Classical Stokes solvers are exact but expensive, while learned surrogates lack reliability. The paper splits the operator into an exact core and a learned boundary correction, achieving data efficiency and cross-shape generalization via equivariant descriptors.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25130",
+  "source": "arXiv",
+  "title": "Finite Elements for Helmholtz Scattering with Infinity as a Computational Boundary",
+  "abstract": "Building on the null-infinity-layer construction, we develop an H1-conforming finite-element formulation of hyperboloidal compactification for the exterior Helmholtz equation. A change of coordinates maps infinity to a finite outer boundary, and a rescaling removes the leading oscillatory decay. We derive the transformed equation and a global sesquilinear weak formulation with bounded coefficients. The compactified boundary contributes an explicit boundary mass term, and its trace gives the far-field pattern up to a known normalization. We compare the resulting method with finite-element discretizations using perfectly matched layers (PML) and report benchmark results in two and three dimensions. Numerical experiments include scattering by a unit disk, resonance in a trapping geometry, a manufactured benchmark in three dimensions, and a submarine benchmark.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "gr-qc"
+  ],
+  "authors": [
+   "Markus Wess",
+   "An{\\i}l Zengino\\u{g}lu"
+  ],
+  "url": "https://arxiv.org/abs/2606.25130",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Solving the Helmholtz equation with traditional methods requires handling unbounded domains. The paper develops an H1-conforming finite-element formulation using hyperboloidal compactification to map infinity to a finite boundary.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25151",
+  "source": "arXiv",
+  "title": "Silent Failures in Physics-Informed Neural Networks: Parameter Poisoning and the Limits of Loss-Based Validation",
+  "abstract": "Physics-informed neural networks (PINNs) embed governing equations in their loss function, enabling mesh-free solutions to partial differential equations. Low training loss is treated as evidence that the learned solution is physically correct. This paper shows that assumption breaks down when encoded physics are incorrect. By perturbing PDE parameters before training, a setting we describe as physics parameter poisoning or parameter misspecification, we produce models that train to low loss but give incorrect answers; we treat the perturbation schedule as sensitivity analysis rather than only as a security threat, and none of our claims requires an adversary. Achieving low residual loss does not discriminate accurate from inaccurate solutions: poisoned models reach losses at or below the clean baseline yet differ by large margins, so driving the residual down is not evidence of physical accuracy. Across three PDE systems (Burgers equation, Navier-Stokes cavity, and convection-diffusion), poisoned models match or beat the clean-model training loss while their solutions differ by up to 71% in the fixed sweep and up to 128% under adversarial search; at Cavity Re=400 the poisoned loss falls below the clean baseline. We define a detection difficulty ratio R (solution error divided by training loss) to summarize how invisible the corruption is, though cross-PDE comparison is complicated by differences in loss scale. We test six candidate defenses, none of which reliably detects corruption across all regimes. We propose a post-hoc defense: sweeping the PDE residual loss across parameter values without retraining. The loss minimum recovers the true training parameter without external data, and generalizes across all three PDE systems. The effect holds across five network architectures (8.7K to 133K parameters), is bidirectional, and is confirmed across multiple random seeds.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "David McShannon",
+   "Nicholas Dietrich"
+  ],
+  "url": "https://arxiv.org/abs/2606.25151",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "PINNs trained with incorrect physics parameters can achieve low loss but yield incorrect solutions. The paper demonstrates that residual loss minimization alone cannot detect parameter poisoning and proposes a parameter-sweep defense.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25185",
+  "source": "arXiv",
+  "title": "Neural operator-based digital twins for modeling amyloid-$\\beta$ and tau propagation and treatment optimization in Alzheimer's disease",
+  "abstract": "Accurately predicting the spatiotemporal evolution of amyloid-$\\beta$ and tau proteins at the individual level is critical for improving the diagnosis and treatment of Alzheimer's disease. We consider the problem of constructing patient-specific digital twins that model the propagation of these biomarkers on the cortical surface using reaction--diffusion dynamics. A major challenge is that the underlying nonlinear aggregation mechanisms are unknown and must be inferred from sparse, noisy, and heterogeneous longitudinal PET imaging data. To address this, we develop a data-driven framework that learns biomarker dynamics directly from clinical observations. The approach combines operator learning with reduced-order representations to infer governing equations of disease progression from data. Using this framework, we achieve predictive accuracies of 87\\% for amyloid-$\\beta$ and 81\\% for tau. Building on the learned dynamics, we further formulate a PDE-constrained optimal control problem to design personalized therapeutic strategies that regulate pathological protein propagation. By integrating data-driven dynamical modeling with treatment optimization, the proposed digital twin framework provides an interpretable and predictive platform for understanding disease progression and enabling precision interventions in neurodegenerative disorders.",
+  "categories": [
+   "cs.LG",
+   "math-ph",
+   "math.MP"
+  ],
+  "authors": [
+   "Xiaofeng Xu",
+   "Tingting Dan",
+   "Zifan Zhou",
+   "Bin Li",
+   "Guorong Wu",
+   "Wenrui Hao"
+  ],
+  "url": "https://arxiv.org/abs/2606.25185",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Modeling amyloid-β and tau propagation in Alzheimer's requires patient-specific digital twins. The paper uses neural operators and reduced-order representations to learn biomarker dynamics from PET data and optimize therapies.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25188",
+  "source": "arXiv",
+  "title": "Efficient Analytic Uncertainty Quantification for Multi-Modal Regression",
+  "abstract": "Efficient uncertainty quantification (UQ) is essential for trustworthy large-scale learning. Existing UQ methods for regression tasks mainly operate under the assumption that the conditional label marginal satisfies single-peak parametric models, e.g., Gaussians, where the negative log-likelihood function simplifies to the mean square error. However, such single-peak assumptions fail in regression tasks featuring multi-modal distributions. On the other hand, semi-parametric methods which achieve strong regression performance for multi-modal distributions often lack efficient quantification on their prediction variances. In this work, we extend UQ techniques based on Variational Bayesian Inference (VBI) to two widely used semi-parametric regression models that yield histogram-like reconstructions of the conditional label densities: Quantile Regression (QR) and Classification Restoration (CR). Our approach introduces a unified, distribution-agnostic framework that simultaneously achieves accurate estimation of complex conditional distributions and highly efficient UQ. Theoretically, our method is grounded in novel formulations of QR and CR within the VBI framework, yielding analytic Evidence Lower Bounds (ELBO) to streamline training and a closed-form or analytically approximated predictive density for efficient inference. Empirically, we evaluate our methods on three large-scale regression benchmarks with multi-modal label distributions. Our framework outperforms state-of-the-art multi-modal regression baselines, and even matches predictive performance of computationally expensive ensemble models. Furthermore, by leveraging epistemic uncertainty estimation, our approach enables highly data-efficient active learning strategies.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Kun Jin",
+   "James Harrison",
+   "Jiawei Li",
+   "Sihan Liu",
+   "Jiayi Liu",
+   "Randolph Linderman",
+   "Yuening Li",
+   "Arnab Bhadury",
+   "Sourabh Prakash Bansod",
+   "Liang Liu",
+   "Jasper Snoek"
+  ],
+  "url": "https://arxiv.org/abs/2606.25188",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Uncertainty quantification for multi-modal regression lacks efficient methods. The paper extends variational Bayesian inference to quantile regression and classification restoration, enabling analytic uncertainty estimates.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25197",
+  "source": "arXiv",
+  "title": "Efficient Adaptive Data Acquisition via Pretrained Belief Representations",
+  "abstract": "Learning effective policies for adaptive data acquisition remains challenging: posterior-based methods rely on surrogate models and posterior approximations that can be misspecified or biased, while direct policy-learning methods map from historical observations and fail to exploit available model representations, making learning harder. We introduce policy learning with belief representations (POLAR), based on the insight that optimal data acquisition depends on the observation history only through a sufficient belief state. Specifically, POLAR decouples representation learning from policy learning by leveraging pretrained predictive foundation models as belief-state encoders, training a policy head on top of their representations. This yields a simple, unified amortised policy learning framework for Bayesian experimental design, Bayesian optimisation, and active learning, differing only in the task-specific utility used to train the policy. Empirically, we find that POLAR outperforms state-of-the-art amortised methods across diverse tasks while requiring far fewer training samples, demonstrating a significant step in the scalability and efficiency of amortised data acquisition.",
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Daolang Huang",
+   "Zhuoyue Huang",
+   "Conor Hassan",
+   "Luigi Acerbi",
+   "Samuel Kaski",
+   "Tom Rainforth"
+  ],
+  "url": "https://arxiv.org/abs/2606.25197",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Amortized data acquisition methods struggle with sample efficiency. POLAR decouples representation and policy learning by using pretrained models as belief encoders, improving Bayesian experimental design and active learning.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25218",
+  "source": "arXiv",
+  "title": "Leakage detection, collision relation, and self-adjoint cancellation in multi-velocity systems",
+  "abstract": "Let $W^T$ map Dirichlet data $f$ to time $T$ state $u^f(T, \\cdot)$, we study the $K$-normal operator $C^T_K:= (W^T)^*KW^T$ where $(W^T)^*$ is the standard $L^2(dx)$ adjoint. We prove that it is a Fourier Integral Operator away from the glancing directions with canonical relation involving collision data between pairs of velocities. However, if the operator is $M$-self-adjoint, then the canonical relation for $C^T_M$ loses the collision data and reduces to scattering relation for each individual metric. Thus, when system satisfies certain coupling requirement, we demonstrate off-polarization leakage detection and introduce a new collision rigidity problem. Combine these two parts, we prove an inverse problem of velocity recovery from $C^T_K$ for multi-velocity wave models and variable coefficient isotropic elasticity system.",
+  "categories": [
+   "math.AP"
+  ],
+  "authors": [
+   "Yuchao Yi"
+  ],
+  "url": "https://arxiv.org/abs/2606.25218",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Inverse problems for multi-velocity wave models require analyzing collision data. The paper studies the K-normal operator's canonical relation and proves velocity recovery for elasticity systems via collision rigidity.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25259",
+  "source": "arXiv",
+  "title": "A Neural Surrogate Approach for Simulating Natural Convection Problems",
+  "abstract": "This paper presents a neural surrogate approach for improving the accuracy of natural convection problems simulated with a Boussinesq flow model (incompressible flow with heat transfer). Our approach, based on Fourier neural operators, uses training data consisting of matched pairs of simulations run under the computationally cheaper yet less accurate Boussinesq flow model and a more computationally expensive and more accurate compressible flow model. In both cases, we implement our parallelized simulation codes based on an implicit monolithic mixed finite element method (FEM) approach using the open-source FEniCSx framework. Our implementations are validated against a commercial software package, COMSOL, as well as standard test problems from the literature. We include a careful discussion and analysis of data set generation and present learning results in two and three spatial dimensions. Using compressible flow results as high-fidelity reference solutions, our learning approach, with a single model evaluation per simulation, substantially improves the per-channel accuracy of Boussinesq predictions, with structural similarity (SSIM) close to unity across all flow variables and test distributions and corresponding mean-squared error reductions of one to nearly three orders of magnitude. All code and data is released as open-source.",
+  "categories": [
+   "physics.comp-ph",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Nurshat Menglik",
+   "Alex Shao",
+   "David Hyde"
+  ],
+  "url": "https://arxiv.org/abs/2606.25259",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Improving the accuracy of natural convection simulations using the Boussinesq model compared to compressible flow references. The paper introduces a Fourier neural operator surrogate trained on paired simulation data, implemented with a parallelized implicit monolithic mixed finite element method in FEniCSx.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25323",
+  "source": "arXiv",
+  "title": "Physics-Informed Neural Networks for the Time-Domain Maxwell Equations with Split-Field Perfectly Matched Layers",
+  "abstract": "Physics informed neural networks (PINNs) incorporate Maxwell's equations, initial conditions, boundary conditions, and measurement data directly into the learning process, transforming the solution of partial differential equations into a constrained optimization problem. As such, PINNs are attracting increased attention in computational electromagnetics as an alternative to traditional time-domain solvers. This paper presents a PINN formulation for the time-domain Maxwell's equations incorporating split-field perfectly matched layers (PMLs). A key advantage of the split-field PML formulation is that the same governing equations can be applied in both the physical and PML regions, simplifying the PINN formulation and loss construction. The proposed approach is validated using one-dimensional and two-dimensional Gaussian pulse problems with PML. The PINN solutions show good agreement with analytical and finite-difference time-domain (FDTD) reference solutions, demonstrating the feasibility of combining PINNs with split-field PMLs for open-domain time-domain electromagnetic simulations.",
+  "categories": [
+   "math-ph",
+   "math.MP",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Xiaodong Liu",
+   "Lingquan Li",
+   "Gregory Moss",
+   "Scott Langdon"
+  ],
+  "url": "https://arxiv.org/abs/2606.25323",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Solving open-domain time-domain electromagnetic simulations with split-field PMLs. The paper formulates a PINN approach that unifies governing equations in physical and PML regions, validated against FDTD solutions.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25494",
+  "source": "arXiv",
+  "title": "A functional central limit theorem for kernel gradient flow and infinitesimal gradient boosting",
+  "abstract": "Building on the large-sample analysis of infinitesimal gradient boosting (Dombry and Duchamps, 2024b), we study the fluctuations of the process around its deterministic limit and establish a functional central limit theorem: the rescaled deviations converge in distribution to a Gaussian process. The analysis is carried out in a reproducing kernel Hilbert space (RKHS) naturally associated with the softmax gradient tree base learner, in which the boosting process is characterized as the solution of an autonomous ordinary differential equation (ODE). The proof rests on a general stochastic perturbation analysis of ODEs in Banach spaces, which is of independent interest: whenever a sequence of vector fields converges and satisfies a central limit theorem, so does the associated ODE solution. We first illustrate this perturbation approach in the simpler setting of kernel gradient flow, where the Gaussian limit admits an explicit characterization, and then consider the more complicated tree-based gradient boosting setting.",
+  "categories": [
+   "math.PR",
+   "math.ST",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Cl\\'ement Dombry (LMB)",
+   "Jean-Jil Duchamps (LMB)"
+  ],
+  "url": "https://arxiv.org/abs/2606.25494",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Analyzing fluctuations in gradient boosting around its deterministic limit. The paper establishes a functional central limit theorem for boosting processes using stochastic perturbation analysis of ODEs in Banach spaces.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25640",
+  "source": "arXiv",
+  "title": "Parametric elliptic reconstructions and a posteriori error estimates for parabolic partial differential equations with small randomness in a Robin boundary condition",
+  "abstract": "We obtain reliable a posteriori residual-based error estimates for parabolic partial differential equations with small randomness in a Robin-type boundary condition. The uncertainty is addressed via a perturbation approach, transforming the problem with small random input data into a sequence of deterministic problems. Finite element approximations, combined with the backward Euler time discretization, are employed for the resulting problems. To ensure optimal spatial accuracy, the elliptic reconstruction framework is suitably adapted to this setting. This is achieved by introducing a parametric elliptic reconstruction operator that unifies the a posteriori analysis of deterministic parabolic problems with that of parabolic problems with small uncertainties. The obtained a posteriori error estimator is robust with respect to the parameter that describes the amount of uncertainty, in the sense that the constants appearing in the bounds are independent of the parameter, as well as of the mesh size and the time-step. In addition, numerical experiments are presented to validate the theoretical findings and illustrate the robustness of the proposed estimators.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Nakidi Shravani",
+   "Gujji Murali Mohan Reddy",
+   "Amiya Kumar Pani",
+   "Stig Larsson"
+  ],
+  "url": "https://arxiv.org/abs/2606.25640",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "A posteriori error estimation for parabolic PDEs with uncertain Robin boundary conditions. The paper adapts the elliptic reconstruction framework to parametric settings and demonstrates robustness of error bounds across mesh sizes and uncertainty parameters.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25743",
+  "source": "arXiv",
+  "title": "Black-Box Assisted Regression: Phase Transitions and Minimax Optimality",
+  "abstract": "Foundation models are often used as fixed black-box predictors for downstream tasks with limited labeled data, but their predictions may be biased and unsafe to trust blindly. We study this setting through black-box assisted nonparametric regression: a learner observes labeled samples and can query a fixed predictor $f_0$, while the target $f^*$ is close to $f_0$ in $L_2(P_X)$ up to an unknown radius $\\delta$. We give a finite-sample minimax characterization showing a phase transition at $\\delta_c(n) \\asymp n^{-\\beta/(2\\beta+d)}$, with leading risk $\\min\\{\\delta^2, n^{-2\\beta/(2\\beta+d)}\\}$. We then analyze a Safe Residual Estimator: it learns a correction around $f_0$, initializes the residual head at zero so the initial predictor equals $f_0$, and uses holdout selection to revert to $f_0$ when the learned correction is not supported by validation data. Here, \"safe\" means avoiding negative transfer, i.e., performing worse than the black-box predictor alone. The estimator matches the leading minimax term up to an additive validation-selection cost. Synthetic regression experiments verify the predicted phase transition, while CIFAR-100 with CLIP and AG News with Qwen3-8B provide practice-facing evidence that the same residual-correction tradeoff is useful beyond the formal squared-loss regression setting.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Yan Zhou"
+  ],
+  "url": "https://arxiv.org/abs/2606.25743",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Theoretical analysis of regression with foundation model assistance under L2 proximity constraints. The paper identifies phase transitions in minimax risk and proposes a Safe Residual Estimator with validation-based reversion to avoid negative transfer.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25753",
+  "source": "arXiv",
+  "title": "Gradient-based inverse lithography for EUV masks via the waveguide method and a physics-informed neural operator",
+  "abstract": "Gradient-based inverse lithography technology~(ILT) for extreme ultraviolet~(EUV) masks is presented. A novel framework treats the differentiable waveguide method and the recently proposed waveguide neural operator~(WGNO) as end-to-end physics engines, recovering the permittivity of the absorber of the mask through automatic differentiation of the full forward diffraction model. Numerical experiments on realistic 2D and 3D absorbers of the mask (TaBN, La, U) at $\\lambda{=}11.2$~nm show that the considered ILT methods make it possible to obtain a mask structure that achieves the desired field on the wafer.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "math.OC",
+   "physics.comp-ph",
+   "physics.optics"
+  ],
+  "authors": [
+   "Vasiliy A. Es'kin",
+   "Egor V. Ivanov"
+  ],
+  "url": "https://arxiv.org/abs/2606.25753",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "generative-simulation"
+  ],
+  "summary": "Inverse lithography for EUV masks using differentiable waveguide physics and neural operators. The method jointly optimizes mask permittivity through automatic differentiation of full diffraction models and neural operator surrogates.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25793",
+  "source": "arXiv",
+  "title": "Monte Carlo physics-informed neural networks for inverse multiscale heat conduction problems via the phonon Boltzmann transport equation",
+  "abstract": "Inferring thermal fields and thermophysical properties from limited measurements is a fundamental challenge in micro- and nanoscale heat conduction, where the classical Fourier law breaks down and the phonon Boltzmann transport equation (BTE) is needed to capture non-diffusive transport effects. In this work, we extend Monte Carlo physics-informed neural networks (MC-PINNs), originally developed for forward phonon BTE problems [J. Comput. Phys. 542, 114364, 2025], to inverse multiscale heat conduction problems. Two representative classes of inverse problems are considered: (i) reconstructing the full thermal field from sparse interior temperature measurements when boundary conditions are unknown, and (ii) simultaneously inferring the unknown relaxation time together with the thermal field. Problem-specific MC-PINN architectures and training strategies are designed for each class. The mesh-free Monte Carlo sampling strategy enables a unified treatment across diffusive, transitional, and ballistic transport regimes without requiring a priori knowledge of the relaxation time. The proposed method is evaluated on quasi-one-dimensional, quasi-two-dimensional, and three-dimensional benchmark problems covering a wide range of Knudsen numbers, as well as on a realistic 3D fin field-effect transistor (FinFET) structure. Results demonstrate that MC-PINNs consistently outperform purely data-driven deep neural networks, particularly in the sparse-data regime, and can accurately infer spatially uniform relaxation times. For spatially varying relaxation times, the inferred distributions capture the dominant thermal response, and numerical simulations using the recovered parameters reproduce the macroscopic fields with good accuracy. These findings establish MC-PINNs as an effective and physically consistent framework for inverse thermal analysis at micro- and nanoscales.",
+  "categories": [
+   "physics.comp-ph",
+   "math.AP"
+  ],
+  "authors": [
+   "Qingyi Lin (Institute of Interdisciplinary Research for Mathematics and Applied Science",
+   "School of Mathematics and Statistics",
+   "Huazhong University of Science and Technology",
+   "Wuhan",
+   "China)",
+   "Chuang Zhang (Institute of Fundamental and Transdisciplinary Research",
+   "Zhejiang University",
+   "Hangzhou",
+   "China)",
+   "Xuhui Meng (Institute of Interdisciplinary Research for Mathematics and Applied Science",
+   "School of Mathematics and Statistics",
+   "Huazhong University of Science and Technology",
+   "Wuhan",
+   "China)",
+   "Zhaoli Guo (Institute of Interdisciplinary Research for Mathematics and Applied Science",
+   "School of Mathematics and Statistics",
+   "Huazhong University of Science and Technology",
+   "Wuhan",
+   "China)"
+  ],
+  "url": "https://arxiv.org/abs/2606.25793",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Inferring thermal fields and relaxation times in multiscale heat conduction problems governed by the phonon Boltzmann transport equation is challenging due to unknown boundary conditions and transport regimes. The paper extends Monte Carlo physics-informed neural networks (MC-PINNs) with problem-specific architectures and mesh-free sampling to solve inverse problems across diffusive, transitional, and ballistic regimes.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25820",
+  "source": "arXiv",
+  "title": "Operator Learning on the Data-Driven Multiscale Space for Nonlinear Flow in Random Heterogeneous Porous Media",
+  "abstract": "We present an operator learning framework based on a coarse data-driven multiscale space for nonlinear flow in random heterogeneous porous media. The multiscale space is constructed from local representative fine-scale solution snapshots, yielding an accurate low-dimensional representation of the solution manifold. This multiscale basis serves as the trunk of a neural operator, while a branch network predicts the corresponding reduced coefficients from the input permeability field. Unlike Galerkin projection methods, the neural operator learns a global nonlinear mapping from permeability fields to solution coefficients, providing greater flexibility, improved accuracy, and eliminating the need for online nonlinear coarse-grid solves and coefficient evaluations. Numerical results show that the proposed approach achieves good accuracy and substantially lower computational cost than projection-based methods for nonlinear flow in high-contrast heterogeneous media.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Maria Vasilyeva",
+   "Raphael Pangilinan"
+  ],
+  "url": "https://arxiv.org/abs/2606.25820",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Solving nonlinear flow in random heterogeneous porous media requires expensive multiscale simulations. The paper develops a neural operator that combines data-driven multiscale basis functions with a branch network to learn global nonlinear mappings from permeability fields to solutions, eliminating online coarse-grid solves.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25893",
+  "source": "arXiv",
+  "title": "A Physics-Informed Statistical Learning Model for Long-Term Fragmentation Cloud Propagation",
+  "abstract": "This paper introduced a Hierarchical Generative Density Model (HGDM) for the long-term propagation of orbital fragmentation clouds. Validation against high-fidelity Monte Carlo simulations showed that the proposed surrogate accurately reproduces the dominant multidimensional structures of propagated clouds while consistently outperforming classical band-formation approximations based on independent angular variables. Accurate cloud reconstructions were obtained using only a few hundred to a few thousand propagated fragments, yielding reductions exceeding two orders of magnitude in computational cost and three orders of magnitude in storage requirements; future work will investigate its application to large-scale debris-environment evolution and collision-cascade simulations associated with the Kessler syndrome.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Yema Paul",
+   "Diogo Sousa",
+   "Albert Servitje",
+   "Rodrigo Pariente",
+   "Emmanuel Delande",
+   "Christophe Taillan",
+   "Joan Pau Sanchez"
+  ],
+  "url": "https://arxiv.org/abs/2606.25893",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Long-term orbital fragmentation cloud propagation requires expensive Monte Carlo simulations. The paper introduces a Hierarchical Generative Density Model (HGDM) as a physics-informed surrogate that accurately reconstructs cloud structures with reduced computational cost.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25952",
+  "source": "arXiv",
+  "title": "Principal-Part Decomposition for Neural Operator Learning of Dirichlet-to-Neumann Maps",
+  "abstract": "Dirichlet-to-Neumann (DtN) maps send boundary values of a partial differential equation (PDE) solution to its normal derivative on the boundary. Learning such maps across varying domains is important for boundary-value problems, but a black-box neural operator must model both the operator's non-smoothing principal behavior and its dependence on boundary geometry. We use the boundary integral representation of the DtN map to obtain, for smooth planar boundaries, a useful principal-part decomposition: a geometry-independent leading operator can be written as a universal Fourier multiplier, while the remaining geometry-dependent correction is smoother. We propose Principal-Part Decomposed Neural Operators (PPDNO), a hybrid analytic-neural framework that turns this decomposition into a geometry-conditioned operator learning model. PPDNO computes the principal part by FFT and trains a low-rank Deep Operator Network (DeepONet)-type architecture to approximate only the residual correction across families of boundary geometries. This design keeps the exact linear action on the boundary data, exposes the sampled boundary as an input to the model, and turns the learned target into a smoother operator family. We justify the decomposition theoretically by proving smoothing and separated-approximation properties of the residual, and we derive finite-node and training-error bounds for the reconstructed full map. Experiments on interior Laplace problems over elliptical and Fourier-parameterized domains, and on exterior Helmholtz problems over rose curves, show that PPDNO improves accuracy over direct neural operator baselines while adding little inference overhead and generalizing to unseen boundary data. These results suggest that analytic operator structure and geometry-conditioned learning can be combined effectively for boundary solution maps.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Shuo Ling",
+   "Wenjun Ying",
+   "Han Zhou"
+  ],
+  "url": "https://arxiv.org/abs/2606.25952",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Learning Dirichlet-to-Neumann maps across varying boundary geometries is challenging due to non-smoothing principal behavior. The paper proposes a hybrid model (PPDNO) that decomposes the map into a universal Fourier-based principal part and a geometry-conditioned neural correction trained via DeepONet.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.26013",
+  "source": "arXiv",
+  "title": "G-PINNs: Gaussian-based spatially weighted formulation for PINNs: 1D low-viscous Burgers",
+  "abstract": "We introduce a Gaussian-based spatially weighted loss framework (G-PINNs) for physics-informed neural networks (PINNs) to improve the resolution of sharp discontinuities and shock waves. The proposed method dynamically prioritizes collocation points in high-gradient regions during optimization. Without requiring prior knowledge of the shock location or trajectory, the framework can autonomously detect and track moving discontinuities directly from the PDE residual landscape, making it broadly applicable to problems in which the position of shocks or discontinuities is unknown \\textit{a priori}. The approach is validated using one-dimensional quasi-inviscid Burgers' problems exhibiting both stationary and moving shock waves. For the low-viscosity regime $(\\nu = 0.0005)$, the proposed method achieves $L_2$ relative errors of approximately $13\\%$ and $14\\%$ for the stationary and moving shock cases, respectively, compared with $45\\%$ and $33\\%$ obtained when using standard PINNs.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Kheir-eddine Otmani",
+   "Abdelhalim Azzouz",
+   "Nourelhouda Groun",
+   "Esteban Ferrer"
+  ],
+  "url": "https://arxiv.org/abs/2606.26013",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Resolving sharp discontinuities in low-viscosity Burgers' equation with PINNs is challenging due to smearing. The paper introduces Gaussian-based spatially weighted loss (G-PINNs) to dynamically prioritize high-gradient regions, autonomously tracking shocks via residual landscapes.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.24902",
+  "source": "arXiv",
+  "title": "Failure Modes of Large Language Models on Research-Level Mathematics: A Taxonomy and an Empirical Characterisation",
+  "abstract": "The \"First Proof\" benchmark [1] posed ten research-level mathematics questions to the strongest publicly available LLMs and found them consistently wrong-not silent, but confidently, fluently wrong. This paper asks why. Working from the per-question post-mortems in First Proof's Appendix A, I identify four failure modes: citation fabrication (F1), premise smuggling (F2), silent problem reformulation (F3), and local-to-global compatibility gaps (F4). I then audit eight one-shot proofs generated by Gemini 2.5 Flash on Questions 1, 2, and 5 of the benchmark, using two instruments built specifically to surface F1 and F2. The central finding is uncomfortable for anyone who sees retrieval-augmented generation (RAG) as the obvious fix: not one of the eight proofs contained a confirmed fabricated citation, yet every single one contained at least one load-bearing claim asserted as a \"fundamental result\" or \"standard argument\" with no justification attached. That failure mode-F2, premise smuggling-is invisible to citation verification by design. A premise-audit instrument I introduce flags it at 100% precision (5/5 judge-confirmed flags are true positives) and 50% proof-level recall in this corpus. The taxonomy and the audit together suggest that the right long-term objective is building inference-time pipelines that prevent these failure modes from occurring, not just detecting them after the fact. Index Terms--Large language models, mathematical reasoning, hallucination, premise smuggling, failure-mode taxonomy.",
+  "categories": [
+   "cs.DL",
+   "cs.AI"
+  ],
+  "authors": [
+   "Arnesh Banerjee",
+   "Ayushi Bhattacharjee"
+  ],
+  "url": "https://arxiv.org/abs/2606.24902",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "LLMs often fail to solve research-level mathematics despite fluent proofs. The paper identifies premise smuggling (unjustified claims framed as 'fundamental results') as a key failure mode via citation-free audits, contributing to mathematical analysis of LLM reasoning.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25169",
+  "source": "arXiv",
+  "title": "Laplace--Fisher Gate Identities for Optimal Matrix-Gated Blended Score Estimation",
+  "abstract": "Sampling from an unnormalized target by reversing an Ornstein--Uhlenbeck diffusion requires the score of each noise-perturbed marginal. Tweedie's identity and a target-score identity give unbiased finite-reference estimators for this score. Scalar blends can reduce variance, but are too rigid for singular or strongly anisotropic targets. We cast blended score estimation as conditional risk minimization over matrix-valued blending coefficients, or gates, and derive the variance-optimal gate [ \\Gstar(y,t)=\\alphat^2\\bigl(\\alphat^2 I_d+\\gammat,\\E[H_0(X_0)\\mid Y_t=y]\\bigr)^{-1},\\qquad H_0=-\\nabla^2\\log p_0 . ] Here (\\alphat=e^{-t}) and (\\gammat=1-e^{-2t}). We call this formula the \\emph{Laplace--Fisher Gate Identity} (\\LFGI{}). Since the Tweedie--TSI disagreement has conditional mean zero, the gate changes estimator variance without changing its expected value. We give the Gaussian special case and prove finite-reference consistency and stability bounds for estimating the gate from weighted reference samples. We apply the finite-reference LFGI estimator to normalized density evaluation for Bayesian inverse problems. When MCMC pilot samples and derivative information are available, LFGI uses these byproducts to construct a normalized posterior-density surrogate. The surrogate enables posterior-energy evaluation, model-evidence estimation, and density-based diagnostics beyond those available from samples alone. On a PDE-constrained inverse-problem benchmark, LFGI improves posterior-density calibration and sampling diagnostics relative to the other tested score-estimator classes, and known-evidence experiments check absolute calibration in Gaussian and non-Gaussian settings.",
+  "categories": [
+   "math.ST",
+   "cs.LG",
+   "stat.TH"
+  ],
+  "authors": [
+   "Alois Duston",
+   "Tan Bui Tanh"
+  ],
+  "url": "https://arxiv.org/abs/2606.25169",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Optimal score estimation for diffusion sampling requires blending Tweedie and target-score identities. The paper derives a closed-form variance-optimal blending gate via Laplace–Fisher Gate Identity, enabling improved posterior-density evaluation in Bayesian inverse problems.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.25363",
+  "source": "arXiv",
+  "title": "TheoremGraph: Bridging Formal and Informal Mathematics",
+  "abstract": "Mathematical knowledge is organized around statements and their dependencies, but this structure is exposed unevenly: informal papers cite mostly at the document level, while formal libraries record fine-grained dependencies over a much smaller body of mathematics. We introduce TheoremGraph, a unified statement-level dependency graph spanning both informal and formal mathematics. On the informal side, we parse 11.7M theorem-like environments from mathematics arXiv and recover 18.3M candidate directed dependencies, each labeled by the extractor that proposed it so downstream users can trade coverage for precision. On the formal side, we release LeanGraph, a Lean 4 elaborator-level extractor producing 388,105 declaration nodes and 11.3M typed edges across 25 Lean projects. We bridge the two graphs by embedding generated natural-language slogans into a shared semantic space, linking related statements across papers and across the informal/formal divide; an LLM judge affirms 47,952 such matches above a 0.8 cosine floor, with the judge-acceptance rate rising from 48% across the floor to 87% in the >=0.9 tier. On formal concept retrieval, our name-and-signature representation with graph expansion comes within 0.5pp of LeanSearch v2's reranked Recall@10 (0.775 vs. 0.780) without an LM reranker. We release the dataset, extractors, HTTP API, and MCP interface as infrastructure for mathematical search, attribution, and retrieval-augmented reasoning, available at theoremsearch.com and huggingface.co/datasets/uw-math-ai/theorem-matching.",
+  "categories": [
+   "cs.IR",
+   "cs.AI",
+   "math.HO"
+  ],
+  "authors": [
+   "Simon Kurgan",
+   "Evan Wang",
+   "Eric Leonen",
+   "Sophie Szeto",
+   "Luke Alexander",
+   "Artemii Remizov",
+   "Jarod Alper",
+   "Giovanni Inchiostro",
+   "Vasily Ilin"
+  ],
+  "url": "https://arxiv.org/abs/2606.25363",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Mathematical knowledge is fragmented between informal papers with coarse dependencies and formal libraries with fine-grained but limited coverage. The paper introduces TheoremGraph, a unified statement-level dependency graph that bridges formal and informal mathematics via LLM-embedded semantic matching and releases infrastructure for mathematical search and retrieval-augmented reasoning.",
+  "added": "2026-06-25"
+ },
+ {
+  "id": "arxiv:2606.26059",
+  "source": "arXiv",
+  "title": "A welding penetration prediction model for laser welding process based on self-supervised learning using physics-informed neural networks",
+  "abstract": "The laser welding full-penetration is of critical importance, as it constitutes one of the fundamental factors in achieving defect-free welded joints. Accurate prediction of the penetration state is therefore essential for ensuring weld quality. To this end, this paper introduces SimPhysNet, a novel algorithm that achieves high classification accuracy in laser welding penetration prediction using only a limited number of labelled images. This approach effectively overcomes the limitations of supervised learning classification algorithms, which are hindered in industrial applications by their dependence on extensive, high-quality labelled data. The core of SimPhysNet is a unique self-supervised learning paradigm that embeds physical priors into a contrastive learning framework. By incorporating a physics-informed neural network (PINN), the model is guided to extract physically meaningful features of the molten pool and keyhole from a large set of unlabelled data, while three image augmentation tasks further enhance its generalization capabilities. Subsequently, a few-shot learning strategy, based on prototypical networks, enables robust classification by constructing class representations from a minimal set of labelled images. Experimental results demonstrate that SimPhysNet achieves a classification accuracy of 96.06% using only 200 labelled images (approximately 5% of the total labelled dataset), which is comparable to the performance of conventional supervised learning algorithms that utilize the entire labelled dataset. This work presents a new, efficient, and highly accurate method, providing the way for the intelligent automation of laser welding.",
+  "categories": [
+   "cs.CV",
+   "cs.AI"
+  ],
+  "authors": [
+   "Sen Li",
+   "Xiaoying Liu",
+   "Xiaojian Xu",
+   "Chendong Shao",
+   "Yaqi Wang",
+   "Ling Lan",
+   "Xinhua Tang",
+   "Haichao Cui"
+  ],
+  "url": "https://arxiv.org/abs/2606.26059",
+  "published": "2026-06-25",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Predicting laser welding penetration states requires costly labeled data. The paper introduces SimPhysNet, a self-supervised method combining physics-informed neural networks (PINNs) with contrastive learning to extract molten-pool features from unlabeled data and enable few-shot classification.",
+  "added": "2026-06-25"
  }
 ]
