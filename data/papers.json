@@ -17023,5 +17023,499 @@
   ],
   "summary": "Matrix-orthogonalization optimizers like Muon face high distributed training costs due to coupled weight updates. DMuon introduces distributed computation techniques to reduce Muon's optimizer-step latency to near-Adam levels, enabling efficient scaling for matrix-aware optimization.",
   "added": "2026-06-26"
+ },
+ {
+  "id": "arxiv:2606.27459",
+  "source": "arXiv",
+  "title": "Operator Learning for Cubic Nonlinear Schr\\\"odinger Equation on Periodic Domains",
+  "abstract": "We consider the cubic nonlinear Schr\\\"odinger (NLS) equation on two-dimensional flat tori with varying aspect ratios. In this formulation, the choice of aspect ratio governs the Fourier resonance structure, so rational and irrational geometries can exhibit different high-frequency cascade behaviors. We present a geometry-conditioned Fourier neural operator (FNO) for the cubic defocusing NLS equation, where the input consists of the real and imaginary parts of the solution together with the aspect-ratio parameter \\(\\omega^2\\). The model is trained to approximate the one-step solution operator and is evaluated on unseen trajectories generated from random-phase initial data using Fourier pseudospectral method. Our numerical experiments show that the learned operator captures the main solution dynamics on both tori and reproduces the distinct Sobolev norm behavior of the two geometries, with stronger \\(H^2\\)-growth on the rational torus and more constrained behavior on the irrational torus, consistent with the findings of \\cite{hrabski2021energy}. We perform ablation studies to examine the roles of retained Fourier modes, activation functions, Fourier-layer depth, and explicit geometry conditioning. The results indicate that including $\\omega^2$ improves long-time predictive accuracy, especially for the rational geometry, and supports the use of geometry-aware neural operators for learning spectral-transfer phenomena in nonlinear dispersive partial differential equations.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.AP",
+   "math.NA"
+  ],
+  "authors": [
+   "Emmanuel E. Oguadimma",
+   "Victory C. Obieke",
+   "Xueying Yu"
+  ],
+  "url": "https://arxiv.org/abs/2606.27459",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Solving the cubic nonlinear Schrödinger equation on varying-geometry tori requires handling aspect-ratio-dependent resonance structures. The paper introduces a geometry-conditioned Fourier neural operator that incorporates aspect ratio as an input parameter, capturing distinct Sobolev norm behaviors on rational vs. irrational tori.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27611",
+  "source": "arXiv",
+  "title": "COOPA: A Modular LLM Agent Architecture for Operations Research Problems",
+  "abstract": "Operations Research (OR) provides a rigorous framework for high-stakes decision-making, but effective OR modeling requires substantial domain knowledge, mathematical abstraction, and solver expertise. Recent LLM-based systems automate parts of this pipeline, yet remain limited by low accuracy on complex problems, opaque outputs, and narrow solver support. We propose COOPA (COoperative OPerations Agent), a modular LLM-agent architecture for interpretable and scalable OR decision support. It combines three components: iterative confidence-based modeling, which generates multiple candidate formulations, self-evaluates them across modeling dimensions, and selects one using a max-min confidence criterion; element-level provenance and confidence explanations, which link variables, parameters, constraints, and objectives to quoted source text and provide an audit trail for human verification; and multi-solver routing to specialized optimizer agents for different OR problem classes. Across three OR benchmarks, eight LLM backbones, and four baselines under identical conditions, COOPA achieves the best macro-average accuracy on six of eight backbones and improves over the strongest baseline by up to 6.7 percentage points. A within-system ablation isolates the contribution of iterative confidence-based modeling, while additional analyses and case studies illustrate the value of source traceability and multi-solver dispatch.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Chuanhao Li",
+   "Xiaoan Xu",
+   "Dirk Bergemann",
+   "Ethan X. Fang",
+   "Yehua Wei",
+   "Zhuoran Yang"
+  ],
+  "url": "https://arxiv.org/abs/2606.27611",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Operations Research modeling requires domain expertise and mathematical abstraction. The paper proposes COOPA, an LLM-agent architecture with iterative confidence-based modeling and multi-solver routing to automate OR problem formulation and solving.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27721",
+  "source": "arXiv",
+  "title": "Learning to Reason with Curriculum II: Compositional Generalization",
+  "abstract": "Compositional generalization, the ability to solve complex problems by combining solutions to simpler sub-problems, is a fundamental capability of both natural and artificial intelligence, and a key mechanism underlying chain-of-thought reasoning. However, the theoretical underpinnings of compositional generalization remain poorly understood: when and why does decomposing a problem into parts yield more efficient learning than solving it directly? We study this question through the canonical problem of learning to simulate semiautomata (predicting the outcome of $T$ steps of sequential computation), a model that captures state tracking, regular language recognition, and modular arithmetic. We show that an autocurriculum-based approach building on Part I of this series, recursively decomposing longer sequences into shorter sub-problems, learning to solve them, and composing the solutions, achieves dramatically better statistical complexity than direct methods. (i) For a setting inspired by supervised fine-tuning (SFT) where the learner receives interactive feedback on intermediate states of the computation, curriculum facilitates learning from only $2^{\\mathcal{O}(\\sqrt{\\log T})}$ tokens of supervision; i.e., subpolynomial in the sequence length $T$, overcoming the $\\Omega(T)$ token barrier required by direct simulation. (ii) For a setting inspired by reinforcement learning with verifiable rewards (RLVR), where the learner improves a pre-trained reference model using an outcome verifier, we show that curriculum reduces the requirement on the reference model from coverage at the full sequence length $T$ to coverage at a shorter block length $B \\ll T$, an exponentially weaker condition.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Nived Rajaraman",
+   "Audrey Huang",
+   "Miroslav Dudik",
+   "Robert Schapire",
+   "Dylan Foster",
+   "Akshay Krishnamurthy"
+  ],
+  "url": "https://arxiv.org/abs/2606.27721",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Learning to simulate sequential computations (semiautomata) via decomposition is statistically challenging. The paper introduces an autocurriculum-based recursive decomposition method that achieves subpolynomial sample complexity by solving shorter sub-problems and composing solutions.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27731",
+  "source": "arXiv",
+  "title": "Enhancing Numerical Prediction in LLMs via Smooth MMD Alignment",
+  "abstract": "Despite their strong general capabilities, large language models (LLMs) often remain unreliable when outputs must be numerically precise. A key reason is the training objective: standard cross-entropy treats numeric tokens as unstructured categories and ignores the metric structure of their values. We address this mismatch with Smooth Maximum Mean Discrepancy (SMMD), which builds on the classic MMD by incorporating value-distance kernels over numeric tokens and graph-based smoothness. With this kernel defined over a numeric sub-vocabulary, SMMD aligns the predicted numeric distribution to the target via kernel matching and smooths the prediction-target residual over the induced kernel graph to encourage local consistency. We evaluate SMMD on four numeric-target tasks: mathematical reasoning, arithmetic calculation, clock-time recognition, and chart question answering, across multiple open-weight LLM and VLM backbones. SMMD consistently improves accuracy over both cross-entropy and recent numeric-target losses; analyses show complementary effects between MMD and smoothness and underscore the importance of distance-based kernel design. Code is available at https://github.com/Zuozhuo/smmd-loss.",
+  "categories": [
+   "cs.CL",
+   "cs.AI",
+   "cs.CE",
+   "cs.LG"
+  ],
+  "authors": [
+   "Zhuo Zuo",
+   "Li Yue",
+   "Wenhao Zheng",
+   "Chenpeng Wang",
+   "Xianggen Liu"
+  ],
+  "url": "https://arxiv.org/abs/2606.27731",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "LLMs struggle with numerically precise predictions due to categorical token treatment. The paper introduces Smooth MMD Alignment, a kernel-based loss that incorporates value-distance metrics and graph smoothness to improve numerical token distributions.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27895",
+  "source": "arXiv",
+  "title": "Mosaic: A Benchmark Suite for Differentiable Physics Solvers",
+  "abstract": "Differentiable partial differential equation (PDE) solvers underpin solver-in-the-loop ML training, gradient-based optimal control, and inverse problems, yet the practical cost of obtaining correct, usable gradients from a given solver on a given problem is largely undocumented. Integration effort, computational cost, gradient accuracy, and numerical conditioning vary widely across solvers and are discoverable only by trial and error. We introduce Mosaic, an extensible benchmarking framework for differentiable PDE solvers that standardizes access to solver gradients. Each solver is packaged as a containerized component (Tesseract) exposing a uniform gradient API regardless of language or automatic differentiation (AD) strategy, enabling researchers to evaluate, compare, and build on non-trivial physical solvers. Our evaluation of 14 solvers across fluid dynamics, structural mechanics, and heat transfer demonstrates that the benchmark surfaces practically relevant differences: order-of-magnitude variation in computational cost and Jacobian conditioning, alongside structural incompatibilities that eliminate solvers from realistic tasks entirely. Despite this variation, all solvers that produce gradients converge to similar optima, indicating that the practical barriers are memory limits, numerical stability, and setup compatibility rather than gradient accuracy alone. Mosaic is open-source and available at https://github.com/pasteurlabs/mosaic.",
+  "categories": [
+   "physics.comp-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Andrin Rehmann",
+   "Heiko Zimmermann",
+   "Dion H\\\"afner"
+  ],
+  "url": "https://arxiv.org/abs/2606.27895",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Differentiable PDE solvers face undocumented variations in gradient computation cost and accuracy across implementations. The paper introduces Mosaic, a containerized benchmarking framework that standardizes gradient APIs for 14 solvers, revealing order-of-magnitude differences in cost and Jacobian conditioning despite similar optima.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27982",
+  "source": "arXiv",
+  "title": "PRONE: Petrov-Galerkin Operator Learning Unifies DMD, SINDy & Koopmanism",
+  "abstract": "Data-driven dynamics often asks how to linearize a nonlinear system. We ask instead: which observables should be advanced, and where should their futures live? This leads to Petrov Regression Of Nonlinear Evolution (PRONE), a Petrov--Galerkin regression framework based on $ \\Psi(\\mathbf{X})K \\approx \\Phi(\\mathbf{Y}), $ with distinct trial and test dictionaries. In this form, DMD, EDMD, SINDy, Koopman regression, sparse regression, and low-rank regression become variants of one construction: different dictionaries, weights, and constraints. We keep the linear algebra of Koopman learning, but drop the artificial requirement that a finite model map a dictionary into itself. With this asymmetry, eigenmodes are no longer the right objects. Instead, we use singular modes, which identify the observable combinations captured by the data, their projected futures, and the strength of the coupling between the two spaces. We identify the limiting projected operator and prove $L^2$ convergence of the resulting nonlinear predictor. We give examples from chaotic maps, the double gyre, a pitching-airfoil wake, and Lorenz--63, where PRONE outperforms DeepONets, Fourier neural operators, and reservoir computers with considerably fewer parameters. These examples show the same message: lift once, regress once, and let the singular structure reveal statistics, transport, prediction, and dimension.",
+  "categories": [
+   "math.DS"
+  ],
+  "authors": [
+   "Matthew J. Colbrook",
+   "April Herwig",
+   "J. Nathan Kutz"
+  ],
+  "url": "https://arxiv.org/abs/2606.27982",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Linearization-centric approaches to data-driven dynamics limit model flexibility. PRONE generalizes Koopman/DMD/SINDy via Petrov–Galerkin regression with trial/test dictionaries, using singular modes to capture observable couplings and outperforming neural operators on chaotic systems.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28011",
+  "source": "arXiv",
+  "title": "From Detection to Action: Using LLM Agents for Fault-Tolerant Control",
+  "abstract": "We propose an agentic Large Language Model (LLM) framework for active Fault-Tolerant Control (FTC) that transforms fault detection outputs into constraint-aware recovery actions grounded in plant-specific knowledge. The approach couples (i) a multi-agent workflow that decomposes operator duties into monitoring, planning, action synthesis, simulation, validation, and reprompting; (ii) a Digital Process Plant Twin (DPPT) that exposes plant data, models, and a simulation service for pre-execution testing; and (iii) a Graph Retrieval-Augmented Generation (Graph RAG) layer built on the CPSMod ontology, which organizes plant knowledge (structure, function, hybrid dynamics, control context, and fault semantics) into a graph that supports relation-aware, multi-hop retrieval for the agents. Corrective actions are generated as minimal-risk state-machine recovery paths and corresponding discrete commands or continuous setpoint adaptations, then validated deterministically against interlocks, envelopes, and dynamic feasibility before any actuation. If no acceptable plan is found within a bounded time window, control is handed to a safety fallback. The framework is evaluated in simulation on two representative benchmarks: a discrete batch Mixing Module and a Continuous Stirred-Tank Reactor (CSTR) under closed-loop PID regulation. Results with lightweight LLMs (GPT-4o-mini and GPT-4.1-mini) show that semantically grounded agents can derive valid recovery decisions within latency budgets compatible with the respective process dynamics, demonstrating a practical pathway from detection to validated corrective action across both discrete and continuous FTC tasks.",
+  "categories": [
+   "eess.SY",
+   "cs.LG",
+   "cs.SY"
+  ],
+  "authors": [
+   "Javal Vyas",
+   "Milapji Singh Gill",
+   "Artan Markaj",
+   "Felix Gehlhoff",
+   "Mehmet Mercang\\\"oz"
+  ],
+  "url": "https://arxiv.org/abs/2606.28011",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Fault-tolerant control requires translating fault detection into validated recovery actions. The paper proposes LLM agents that interact with a digital twin and Graph RAG to generate and test minimal-risk state-machine recovery paths for industrial processes.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28013",
+  "source": "arXiv",
+  "title": "The Signal-Coverage Matrix: Stratifying Type and Semantic Errors in Statement Autoformalization",
+  "abstract": "Headline type-correctness (TC\\%) of LLM autoformalization has climbed from $\\sim$53\\% to $\\sim$76\\% in two years, yet this scalar conceals which errors each method resolves. We propose a signal-coverage matrix that crosses the Lean elaborator (pass/fail) with a semantic-equivalence judgment (equivalent/not), sorting every output into one of four cells: true success (TS), type-only (TO), semantic-only (SO), or both fail (BF). On ProofNet\\# and MiniF2F-test with DeepSeek V4-Pro across Vanilla, Lean-Retry, Sample-Filter, and Stratified Autoformalization (SAF): (1) the +34 to +36 TS gain across the three elab-feedback methods is $\\sim$64\\% type-stratum recovery, with SO flat on net (87.5\\% of original semantic errors rescued, 8 newly created). (2) The TO-to-TS rate is 23/61 for each method (Wilson 95\\% CI [26.6\\%, 50.3\\%]), and this stratum-level recovery rate predicts $\\Delta$TS on held-out methods to within 2/186 and renders $\\Delta$TC linear in the Vanilla elab-fail rate across six (model, dataset) cells ($R^2=0.96$). (3) The two judges disagree by 26 to 37 pp on elab-feedback outputs (vs. 7 pp on Vanilla), with 30 to 56\\% of symbolic-judge false negatives traceable to elaborator-forced rewrites. The persistent residual reduces to two gold-formalization errors. TC\\% gains should be credited by which cell moved, not by the scalar alone.",
+  "categories": [
+   "cs.CL"
+  ],
+  "authors": [
+   "Chengxiao Dai",
+   "Zhaokun Yan",
+   "Zhanhui Lin"
+  ],
+  "url": "https://arxiv.org/abs/2606.28013",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLM autoformalization progress is obscured by conflating type and semantic errors. The signal-coverage matrix stratifies Lean elaborator pass/fail with equivalence judgments, showing elab-feedback methods recover 64% type errors but create new semantic issues.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28036",
+  "source": "arXiv",
+  "title": "A robust mixed finite element formulation for third medium contact",
+  "abstract": "Third medium contact provides a smooth continuum alternative to classical contact algorithms by replacing explicit contact constraints with a highly compliant fictitious medium. In this work, an auxiliary-field stabilization is introduced in which a deformation-gradient-like field is treated as an independent unknown in the third medium and coupled to the physical deformation gradient by a penalty term. A gradient contribution acting on the auxiliary field provides the regularization mechanism without requiring a direct evaluation of higher displacement derivatives. Linear and quadratic interpolation spaces are investigated, including continuous and element-wise discontinuous auxiliary-field approximations. The numerical results show that continuous low-order auxiliary fields provide an effective gradient-type stabilization of the third medium, even when the displacement field is approximated by first-order finite elements. For element-wise discontinuous auxiliary fields, the additional unknowns remain local to each element and can be eliminated locally by static condensation, so that the global system does not necessarily contain additional auxiliary degrees of freedom. Benchmark problems involving large deformation, progressive self-contact and severe third-medium compression are used to assess the formulation.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "M. Vorwerk",
+   "J. Schr\\\"oder",
+   "P. Wriggers"
+  ],
+  "url": "https://arxiv.org/abs/2606.28036",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Third-medium contact formulations suffer from instability under severe compression. The paper introduces an auxiliary deformation-gradient field coupled via penalty terms, enabling gradient-type stabilization for low-order elements without higher derivatives.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28065",
+  "source": "arXiv",
+  "title": "OperatorSHAP: Fast and Accurate Shapley Value Estimation for Neural Operators",
+  "abstract": "Understanding model predictions is essential for physical applications, where outputs often inform safety-critical decisions, such as structural load assessment, weather warnings, and clinical diagnosis. Shapley values satisfy many desirable properties as an attribution method, but their computational cost during inference hinders their practical use. Current amortized explainers, such as FastSHAP, are limited to homogeneous inputs, which is problematic for physical applications where data often comes from irregular grids and geometries. We introduce OperatorSHAP, a grid-agnostic attribution method and training procedure that allows us to train FastSHAP-like explainers for neural operators. We establish a theoretical framework for attributions in function space, connecting to Aumann-Shapley values. We further show that OperatorSHAP's explanations are consistent with state-of-the-art discrete Shapley values across resolutions and transfer across grid sizes without retraining.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Joshua Stiller",
+   "Santo M. A. R. Thies",
+   "Felix Czaja",
+   "Eyke H\\\"ullermeier"
+  ],
+  "url": "https://arxiv.org/abs/2606.28065",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "uq-inverse-problems"
+  ],
+  "summary": "Shapley value attribution for neural operators is computationally prohibitive. OperatorSHAP trains grid-agnostic explainers via function-space Aumann-Shapley theory, achieving resolution-invariant attributions consistent with discrete Shapley values.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28116",
+  "source": "arXiv",
+  "title": "Mechanism-Driven Monitors for Preemptive Detection of LLM Training Instability",
+  "abstract": "Frontier large language model training consumes massive accelerator fleets and long wall-clock computation, making stability failures costly when they occur. After a numerical or a hyperparameter fault has already destabilized the training dynamics, it may continue for thousands of steps while loss and gradient norms still appear normal. We study mechanism-driven detection of training instability by deriving internal monitors from the functional role of each critical module and from the earliest computational sites where failures are expected to produce measurable signatures. For low-precision flash attention, we monitor the spectral entropy of a QK bilinear decomposition, whose first-order term becomes abnormal before the loss fully collapses. For MoE routers, we derive indicators from their role in expert selection. Our fault-injection experiments on low-precision attention, large learning-rate, and combined faults show that these signals provide distinct signatures for different failures, triggering thousands of steps before loss divergence.",
+  "categories": [
+   "cs.CL"
+  ],
+  "authors": [
+   "Ruixuan Huang",
+   "Yipei Wang",
+   "Wenyi Fang",
+   "Hantao Huang",
+   "Yifan Huang",
+   "Ansheng You",
+   "Zhenxing Zhang",
+   "Shuai Wang",
+   "Fan Wu",
+   "Yang Zheng"
+  ],
+  "url": "https://arxiv.org/abs/2606.28116",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "LLM training instability manifests in latent numerical signatures before loss divergence. The paper derives spectral entropy monitors for attention and expert routing, detecting faults thousands of steps early via mechanism-driven indicators.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28122",
+  "source": "arXiv",
+  "title": "Higher-Order Fourier Neural Operator: Explicit Mode Mixer for Nonlinear PDEs",
+  "abstract": "Neural operators provide deep neural networks for learning mappings between function spaces. Among them, the Fourier Neural Operator (FNO) is particularly effective: its spectral convolution relies on low-dimensional Fourier-domain representations and can handle inputs at different resolutions. This design aligns well with settings where the Fourier basis diagonalizes the underlying operator, such as linear, constant-coefficient PDEs on periodic domains, in which Fourier modes evolve independently. However, nonlinear PDEs may benefit from an additional inductive bias, as they exhibit structured interactions between modes, governed by polynomial nonlinearities. To capture this inductive bias, we introduce the Higher-Order Spectral Convolution, a spectral mixer that extends FNO from diagonal modulation to explicit n-linear mode mixing, aligned with the dynamics of nonlinear PDEs. Our experiments on standard benchmarks show that the proposed Higher-Order FNO (HO-FNO) retains the efficiency of FNO-based architectures and consistently improves over other spectral neural operators. HO-FNO also performs on par with or better than state-of-the-art transformers and state-space models on several datasets, with stronger gains in highly nonlinear regimes, such as the Poisson equation with polynomial forcing, where a single HO-FNO layer outperforms FNO models with up to 16 layers. We open-source our code for reproducibility at: https://github.com/AlexColagrande/HO-FNO.",
+  "categories": [
+   "cs.CE",
+   "cs.AI",
+   "cs.CV"
+  ],
+  "authors": [
+   "Alex Colagrande",
+   "Paul Caillon",
+   "Eva Feillet",
+   "Alexandre Allauzen"
+  ],
+  "url": "https://arxiv.org/abs/2606.28122",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "FNO's diagonal spectral convolution struggles with nonlinear PDE mode interactions. HO-FNO introduces higher-order n-linear mixers aligned with polynomial nonlinearities, outperforming transformers on Poisson equations with polynomial forcing.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28158",
+  "source": "arXiv",
+  "title": "Recovering Sharp Conductivity Features in the Finite-Data Calder\\'on Problem with Physics-Informed Neural Networks",
+  "abstract": "Physics-informed neural networks (PINNs) have recently emerged as a promising framework for addressing the Calder\\'on inverse problem from limited boundary data. In this work, we revisit neural Calder\\'on inversion by introducing multiscale boundary excitations based on randomized wavelet functions and investigating the role of Fourier-feature encoding (FFE) for representing sharp conductivity variations. We propose a physics-informed reconstruction framework that represents the unknown conductivity and the associated family of electric potentials with separate neural networks conditioned on the applied boundary excitations. The governing elliptic PDE is enforced through physics-informed residuals, while finite Dirichlet-to-Neumann (DtN) data are incorporated through boundary losses. Using synthetic data from a finite-difference forward solver, we evaluate the method on conductivity fields with inclusions, sharp interfaces, smooth profiles, and heterogeneous media. Results show that the framework recovers dominant conductivity structures from finite boundary measurements with relative errors between $3\\%-12\\%$ approximately. We show that FFE improves the reconstruction of localized sharp features, particularly for inclusions and interfaces, but are not universally optimal, with raw-coordinate networks performing competitively for smoother fields. These results highlight coordinate representations and boundary excitation design as key factors in neural Calder\\'on inversion.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "eess.IV",
+   "math.NA"
+  ],
+  "authors": [
+   "Ali AlHadi Kalout",
+   "Pablo Tejerina-P\\'erez",
+   "Konstantin Karchev",
+   "Pedro Taranc\\'on-\\'Alvarez",
+   "Leonid Sarieddine",
+   "Raul Jimenez",
+   "Max Engelstein",
+   "Guy David"
+  ],
+  "url": "https://arxiv.org/abs/2606.28158",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "uq-inverse-problems"
+  ],
+  "summary": "PINNs struggle to recover sharp conductivity in Calderón's problem. The method uses multiscale wavelet boundary excitations and Fourier-feature networks, achieving 3-12% error on inclusions and interfaces while analyzing encoding tradeoffs.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28220",
+  "source": "arXiv",
+  "title": "Physics-Informed Neural Network with Transfer Learning for State Estimation in Lithium-Ion Batteries using the Single Particle Model with Electrolyte",
+  "abstract": "Physics-informed neural networks (PINNs) have emerged as a powerful tool for solving nonlinear partial differential equations (PDEs), including battery electrochemical models. They typically en-force conservation laws within the loss function to ensure physically consistent solutions. Tradi-tional numerical methods such as finite difference, finite volume, and finite element techniques, re-ly on discretization and can be computationally expensive for nonlinear systems. To address this challenge, PINNs offer improved scalability, particularly for reduced-order models like the single particle model with electrolyte (SPMe). The SPMe describes lithium-ion battery dynamics through coupled diffusion, transport, reaction kinetics, and voltage equations. Despite these advantages, training SPMe-based PINNs from scratch for different battery chemistries or operating conditions is demanding and often leads to slow convergence. To overcome this limitation, this work introduces a transfer learning framework for SPMe-PINNs. The model is first pretrained to learn general elec-trochemical dynamics and then adapted to a target battery by transferring weights, freezing se-lected layers, and fine tuning the remaining parameters, including estimating key electrochemical variables. Validation using PyBaMM demonstrates accurate voltage prediction, indicating that the proposed approach preserves electrochemical consistency while reducing training time and ena-bling efficient generalization across batteries.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Gift Modekwe",
+   "Qiugang Lu"
+  ],
+  "url": "https://arxiv.org/abs/2606.28220",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Training physics-informed neural networks (PINNs) for battery models from scratch is computationally demanding. The paper introduces a transfer learning framework for SPMe-PINNs that pretrains on general electrochemical dynamics and adapts to target batteries via weight transfer and fine-tuning.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27409",
+  "source": "arXiv",
+  "title": "Delayed Verification Destabilizes Multi-Agent LLM Belief: Instability Thresholds and Optimal Corrector Placement",
+  "abstract": "Multi-agent large language model (LLM) systems often rely on verifier and critic agents to suppress hallucinations, but verification is delayed. During this delay, false claims can propagate through the agent network. We model this process as delayed consensus on a graph with grounded corrector nodes. Spectral decomposition by the grounded Laplacian yields a closed-form stability threshold for the verification dose: correction that is too strong or too delayed can turn consensus into oscillation. The most unstable regime occurs when the communication and verification delays coincide; for delay two, the threshold is the inverse golden ratio. The same framework gives a supermodular placement objective and a greedy (1-1/e)-approximation rule for assigning a limited corrector budget to influential nodes. Experiments across five open models confirm the predicted dose-delay oscillations. By contrast, grounded factual answering makes truth an absorbing boundary and eliminates the effect, suggesting that the instability is specific to signed-belief tasks while grounded verification remains stabilizing",
+  "categories": [
+   "cs.MA",
+   "cs.CL",
+   "cs.LG",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Igor Itkin"
+  ],
+  "url": "https://arxiv.org/abs/2606.27409",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Delayed verification in multi-agent LLM systems risks propagating false claims. The paper models this as a graph consensus problem with grounded correctors, deriving stability thresholds via spectral analysis of the grounded Laplacian and identifying oscillation regimes.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27567",
+  "source": "arXiv",
+  "title": "On the Inseparability of Instructions and Data in Shared-Embedding Sequence Models",
+  "abstract": "Prompt injection is the top security risk for LLM-integrated applications, yet every defense proposed so far has been broken. We prove this is not a coincidence: in shared-embedding architectures that lack enforced control-data separation, perfect prompt-injection prevention is mathematically impossible. We formalize prompted systems as Prompted Action Models whose outputs include control-authoritative actions: refusal decisions, tool authorization, policy routing, and memory writes. We define Semantic-Faithful Control (SFC), the property that such behavior depends only on the meaning of untrusted input, not on how it is encoded. We then prove SFC is unachievable within the shared pipeline, via three results: a provenance-recovery impossibility (shared representations make trusted and untrusted content statistically inseparable, bounded by total variation distance); control-path exposure (untrusted tokens enter control-relevant computation through the same attention value-aggregation that determines outputs); and a finite-coverage invariance gap (finite training cannot certify invariance over infinite semantic-equivalence classes). We ground each quantity in measurements on production tokenizers and models. The result is structural, not a gap in current defenses. It mirrors the code-data confusion in Von Neumann machines that gives rise to buffer overflows, a vulnerability class that took decades of layered defenses (DEP, Write-XOR-Execute, ASLR, stack canaries, and ultimately memory-safe languages) to contain, because no single mechanism sufficed. The implication is the same: prompt injection cannot be eliminated by better in-pipeline classification or alignment alone. It requires architectural separation of instruction and data channels. We identify the root cause and the class of solution it demands.",
+  "categories": [
+   "cs.CR",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Dewank Pant",
+   "Shruti Lohani",
+   "Avijit Kumar"
+  ],
+  "url": "https://arxiv.org/abs/2606.27567",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Shared-embedding LLM architectures are vulnerable to prompt injection by design. The paper proves semantic-faithful control is impossible via statistical inseparability, control-path exposure, and invariance gaps, formalizing this as a structural limitation akin to Von Neumann architecture vulnerabilities.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27624",
+  "source": "arXiv",
+  "title": "Physics-Guided Robotic Radiation Source Localization along Arbitrary Measurement Paths in Unstructured Environments",
+  "abstract": "Using robots to estimate the location of the radiation source is an effective way to improve efficiency and safety. Existing methods focus on planning the robot's path to achieve precise estimation, typically approaching the source. However, approaching the source increases the risk of radiation damage to a robot. In addition, a path-planning algorithm designed solely for radiation source localization (RSL) limits the flexibility of missions that deploy robots into radioactive environments. This study presents an automation framework for robotic RSL that leverages a physics-informed machine learning (PIML) model to precisely estimate the source location, regardless of measurement paths, in unknown environments. Physics-inspired model tensors have been designed for PIML to handle attenuated gamma-ray flux signals from unknown obstacles, and multiple models are computed in parallel to improve the robustness and precision of the RSL. The proposed method is evaluated in high-fidelity simulation environments using Monte Carlo particle transport across diverse randomized domains, including spatial scales, radiation source types, obstacle materials and geometries, and robot trajectories. The method is also validated through physical experiments on configurations that are not included in the simulation-based evaluation. The continuous learning technique is applied in real-robot deployment to enhance the practical applicability of the online robotic RSL system. The proposed method advances robot radiation perception from pointwise flux detection to spatial intelligence.",
+  "categories": [
+   "cs.RO",
+   "cs.LG"
+  ],
+  "authors": [
+   "Hojoon Son",
+   "Kai Tan",
+   "Fan Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2606.27624",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Robotic radiation source localization requires handling attenuated gamma signals in unknown environments. The paper develops a physics-informed machine learning (PIML) model with physics-inspired tensors to estimate source locations from arbitrary paths, validated via Monte Carlo simulations and physical experiments.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.27972",
+  "source": "arXiv",
+  "title": "A Finite Element Method for Fluctuating Navier--Stokes Equations",
+  "abstract": "We introduce a finite-element framework for simulating thermal fluctuations in compressible fluids governed by the fluctuating Navier-Stokes equations. The method is designed to preserve the fundamental fluctuation-dissipation balance at the discrete level. This is achieved by defining the stochastic forcing term in the weak formulation, ensuring its covariance is proportional to the discrete viscous dissipation operator. A nodal quadrature rule is employed to eliminate unphysical mesh-scale correlations. The time integration is performed using the Crank-Nicolson scheme to maintain numerical stability and accuracy. The proposed approach is numerically validated in one, two, and three spatial dimensions, demonstrating its capability to correctly capture equilibrium fluctuation statistics across various discretisation parameters.",
+  "categories": [
+   "cond-mat.stat-mech",
+   "cs.NA",
+   "math.NA",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Dimitrios Gourzoulidis",
+   "Mirko Gallo",
+   "Soumaya Elkantassi",
+   "Toby Kay",
+   "Serafim Kalliadasis"
+  ],
+  "url": "https://arxiv.org/abs/2606.27972",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Simulating thermal fluctuations in compressible fluids requires discrete fluctuation-dissipation balance. The paper introduces a finite-element framework with stochastic forcing in weak formulation and nodal quadrature to preserve this balance across dimensions.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28105",
+  "source": "arXiv",
+  "title": "Scaling limit of the Random Language Model",
+  "abstract": "We develop a quantitative theory of the Random Language Model (RLM), an ensemble of stochastic context-free grammars, in a scaling limit where the number of hidden symbols $N \\to \\infty$ while the grammar temperature $\\tilde{\\epsilon}_d \\to 0$ at fixed $x = {\\tilde\\epsilon}_d \\log N$. In this limit, the model admits a controlled description based on a large-deviation principle over rule-usage patterns. A semi-annealed approximation maps the problem to a class of Random Energy Models with nontrivial combinatorics. We show that the RLM exhibits a condensation transition at a critical value $x_c=1/8$, below which rule usage concentrates and language statistics acquire a nontrivial dependence on corpus length. A second characteristic scale at $x=1/2$ marks the onset of entropy reduction from its maximal value. Across these regimes, we derive explicit scaling laws for the number of distinct rules, entropy, and related observables, identifying distinct scaling, saturation, and critical regimes controlled by the interplay of grammar size, corpus length, and temperature. The theory resolves previous ambiguities regarding the existence of a thermodynamic transition and explains the slow approach to the large-$N$ limit as a consequence of the dependence on $\\log N$. It further provides a unified framework in which universal statistical properties of language emerge from typical realizations of generative grammars, with implications for both natural language statistics and the behavior of large language models.",
+  "categories": [
+   "cond-mat.dis-nn",
+   "cond-mat.stat-mech",
+   "cs.CL"
+  ],
+  "authors": [
+   "Eric De Giuli"
+  ],
+  "url": "https://arxiv.org/abs/2606.28105",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Statistical properties of stochastic context-free grammars in scaling limits lack theoretical characterization. The paper develops a large-deviation principle and maps to Random Energy Models, identifying phase transitions controlled by grammar size and temperature.",
+  "added": "2026-06-29"
+ },
+ {
+  "id": "arxiv:2606.28287",
+  "source": "arXiv",
+  "title": "Bridging Ab Initio Symmetries and Global Nuclear Masses with Interpretable Neural Networks",
+  "abstract": "Ab initio modeling has established Wigner's SU(4) and Elliott's SU(3) as dominant symmetries of the nuclear force in light and intermediate-mass nuclei. We ask whether they also govern nuclear binding across the entire chart. Our aim is not high-precision prediction but physical insight, through interpretable, symmetry-based models. From the SU(3) and SU(4) Casimir operators we construct three neural-network (NN) mass models: Feature-Informed NN (FINN) for point predictions, Gaussian-Informed NN (GINN) adding uncertainty quantification, and Wigner-Informed NN (WINN) -- a mass formula using the Casimirs as an operator basis. All are trained on AME2016 and validated on nuclei new to AME2020. The SU(4) operators alone cut the root-mean-square error (RMSE) by nearly half on train and test data, and by about a fifth on extrapolation, relative to the liquid-drop baseline -- showing that Wigner's symmetry carries predictive information beyond bulk properties. Despite its compact form, WINN reaches the lowest validation RMSE, 0.430 MeV -- competitive with state-of-the-art mass models -- which we read less as a benchmark than as evidence that its symmetry basis captures important physics. WINN further reveals i) an enhancement of the quadratic SU(4) Casimir near the neutron dripline, signaling restoration of Wigner's symmetry, and ii) an unexpected gain of the quartic operator in the superheavy region. We thereby elevate emergent symmetries from the hidden order within individual nuclei to a governing principle of the whole nuclear chart.",
+  "categories": [
+   "nucl-th",
+   "cs.LG"
+  ],
+  "authors": [
+   "Phong Dang",
+   "Evander Espinoza",
+   "Xiaoliang Wan",
+   "Michela Negro",
+   "Jerry P. Draayer",
+   "Feng Pan",
+   "Tomas Dytrych",
+   "Daniel Langr",
+   "David Kekejian"
+  ],
+  "url": "https://arxiv.org/abs/2606.28287",
+  "published": "2026-06-29",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Nuclear mass modeling must bridge ab initio symmetries with empirical data. The paper constructs interpretable neural networks based on SU(3)/SU(4) Casimir operators, revealing symmetry-driven binding patterns across the nuclear chart.",
+  "added": "2026-06-29"
  }
 ]
