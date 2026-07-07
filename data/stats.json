@@ -453,5 +453,18 @@
   "balance_before": "tokens in=0 out=0",
   "balance_after": "tokens in=0 out=0",
   "total_papers": 877
+ },
+ {
+  "date": "2026-07-07",
+  "fetched": 1171,
+  "new": 1171,
+  "candidates": 314,
+  "classified": 314,
+  "in_scope": 74,
+  "deferred": 0,
+  "requests": 16,
+  "balance_before": "tokens in=0 out=0",
+  "balance_after": "tokens in=141165 out=39988",
+  "total_papers": 951
  }
 ]
