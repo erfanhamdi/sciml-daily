@@ -23207,5 +23207,615 @@
   ],
   "summary": "Classifying transient candidates requires uncertainty-aware models under label noise. The paper develops a weakly supervised dual-network model with hybrid uncertainty quantification (MC dropout + ensembles) for Real-Bogus classification in astronomy surveys.",
   "added": "2026-07-07"
+ },
+ {
+  "id": "arxiv:2607.05436",
+  "source": "arXiv",
+  "title": "Statistically Meaningful Geometry and Gauge Symmetry Breaking: A Geometric Foundation for Scientific Discovery and Intelligence Emergence",
+  "abstract": "The rapid scaling of over-parameterized machine learning architectures, particularly LLMs, raises a profound crisis: do these systems exhibit genuine intelligence, or are they merely sophisticated statistical pattern matchers? Classical flat Euclidean statistics cannot differentiate continuous interpolation from the autonomous discovery of novel causal laws. To resolve this, we introduce Statistically Meaningful Geometry (SMG), a framework modeling over-parameterized learning systems as infinite-dimensional non-parametric Orlicz fiber bundles. We prove that under persistent out-of-distribution (OOD) stimuli governed by unmodeled causal mechanisms, continuous optimization fails. Unmodeled variance is rejected by the visible horizontal base manifold, leaking into the unobservable vertical fiber space and generating an accumulation of Active Acausal Tension. Driven by the statistical manifold's non-linear curvature, this tension inevitably strikes a conjugate focal boundary ($T_{\\text{crit}} = \\pi^2 / K_{\\text{max}}$), triggering localized volumetric collapse and a catastrophic matrix singularity ($[G_f]^{-1} \\to \\infty$). We demonstrate this geometric breakdown acts as the strict non-equilibrium trigger for a Gauge Symmetry Break (GSB). The system purges hidden tension from unobservable gauge redundancies, spontaneously crystallizing a new, mathematically independent horizontal coordinate axis. This non-parametric phase transition registers as a discrete $+1.0$ integer step-jump in observable Structural G-Entropy. By decoupling parameter charts and subjecting emergent axes to a Minimal Energy Path Criterion and a Causal Invariance Filter, we distinguish genuine discovery from malignant hallucinations. Ultimately, SMG provides a parameter-free, falsifiable dashboard to mathematically certify true intelligence, transforming AI for Science into an engine of autonomous paradigm shifts.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Bing Cheng",
+   "Yi-Shuai Niu",
+   "Howell Tong",
+   "Shing-Tung Yau"
+  ],
+  "url": "https://arxiv.org/abs/2607.05436",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Over-parameterized learning systems lack a geometric framework to distinguish interpolation from causal discovery. The paper models them as infinite-dimensional Orlicz fiber bundles and proves geometric breakdown triggers gauge symmetry breaks, formalizing intelligence certification mathematically.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05478",
+  "source": "arXiv",
+  "title": "InvWeaver: Deductive Feedback for Invariant Synthesis in Interacting-Loop Programs",
+  "abstract": "Loop invariant inference is a fundamental yet challenging problem in program verification. Recent LLM-aided guess-and-check techniques have shown strong performance on single-loop programs, but they often struggle with programs containing multiple interacting loops. This paper presents InvWeaver, a neuro-symbolic framework for synthesizing invariants for such programs. The key idea is to expose inter-loop dependencies and propagate proof obligations through a combination of loop-level abstraction, obligation-guided inference, and weakest-precondition-based refinement. We evaluate InvWeaver on a comprehensive benchmark suite, including a newly curated dataset derived from classic algorithms. Experimental results show that InvWeaver substantially outperforms existing invariant inference methods, solving 72 out of 82 multi-loop benchmark problems and maintaining strong performance on single-loop tasks.",
+  "categories": [
+   "cs.LG",
+   "cs.PL"
+  ],
+  "authors": [
+   "Guangyuan Wu",
+   "Weining Cao",
+   "Zehui Tan",
+   "Yuan Yao",
+   "Hengfeng Wei",
+   "Taolue Chen",
+   "Xiaoxing Ma"
+  ],
+  "url": "https://arxiv.org/abs/2607.05478",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Synthesizing invariants for multi-loop programs is challenging for existing guess-and-check methods. The paper introduces a neuro-symbolic framework combining loop abstraction, obligation-guided inference, and weakest-precondition refinement to expose inter-loop dependencies.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05559",
+  "source": "arXiv",
+  "title": "EquiFiLM: Charge-Conditioned Equivariant Force Fields via Feature-wise Linear Modulation",
+  "abstract": "Foundation machine learning force fields (MLFFs) such as MACE-MP-0 and UMA cover broad chemical space at near density functional theory (DFT) accuracy. However, they assume equilibrium ground-state physics and do not natively handle externally induced changes to the electronic state, such as charging, applied fields, or electronic excitation, which limits their use for driven processes such as photoexcitation and charge injection. We propose EquiFiLM, a lightweight extension that adds continuous external conditioning to any equivariant foundation MLFF via a per-layer Feature-wise Linear Modulation (FiLM) block, learning externally driven changes to the potential energy surface from minimal training data. The block modulates only scalar channels and preserves E(3)-equivariance exactly. We demonstrate the recipe on charged liquid water with the foundation model MACE-MatPES as the backbone, yielding E-MACE. On the four training charges, E-MACE delivers a $3.1\\times$ reduction in force RMSE ($21.3$ to $6.96$ meV/$\\mathring{A}$) and a $61\\times$ reduction in per-atom energy RMSE ($6.1$ to $0.1$ meV/atom) over a baseline without EquiFiLM trained on the same data, at indistinguishable inference cost. Across seven held-out interpolation and extrapolation charges, force RMSE stays within $18-61$ meV/$\\mathring{A}$ and energy RMSE within $0.7-5.4$ meV/atom. The model runs stable molecular dynamics across the full range tested and predicts the charge-dependent first-shell response of the reduced pair distribution function probed by ultrafast electron diffraction. Adding this conditioning axis to the foundation requires only a few thousand DFT-labeled frames, against the $\\approx 10^8$ structures of a charge-aware foundation trained from scratch. The recipe is backbone- and conditioning-agnostic: it applies without architectural change to any equivariant MLFF with scalar interaction-layer channels.",
+  "categories": [
+   "cs.LG",
+   "cond-mat.mtrl-sci",
+   "physics.chem-ph",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Samuel Sahel-Schackis",
+   "Ken-ichi Nomura",
+   "Aiichiro Nakano",
+   "Matthias F. Kling",
+   "Thomas Linker"
+  ],
+  "url": "https://arxiv.org/abs/2607.05559",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "physics-informed-ml"
+  ],
+  "summary": "Foundation ML force fields cannot handle external electronic-state changes like charging. The paper introduces EquiFiLM, a charge-conditioned equivariant force field using FiLM modulation on scalar channels, enabling stable MD simulations across charges with minimal training data.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05718",
+  "source": "arXiv",
+  "title": "Learning Stable Controlled Dynamical Systems via Input-Contraction Neural Differential Models",
+  "abstract": "Learning continuous-time representations of dynamical systems from observation data has emerged as a cornerstone of data-driven control and scientific machine learning. However, existing neural differential equations either treat external control inputs heuristically without providing strict structural guarantees, or enforce stability properties under the restrictive assumption of constant or vanishing inputs. This paper proposes the Input-Contraction Neural Differential Model (ICNDM), a novel deep learning framework that seamlessly incorporates time-varying control inputs while ensuring incremental exponential convergence via input-dependent contraction regularization. By leveraging an embedded input encoder and a parameterized metric network, the proposed architecture learns both the non-autonomous neural vector fields and a generalized Riemannian contraction metric simultaneously. We derive sufficient conditions for input-dependent contraction and formally establish an input-to-state contraction property under bounded external excitations. Extensive numerical evaluations on highly nonlinear chaotic oscillators and experimental data from a Permanent Magnet Synchronous Motor (PMSM) drive system demonstrate that ICNDM yields substantial reductions in long-horizon rollout errors and exhibits superior structural robustness against input perturbations compared with state-of-the-art neural differential benchmarks.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Syed Pouladi"
+  ],
+  "url": "https://arxiv.org/abs/2607.05718",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Learning stable controlled dynamical systems with time-varying inputs lacks guaranteed convergence. The paper introduces Input-Contraction Neural Differential Models that enforce input-dependent contraction metrics via a Riemannian regularization framework, ensuring incremental exponential stability.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05843",
+  "source": "arXiv",
+  "title": "Network Interdependency-Informed Power System Dynamic Trajectory Prediction Utilizing Black-Box Modeling of Inverter-Based Resources",
+  "abstract": "Black-box modeling of inverter-based resources (IBRs) has become essential for real-time grid operation and control in the presence of proprietary electronic control architectures. Existing machine learning (ML)-based online dynamic trajectory prediction approaches using IBR black-box models either significantly accumulate prediction errors when multiple surrogates are simultaneously used or ignore measurement errors, limiting their deployment in practical grids. To address these limitations, this paper proposes a novel network interdependency-informed ML algorithm for online dynamic trajectory prediction in IBR-integrated power systems. A modular spatiotemporal attention network (STAN)-based predictor for the black-box modeling of each IBR unit is first proposed. Utilizing past measurements, the proposed STAN can effectively capture and predict the spatiotemporal dynamics of IBRs by employing an attention mechanism to attend to the most pertinent features for trajectory prediction. Furthermore, a novel hybrid physics-informed loss function that integrates a decoupled linearized AC power flow formulation is proposed. The proposed loss function effectively ensures physical consistency of predictions within network operation while avoiding the computational complexity of iterative power flow solving, thereby enabling efficient gradient backpropagation and overall improved prediction accuracy. Case studies on the IEEE 14- and WECC 179-bus systems demonstrate that the proposed method achieves significant accuracy enhancement and robustness against measurement errors, outperforming recent ML-based trajectory prediction methods.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Sungjoo Chung",
+   "Ying Zhang",
+   "Meng Yue",
+   "Hantao Cui"
+  ],
+  "url": "https://arxiv.org/abs/2607.05843",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Black-box modeling of inverter-based resources in power systems accumulates prediction errors under measurement noise. The paper proposes a spatiotemporal attention network with a hybrid physics-informed loss function integrating decoupled linearized AC power flow to ensure physical consistency.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05872",
+  "source": "arXiv",
+  "title": "No Subspace to Track: Non-Identifiability and Optimizer State in Low-Rank Training",
+  "abstract": "Memory-efficient optimizers such as GaLore train large language models by projecting gradients onto a rank-r subspace recomputed every T steps, assuming this subspace is a slowly drifting object that can be tracked. We show that beyond a small reproducible core, there is no such object. Two estimates of the top-r subspace computed at the same step from disjoint minibatches disagree as much as estimates computed T steps apart (0.73 vs 0.74 of the maximal chordal distance sqrt(2r), at Pythia-160M with r=128): the apparent rotation at each refresh is dominated by estimator noise. This holds across four model families in three architecture classes from 70M to 6.9B parameters, strengthening with scale, and more weakly in a vision transformer. Only ~39 of 128 directions are reproducible across minibatches, and averaging cannot recover the rest: under N-fold averaging the gradient's spectral tail shrinks as N^(-1/4) rather than the N^(-1/2) of pure noise, so no averaging budget makes the subspace well defined. What helps instead follows from treating each refresh as a change of coordinates for Adam's state. Carrying the second moment blindly is provably about (r-k*)/2 worse than the best rotation-blind estimator, while the first moment transports exactly through the rotation, the optimal linear map under isotropic gradients and the rule LDAdam uses. At 1B over 40k steps (3 seeds), full LDAdam reaches 18.7 perplexity at beta2=0.999, beating untransported GaLore after its best beta2 fix (19.3); shortening the second-moment memory to beta2=0.99 helps the refreshing optimizers, though for canonical GaLore the effect is small and a full-rank control reverses it. One measurable fact, subspace non-identifiability, clarifies why GaLore works, which patches work, and what to check before trusting a low-rank assumption: the reproducible rank k*.",
+  "categories": [
+   "cs.LG",
+   "math.OC",
+   "stat.ML"
+  ],
+  "authors": [
+   "Noel Thomas"
+  ],
+  "url": "https://arxiv.org/abs/2607.05872",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Low-rank gradient subspace tracking in optimizers like GaLore assumes identifiable subspaces. The paper shows subspace non-identifiability dominates estimator noise and analyzes state transport under rotation, deriving optimal rotation-blind estimators for Adam's moments.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05998",
+  "source": "arXiv",
+  "title": "A unified energy-stable finite element approximation for evolving fluidic biomembranes",
+  "abstract": "We present a unified finite element method for the dynamics of fluidic biomembranes. The model is governed by the Navier--Stokes equations in the bulk coupled to the surface Navier--Stokes equations on the evolving biomembrane surface, with bending forces arising from the Willmore energy. By allowing the bulk mesh velocity to be independent of the fluid velocity and permitting a free tangential surface velocity, we are able to derive a unified weak formulation of the coupled bulk-surface Navier--Stokes system. To address the bending force, we consider an evolution equation for the curvature and propose a surface arbitrary Lagrangian--Eulerian (ALE) weak formulation. Discretization with either fitted or unfitted finite elements leads to well-posed fully discrete linear schemes that are unconditionally energy stable. We present a variety of numerical examples to demonstrate the favourable properties of the proposed methods.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Harald Garcke",
+   "Robert N\\\"urnberg",
+   "Quan Zhao"
+  ],
+  "url": "https://arxiv.org/abs/2607.05998",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Modeling fluidic biomembranes requires stable numerical methods for coupled bulk-surface Navier-Stokes equations. The paper develops a unified finite element method with energy stability guarantees, using fitted/unfitted meshes and surface ALE formulations.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06026",
+  "source": "arXiv",
+  "title": "SplineNet: An Isogeometric Deep Learning Method for Complex Shells",
+  "abstract": "We present a novel isogeometric deep learning method, termed SplineNet, for the seamless design and analysis of shell structures with complex geometries. The proposed approach is built upon watertight spline representations, e.g., analysis-suitable unstructured T-splines, and features exact geometric descriptions of Computer-Aided Design (CAD) models in neural networks. B\\'ezier extraction is used to build the network architecture, where Bernstein polynomials serve as the nonlinear activation functions. SplineNet can be applied in a data-free or data-driven way. In the data-free case, energy-based formulations can be naturally incorporated as loss terms, which fulfill the need of Computer-Aided Engineering (CAE) and can be accurately calculated. In particular, the Kirchhoff--Love (KL) model is adopted to solve for the mechanical behaviors of shell structures. This way, CAD and CAE can be tightly integrated in a deep neural network without the time-consuming model/data exchange process. In the data-driven case, SplineNet can be used as the trunk net of Deep Operator Networks (DeepONet) to provide interpretability. Given such a trained network and unseen input data, results can be immediately obtained without retraining the network or repeatedly performing the traditional workflow for analysis. In the end, a variety of numerical examples are studied to demonstrate the effectiveness of the proposed method, especially when real-world complex geometries are involved.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Shizhou Luo",
+   "Xiaodong Wei"
+  ],
+  "url": "https://arxiv.org/abs/2607.06026",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Integrating CAD and CAE for complex shells requires tight coupling of geometry and analysis. The paper proposes SplineNet, an isogeometric deep learning method using Bézier extraction and Kirchhoff-Love shell theory to unify design and simulation.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06091",
+  "source": "arXiv",
+  "title": "Mass-Conserving Physics-Informed Neural Networks For The One-Dimensional Advection-Diffusion Equation",
+  "abstract": "The advection-diffusion equation is a fundamental model of transport phenomena in which mass conservation is an essential physical constraint. While classical schemes such as Crank-Nicolson preserve this property by construction, Physics-Informed Neural Networks (PINNs) enforce only the local residual of the governing PDE and are therefore not guaranteed to conserve global quantities such as mass over long integration horizons. In this work, we examine the extent of this limitation for the periodic one-dimensional advection-diffusion equation and evaluate a Mass-Penalty PINN that augments the standard PINN loss with a soft mass-conservation constraint. We compare the performance of Vanilla PINN, Mass-Penalty PINN, and the Crank-Nicolson scheme across a range of Peclet numbers spanning diffusion-dominated to advection-dominated regimes, and over two simulation horizons representing short-term and long-term dynamics. The results show that, for short-term simulations, the Mass-Penalty PINN does not always provide a consistent improvement in accuracy. However, for long-term simulations, the Mass-Penalty PINN reduces the relative L2 error and mass conservation error by factors of approximately 9-67 and 15-215, respectively, compared with the Vanilla PINN, across the tested Peclet numbers. Further analysis reveals that the accuracy degradation observed in Vanilla PINN is predominantly caused by the accumulation of mass drift over time. These results demonstrate that incorporating a soft mass-conservation constraint substantially improves the long-term reliability of PINN for conservative transport problems, particularly in mitigating mass drift over extended simulation horizons.",
+  "categories": [
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Eszra Forenita Sigalingging",
+   "Liu Kin Men",
+   "Setianto Setianto",
+   "Ferry Faizal"
+  ],
+  "url": "https://arxiv.org/abs/2607.06091",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Standard PINNs fail to conserve mass in long-term advection-diffusion simulations. The paper introduces a Mass-Penalty PINN with soft conservation constraints, reducing relative L2 error by 9-67× and mass drift by 15-215× over vanilla PINNs.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06132",
+  "source": "arXiv",
+  "title": "Self-Supervised Implicit CEST Reconstruction via Physics-Informed Lorentz Encoding",
+  "abstract": "Multi-Pool Chemical Exchange Saturation Transfer (CEST) MRI provides valuable metabolic information but is clinically limited by long acquisition times. Although sparse sampling reduces scanning time, reconstructing high-resolution Z-spectra from limited data remains an ill-posed inverse problem. Conventional interpolation and generic Implicit Neural Rep-resentations (INRs) often lack physical constraints, leading to spectral artifacts and physically invalid signals. To address this, we propose Lorentz Encoding (LE), a physics-informed framework that formulates CEST reconstruction as a self-supervised reconstruction task via implicit continuous coordinate learning. Unlike generic positional encodings, LE regularizes the continuous spectral mapping by projecting sparse coordinates into a physically constrained space governed by a combination of parametric Lorentzian profiles with learnable basis functions. This mechanism effectively reduces noise and enforces consistency with physical models. Experiments on in vivo human brain data demonstrate that LE significantly outperforms state-of-the-art methods. Specifically, under a 39-point sampling strategy, LE achieves a PSNR of 57.58 dB and an SSIM of 0.9994. Furthermore, the learned physics-informed encodings form a continuous, geometrically ordered trajectory in the latent space, ensuring accurate quantitative metabo-lite mapping (APT, NOE, MT).",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "physics.med-ph"
+  ],
+  "authors": [
+   "Dexuan Li",
+   "Yupeng Wu",
+   "Chenglong Wang",
+   "Hanlin Liu",
+   "Hui Zhen",
+   "Jianqi Li",
+   "Guang Yang"
+  ],
+  "url": "https://arxiv.org/abs/2607.06132",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Reconstructing CEST MRI Z-spectra from sparse data requires physics-aware methods. The paper proposes Lorentz Encoding, a self-supervised implicit neural representation regularized by parametric Lorentzian profiles to enforce spectral consistency.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06188",
+  "source": "arXiv",
+  "title": "Time-Invariant Neural Operators with Applications in Solving Time-Dependent PDEs",
+  "abstract": "The deep operator network (DeepONet) is one of the basic architectures for learning nonlinear operators with neural networks. However, for operators that describe the dynamic response of physical systems, DeepONet does not naturally respect fundamental time properties, including time causality and time invariance. We propose time-invariant neural operator (TINO) to overcome these limitations, by creating the connection between time-delay neural network (TDNN) and DeepONet. We then extend the proposal to solving time-dependent PDEs with initial values, which can be treated as truncated time-invariant systems, with spatial proper orthogonal decomposition (POD) implementation in the output function space. Various numerical tests comparing TINO, neural operators with time causality, and those without time properties justify the enhanced precision of the proposed neural operator frameworks.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Zihan Zhou",
+   "Wenzhong Zhang",
+   "Lizuo Liu"
+  ],
+  "url": "https://arxiv.org/abs/2607.06188",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Solving time-dependent PDEs with neural operators that respect time causality and invariance. The paper proposes TINO, connecting time-delay neural networks with DeepONet, and extends it with spatial POD for PDEs with initial values.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06252",
+  "source": "arXiv",
+  "title": "A Convex Approximation Framework for Neural Likelihood-Based Bayesian Inverse Problems",
+  "abstract": "Many problems in science and engineering are difficult to model accurately, either due to unknown physical mechanisms, poorly quantified measurement uncertainty, or prohibitive computational costs of high-fidelity simulations. These challenges limit the applicability of classical probabilistic inference methods such as Markov chain Monte Carlo, especially in high-dimensional Bayesian inverse problems. As data from scientific experiments become increasingly available, machine learning methods offer a flexible alternative to explicit parametric modelling. We study neural likelihood approximation, where the goal is to learn the likelihood function directly from data without explicit knowledge of the underlying data-generating process. A common approach trains likelihood surrogates by minimizing the Kullback-Leibler divergence between the true posterior and an approximate posterior, which is equivalent to minimizing the expected negative log-likelihood. This work improves the theoretical foundations of neural likelihood approximation by alleviating limitations of restrictive model classes: we show that, by working with un-normalized potentials and folding normalization into the training objective, the resulting learning problem is strictly convex. We show that empirical minimizers of the resulting data-driven objective converge to the true likelihood as the sample size grows. Numerical experiments for the neural likelihood approximation are conducted for a deblurring and a non-linear PDE based imaging problem.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "math.PR",
+   "stat.ME"
+  ],
+  "authors": [
+   "Fabian Schneider",
+   "Tapio Helin",
+   "Leila Taghizadeh"
+  ],
+  "url": "https://arxiv.org/abs/2607.06252",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Approximating likelihoods for high-dimensional Bayesian inverse problems with neural networks. The paper introduces a convex learning framework for un-normalized potentials, ensuring convergence to the true likelihood.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06261",
+  "source": "arXiv",
+  "title": "Learning Adaptive Coarse Spaces Using Transferable Neural Network Models for Linear and Nonlinear Overlapping Domain Decomposition Methods",
+  "abstract": "Domain decomposition methods have been established as efficient and parallel scalable iterative solvers and preconditioners for the solution of large-scale systems arising from the discretization of partial differential equations. In particular, overlapping Schwarz methods have been successfully applied to a wide range of linear and nonlinear problems. However, for problems with highly heterogeneous coefficients, standard domain decomposition methods typically suffer from deteriorating convergence rates. Robustness with respect to the coefficient contrast can be achieved by enriching the coarse space with adaptively selected constraints obtained from local generalized eigenvalue problems. The construction of these adaptive coarse spaces, however, can account for a significant part of the overall computing time. In the present work, machine learning techniques are employed to reduce this part of the computing time in the context of the adaptive Generalized Dryja-Smith-Widlund (AGDSW) coarse space. A two-stage approach is proposed in which regression neural networks are used to predict the adaptive coarse basis functions, while a classification neural network is employed to predict the number of basis functions required to ensure robustness. As a consequence, adaptive coarse spaces can be set up in the online phase without solving any eigenvalue problem. Particular attention is paid to problem-specific aspects, including sign-invariant loss functions and post-processing strategies to significantly improve the predicted constraints. The proposed approach is first investigated for scalar diffusion problems with high coefficient contrasts and is subsequently transferred, without retraining, to problems of linear elasticity and to nonlinear $p$-Laplace problems, also within a nonlinear Schwarz framework.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Axel Klawonn",
+   "Martin Lanser",
+   "Janine Weber-Hamacher"
+  ],
+  "url": "https://arxiv.org/abs/2607.06261",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Accelerating adaptive coarse space construction for domain decomposition methods. The paper uses neural networks to predict coarse basis functions and their counts, avoiding eigenvalue solves during online computation.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06287",
+  "source": "arXiv",
+  "title": "Kernel-based Operator Learning: Error Analysis, Budget Allocation, and a Physics-Informed Extension",
+  "abstract": "We study kernel-based operator learning in a two-stage sampling framework, where an offline kernel regression operator learns a discretized representation of the target operator from input-output pairs and an online kernel reconstruction operator recovers the output function from predicted observations. Our main theoretical contribution is an explicit budget allocation condition relating the number $N$ of training pairs, the number $n$ of input observations, and the output resolution $m$. The condition is derived from a coupled error analysis that interprets the surrogate as a reconstruction from approximate data. This yields a decomposition of the total error into reconstruction and learning contributions that can be analyzed independently. As a consequence, we obtain quantitative scaling laws describing how $N$, $n$, and $m$ must be coupled to guarantee convergence and to balance offline learning and online reconstruction errors. The resulting estimates extend previous analyses of kernel-based operator learning. We further introduce a physics-informed extension that incorporates knowledge of the underlying PDE at evaluation time. Rather than encoding constraints directly into the kernel, we augment the online reconstruction step by penalizing PDE residuals at collocation points. The method requires no retraining for new inputs. Numerical experiments illustrate the theoretical findings and demonstrate the effectiveness of the proposed physics-informed reconstruction strategy.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA"
+  ],
+  "authors": [
+   "R\\\"udiger Kempf"
+  ],
+  "url": "https://arxiv.org/abs/2607.06287",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "foundations"
+  ],
+  "summary": "Analyzing kernel-based operator learning with coupled error decomposition and budget allocation. The paper derives scaling laws for training pairs and observations, and introduces a physics-informed reconstruction step penalizing PDE residuals.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06292",
+  "source": "arXiv",
+  "title": "A unified perspective of Gaussian process approximation for differential equations",
+  "abstract": "The use of Gaussian processes for approximating differential equations has expanded rapidly, leading to a growing, diverse, and fragmented body of numerical methods. We present a unified Bayesian perspective that places these techniques within a common probabilistic framework, based on a derivative matching interpretation for incorporating differential equation constraints into likelihood. This unified perspective supports both parameter estimation and solution approximation, and shows how a range of existing methods can be understood within it. This work aims to consolidate current developments and provide a foundation for future research.",
+  "categories": [
+   "math.NA",
+   "cs.CE",
+   "cs.NA",
+   "stat.ML"
+  ],
+  "authors": [
+   "Mengwu Guo"
+  ],
+  "url": "https://arxiv.org/abs/2607.06292",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Unifying Gaussian process methods for differential equations under a Bayesian framework. The work consolidates existing techniques via a derivative-matching likelihood interpretation for parameter estimation and solution approximation.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06348",
+  "source": "arXiv",
+  "title": "Physics-Informed Neural Embeddings of PDE Solution Families",
+  "abstract": "We introduce a physics-informed framework for learning finite-dimensional embeddings of solution families of partial differential equations. The method uses a multihead Physics-Informed Neural Network in which a shared body learns a latent manifold representing the solution space, while linear heads reconstruct individual solutions associated with different initial conditions. A head-orthogonalization penalty removes degeneracies in the latent representation and stabilizes the principal-component spectrum across training realizations. Because the initial condition is built into the network output by construction, these principal components measure the additional variability the network learns on top of the initial profile, not the full solution itself. We apply the method to the one-dimensional viscous Burgers equation, with the heat and wave equations as robustness checks. For a latent dimension $n_b=20$, the learned manifolds exhibit pronounced effective dimensional reduction: for Burgers dynamics, only $2$-$4$ principal components capture about $95\\%$ of the latent-space variance, while $4$-$7$ capture about $99\\%$, depending on the initial-condition family; the same qualitative compression holds for the heat and wave equations. We also split the wavenumber axis into bands (``Fourier shells'') and measure how much each band contributes to every principal component. The resulting frequency profile is invariant under the change-of-basis freedom that the orthogonalization penalty leaves in the latent space, and is therefore reproducible across independent training runs. More broadly, this establishes the learned spectral profiles and principal components as robust observables of solution-manifold geometry.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Raul Jimenez",
+   "Svitlana Mayboroda",
+   "Pavlos Protopapas",
+   "Leonid Sarieddine",
+   "David N. Spergel",
+   "Pedro Taranc\\'on-\\'Alvarez"
+  ],
+  "url": "https://arxiv.org/abs/2607.06348",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Learning finite-dimensional embeddings of PDE solution families with physics-informed neural networks. The method uses a multihead architecture with orthogonalization penalties to stabilize latent-space principal components.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06382",
+  "source": "arXiv",
+  "title": "A Function-Space Dichotomy for Compositional Learning: Exponential Sub-Optimality of the Neural Tangent Kernel",
+  "abstract": "A persistent empirical observation is that trained neural networks outperform their neural tangent kernel (NTK) limit on tasks with compositional structure, yet a quantitative account of $\\textbf{when}$ and $\\textbf{by how much}$ has been lacking. Working on the unit circle, we give such an account through a dichotomy between two complexity measures of the target: its $\\textbf{Fourier complexity}$, which controls NTK kernel regression, and its $\\textbf{architectural complexity}$, which controls learning over depth-$L$, width-$w$ ReLU networks with the variation norm of the weights bounded by $R$. We first characterize the minimax rate of the architecture class $\\mathcal{C}_{L,w,R}$, pinning it down up to a single factor of $L$: between $\\Omega(Lw^2R^2/n)$ and $\\tilde{O}(L^2w^2R^2/n)$. We then show the NTK estimator sits $\\textbf{exponentially}$ above this floor whenever the two complexities decouple: for the depth-$L$ iterated sawtooth, NTK regression needs $\\Omega(4^L)$ samples while the minimax floor is polynomial in $L$. Numerical experiments confirm the theoretical claims: on bandlimited smooth targets, the NTK is competitive or better, while on the hypercube sparse-parity model, a standard two-layer network beats the NTK by four to six orders of magnitude in test error. The gap is thus a function-space property, a mismatch between the kernel's smoothness bias and the target's compositional structure, rather than a generic kernel-versus-network phenomenon.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Arkaprabha Ganguli",
+   "Emil Constantinescu"
+  ],
+  "url": "https://arxiv.org/abs/2607.06382",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Quantifying the sub-optimality of NTK for compositional learning tasks. The paper establishes a function-space dichotomy between Fourier and architectural complexity, showing NTK requires exponentially more samples than neural networks for certain targets.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06425",
+  "source": "arXiv",
+  "title": "Adaptive and Neural Operator Control of Nonlinear Volterra Hyperbolic PDEs",
+  "abstract": "Adaptive control learns the plant online; neural-operator control learns the control gains offline. We bring the two together for a class of nonlinear hyperbolic PDEs whose dynamics are governed by an unknown Volterra series of arbitrarily many kernels. An observer-based passive identifier learns a truncation of this series online. The infinite-dimensional map that synthesizes the backstepping kernels from the parameter estimates -- a cascade of PDEs on simplex domains of increasing dimension, prohibitive to solve in real time -- is approximated once, offline, by a neural operator. The closed loop then carries two learning processes in series: online learning of the plant feeds an offline-learned PDE solver, whose output is the online control gains. We prove closed-loop stability and asymptotic regulation of the plant state, observer state, and input, on a basin that recovers the exact-kernel basin as the neural-operator accuracy improves. With a single Lyapunov function we absorb at once the perturbations -- all vanishing -- of truncating an infinite Volterra series, of identifying the plant online, and of approximating the gains.",
+  "categories": [
+   "eess.SY",
+   "cs.SY",
+   "math.OC"
+  ],
+  "authors": [
+   "Miroslav Krstic"
+  ],
+  "url": "https://arxiv.org/abs/2607.06425",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Controlling nonlinear hyperbolic PDEs via neural operator-approximated backstepping gains. The method combines online plant identification with offline-learned neural operators to synthesize control gains, ensuring closed-loop stability.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06447",
+  "source": "arXiv",
+  "title": "Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory",
+  "abstract": "Recent LLM-based mathematical reasoning agents have begun to tackle research-level problems and, in several cases, have contributed to the resolution of open problems. However, scaling and orchestrating such agents effectively remains challenging, due to the difficulty of coordinating parallel proof search while keeping intermediate claims organized and reliable. In this paper, we propose Danus, an orchestration system for research-level mathematical reasoning centered on a shared fact graph as a global memory-management mechanism. Danus consists of a main agent that performs planning and coordination, multiple worker agents that carry out proof search in parallel, and a stateless verifier that checks proposed mathematical claims before they are admitted into the fact graph. Each verified fact is stored together with its proof and logical dependencies, allowing the system to build long arguments incrementally while keeping the shared proof state organized. The main agent periodically summarizes the evolving proof state, redirects workers across promising directions, and supports interaction with human mathematicians through progress reports. We evaluate Danus through six research-level case studies in algebraic geometry, singularity theory, and combinatorics, illustrating how the fact-graph memory mechanism enables Danus to construct long, detailed mathematical proofs. Our results suggest that fact-graph-based orchestration provides an effective route toward scaling mathematical reasoning agents for long-horizon research problems. Danus is open source at https://github.com/frenzymath/Danus.",
+  "categories": [
+   "cs.AI",
+   "cs.CL",
+   "cs.MA"
+  ],
+  "authors": [
+   "Jihao Liu",
+   "Guoxiong Gao",
+   "Zeming Sun",
+   "Bin Wu",
+   "Shurui Liu",
+   "Jiedong Jiang",
+   "Haocheng Ju",
+   "Leheng Chen",
+   "Ronnie Cheng",
+   "Xiping Zhang",
+   "Bin Dong"
+  ],
+  "url": "https://arxiv.org/abs/2607.06447",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Scaling and coordinating LLM-based agents for research-level mathematical proofs is challenging due to parallel search and reliability. The paper introduces Danus, an orchestration system with a shared fact-graph memory, verifier, and worker agents to incrementally build organized, verified proofs.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06479",
+  "source": "arXiv",
+  "title": "A Physics-Informed Neural Network Framework for Elastodynamic Wave Propagation in Bimaterial Systems",
+  "abstract": "Physics-informed neural networks (PINNs) provide a promising framework for solving partial differential equations while embedding the underlying physical laws directly into the learning process. This study presents a PINN-based framework for modeling transient elastodynamic wave propagation in bimaterial systems governed by the axisymmetric equations of linear elasticity. A steel-aluminum specimen representative of a Split Hopkinson Pressure Bar configuration is considered, and the governing elastodynamic equations, together with the corresponding initial, boundary, and interface conditions, are incorporated directly into the network through a physics-informed loss function. High-fidelity finite-element simulations performed using ANSYS Workbench Explicit Dynamics are used for validation and as supplementary data constraints during training. The proposed framework accurately predicts wave transmission and reflection across the bimaterial interface and reproduces axial and radial displacement histories, face-averaged responses, and the dominant stress and strain evolution with close agreement to the finite-element solutions. The trained network further demonstrates the ability to predict wave responses at previously unseen time instants and for modified material properties without requiring additional finite-element simulations, providing a continuous surrogate model for elastodynamic analysis. Mesh-sensitivity studies confirm numerical robustness, while additional material combinations demonstrate the generality of the proposed methodology. The results show that integrating physics-informed neural networks with explicit finite-element analysis provides an accurate and computationally efficient framework for elastodynamic wave propagation in heterogeneous solids, offering an effective surrogate modeling approach for high-rate solid mechanics and impact engineering applications.",
+  "categories": [
+   "cs.AI",
+   "math-ph",
+   "math.MP"
+  ],
+  "authors": [
+   "Sonal Ankush Chibire",
+   "Jenn-Terng Gau",
+   "Bo Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2607.06479",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Modeling transient elastodynamic wave propagation in bimaterial systems requires solving complex PDEs with interface conditions. The paper develops a PINN framework that embeds axisymmetric elasticity equations into the loss function, validated against finite-element simulations to create a continuous surrogate model.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05489",
+  "source": "arXiv",
+  "title": "Black Hole Black Boxes: Numerical Black Hole Metrics via AInstein Neural Networks",
+  "abstract": "The AInstein architecture introduced an unsupervised neural method for solving the Riemannian Einstein equations on arbitrary manifolds. This Physics Informed Neural Network approach (PINN) is extended here to Lorentzian signature, validated by recovering the maximally extended Schwarzschild geometry, and tested as novel search method for arbitrary black hole solutions. The topology is built into the architecture by treating $S^{2}$ globally through its standard embedding, such that the network learns an ambient metric on the manifold $\\mathbb{R}^{2} \\times \\mathbb{R}^{3}$, where Penrose coordinates are chosen for $\\mathbb{R}^2$ and the metric on $S^{2}$ is obtained by pullback. The architecture is first trained with the objective of recovering the Schwarzschild metric via losses encoding the vacuum Einstein equation, a quadratic Weyl scalar constraint, and the $SO(3)$ symmetry of the resultant metric; directly motivated by the Birkhoff--Jebsen theorem. Following this, the objective is generalised to use the Petrov speciality index, a horizon curvature anchor, and a trapped-surface constraint, to allow search for algebraically general Petrov type I solutions, finding potentially novel general-type Lorentzian Einstein metrics with a genuinely trapped interior.",
+  "categories": [
+   "gr-qc",
+   "cs.LG",
+   "hep-th"
+  ],
+  "authors": [
+   "Tancredi Schettini Gherardini",
+   "Edward Hirst",
+   "Alexander George Stapleton"
+  ],
+  "url": "https://arxiv.org/abs/2607.05489",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Solving the Einstein equations for black hole metrics with neural networks. The paper extends Physics-Informed Neural Networks (PINNs) to Lorentzian manifolds, recovering Schwarzschild metrics and discovering novel solutions via Petrov index constraints.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05658",
+  "source": "arXiv",
+  "title": "Integrating GNSS-Derived Zenith Wet Delay into a Weather Foundation Model Improves Precipitation Forecasting",
+  "abstract": "Global Navigation Satellite Systems (GNSS), best known for positioning, also serve weather science, as atmospheric water vapour delays their signals. This delay, the Zenith Wet Delay (ZWD), is a direct, all-weather measure of column moisture. Although assimilated into numerical weather prediction for decades, ZWD is not yet used by leading machine learning weather models (MLWM), despite addressing a known deficiency: the underestimation of severe precipitation. Here we present the first integration of GNSS-derived ZWD into Aurora, a state-of-the-art weather foundation model. Our extended Aurora learns ZWD with skill comparable to its pretrained variables. More importantly, including ZWD systematically improves forecasts when fine-tuning for six-hour accumulated precipitation. Gains grow with severity, reaching an 8.8\\% increase in Equitable Threat Score at the 99th percentile, while the precipitation power spectrum becomes more realistic at synoptic and planetary scales. Direct GNSS observations therefore encode information that MLWM can exploit for high-impact precipitation.",
+  "categories": [
+   "physics.ao-ph",
+   "cs.LG",
+   "physics.geo-ph"
+  ],
+  "authors": [
+   "Leonardo Trentini",
+   "Fanny Lehmann",
+   "Laura Crocetti",
+   "Benedikt Soja"
+  ],
+  "url": "https://arxiv.org/abs/2607.05658",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "pde-foundation-models"
+  ],
+  "summary": "Improving precipitation forecasting in ML weather models by integrating GNSS-derived moisture data. The paper extends the Aurora foundation model to learn Zenith Wet Delay, enhancing severe precipitation prediction via fine-tuning.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05669",
+  "source": "arXiv",
+  "title": "Uncertainty-Aware Velocity Correction for Proprioceptive Vehicle Localization using Evidential Mamba",
+  "abstract": "Reliable localization in GNSS-denied environments remains a fundamental challenge for intelligent vehicles, as inertial navigation systems accumulate unbounded drift without external correction. Existing approaches provide drift correction through dedicated infrastructure, expensive external sensors, or complex multi-sensor fusion, each introducing practical deployment barriers. We propose Evidential Velocity Correction using Mamba (EVC-Mamba), a learning-based architecture that transforms onboard vehicle sensor data into a virtual velocity sensor for IMU drift correction without additional hardware. A Mamba-based selective state space model captures the temporal dynamics of vehicle motion, while evidential deep learning with a Normal-Inverse-Gamma distribution provides principled uncertainty quantification. The resulting uncertainty-aware velocity estimate is incorporated as a virtual correction measurement into an Error-State Extended Kalman Filter to reduce position drift. Evaluation on real-world vehicle data demonstrates that inertial navigation using the proposed velocity correction achieves localization accuracy within 10% of a dedicated external velocity sensor across different outage durations. The proposed architecture supports real-time onboard deployment at 40 Hz on edge hardware, enabling reliable localization during prolonged GNSS outages.",
+  "categories": [
+   "cs.RO",
+   "cs.LG"
+  ],
+  "authors": [
+   "Abinav Kalyanasundaram",
+   "Karthikeyan Chandra Sekaran",
+   "Wolfgang Utschick",
+   "Michael Botsch"
+  ],
+  "url": "https://arxiv.org/abs/2607.05669",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Correcting IMU drift in vehicle localization without external sensors. The paper introduces Evidential Mamba to estimate uncertainty-aware velocity via temporal dynamics modeling, integrated into an Extended Kalman Filter.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.05758",
+  "source": "arXiv",
+  "title": "From Closed-Loop Optimization to Open Decision Making: Coupled Digital Twins for Predictive and Autonomous Microscopy",
+  "abstract": "Automated experimentation is moving from closed-loop optimization toward open decision-making, where human or AI planners must forecast the consequences of candidate actions before executing them. Such forecasts require a model of both sides of the experiment: how the sample is likely to respond and what the instrument is likely to detect. We therefore introduce a coupled digital-twin framework that separates these roles and then links them. In this framework, the sample twin encodes material state inferred from prior knowledge and measurements till the moment. The instrument twin captures signal formation, feedback dynamics, and operating constraints based on prior knowledge. When coupled, the two twins estimate expected outcomes, uncertainty, and risk for candidate microscope operations. For amplitude-modulation scanning probe microscopy, we realize this framework with a physics-informed encoder of force-distance curves, a deterministic scanner model of cantilever and feedback dynamics, and sparse learned residual corrections. The encoder first recovers scanner-driving descriptors with sub-nanometer accuracy. The calibrated scanner then reproduces typical traces within a few nanometers and identifies operating-point noise amplification as the main source of mismatch. Supplementary phase analysis localizes residual error to the phase channel, which clarifies where added physics is needed. Together, these results establish coupled sample and instrument twins as a practical foundation for predictive microscope operation and autonomous experimental planning.",
+  "categories": [
+   "cond-mat.mtrl-sci",
+   "cs.LG"
+  ],
+  "authors": [
+   "Yu Liu",
+   "Boris Slautin",
+   "Ian Mercer",
+   "Jon-Paul Maria",
+   "Sergei V. Kalinin"
+  ],
+  "url": "https://arxiv.org/abs/2607.05758",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Predictive microscopy via coupled sample and instrument digital twins. The framework combines physics-informed encoders with learned residual corrections to forecast microscope outcomes and guide autonomous planning.",
+  "added": "2026-07-08"
+ },
+ {
+  "id": "arxiv:2607.06341",
+  "source": "arXiv",
+  "title": "Harnessing Code Agents for Automatic Software Verification",
+  "abstract": "Formal verification offers the strongest guarantee of software correctness, but it does not scale: the proofs demanded by interactive theorem provers such as Coq require enormous expert effort. Large language models (LLMs) promise to generate these proofs automatically, yet existing approaches wire a fixed, human-designed proof strategy into the system and constrain the model to follow it (retrieving premises and predicting tactics one step at a time, or splitting goals by divide-and-conquer), and still prove only a fraction of their target theorems. We show that imposing such a strategy is unnecessary and limiting. Handing the whole lemma to a general LLM code agent (for example, Claude Code), free to choose its own approach, and wrapping it in a verification harness is both simpler and more effective, achieving full coverage: every targeted lemma proved, with no failures and no Coq expert intervention. The agent writes the proofs under feedback and hard constraints from the harness that keep each one sound (accepted only when the prover's kernel closes it), complete (no obligation left unproved or silently dropped), and terminating (no divergent tactics). We evaluate this harness plus code agent along three dimensions. (1) Core logic: on Iris, the state-of-the-art separation logic for concurrent and memory-manipulating programs, Aria proves all 4,257 lemmas of the four core modules and the 217 lemmas verifying Rust's standard libraries built on it, fully automatically. (2) Comparison with prior LLM provers: on reglang, where prior provers manage barely one in eight, Aria proves all 318. (3) Generality: on iris-lean, the unfinished Lean 4 port of Iris, it proves 72 not-yet-ported lemmas, showing the approach is not specific to Coq. A state-of-the-art model (Claude Opus 4.7) can write proofs for verified software development fully and automatically.",
+  "categories": [
+   "cs.FL",
+   "cs.AI",
+   "cs.SE"
+  ],
+  "authors": [
+   "Shuangxiang Kan",
+   "Shuanglong Kan",
+   "Sebastian Ertel"
+  ],
+  "url": "https://arxiv.org/abs/2607.06341",
+  "published": "2026-07-08",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Automating formal software verification requires expert-written proofs in theorem provers like Coq. The paper introduces a code agent harness that uses LLMs to generate complete, sound proofs for separation logic lemmas without human intervention.",
+  "added": "2026-07-08"
  }
 ]
