@@ -25195,5 +25195,513 @@
   ],
   "summary": "Gradient estimation for probabilistic programs faces high-dimensional integration challenges. The paper reduces gradient estimation to probabilistic inference via coupling and factorization, enabling automated gradient estimators through source-to-source transformations.",
   "added": "2026-07-10"
+ },
+ {
+  "id": "arxiv:2607.08843",
+  "source": "arXiv",
+  "title": "How are linear representations learned? Exact solutions to the dynamics of abstraction",
+  "abstract": "In artificial and biological neural networks, concepts are often encoded as consistent linear directions in representation space. In deep learning, this idea is known as the linear representation hypothesis and underpins many interpretability and control methods based on linear probes, from concept detection to activation steering. Yet while prior work has studied whether such directions should exist $\\textit{after}$ training, the dynamics of how they emerge $\\textit{during}$ training remain poorly understood. Here, we develop a framework to study the alignment of concept directions during training - a process we call \"abstraction\". In a minimal linear network setting, we obtain exact solutions for the full trajectory of abstraction. These solutions reveal key analytic principles governing abstraction: (i) data and target geometry jointly determine abstraction at the end-of-learning, (ii) abstraction improves with network depth, and (iii) initialization scale controls the maximum abstraction reached during training. Extending our theory to nonlinear networks, we analyze how the choice of nonlinearity affects abstraction dynamics: erf networks approximate the linear theory, while abstraction in ReLU networks depends less on target geometry and more on input geometry. Across both, we prove a striking attenuation law: both nonlinearities weaken abstraction in activations relative to preactivations. We find evidence for this law in open models (DINOv3, Gemma 4) and apply our theory to improve linear probe generalization in LLMs. Together, our results provide a dynamical theory of abstraction with implications for interpretability and control.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "William W. Yang",
+   "Andrew M. Saxe",
+   "Peter E. Latham"
+  ],
+  "url": "https://arxiv.org/abs/2607.08843",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Understanding how linear concept directions emerge during neural network training. The paper develops a dynamical theory of abstraction in linear/nonlinear networks, linking geometry and initialization to representation alignment.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.08848",
+  "source": "arXiv",
+  "title": "An Explicit Higher-Order Dual Basis for a Multiplicatively Calder\\'on Preconditioned Electric Field Integral Equation",
+  "abstract": "One of the most effective means to precondition the electric field integral equation (EFIE) discretized with Rao-Wilton-Glisson (RWG) functions is the multiplicative Calder\\'on preconditioner employing Buffa-Christiansen (BC) functions as a basis dual to the RWG basis. It results in a formulation that is free from the dense-discretization and the low-frequency breakdown. To generalize the multiplicative Calder\\'on preconditioner from the low-order BC and RWG basis to higher orders, we utilize B-spline-based basis functions and establish the first explicit high-order dual basis. It can be regarded as a generalization of the BC functions to arbitrary polynomial degrees and constitutes a fundamental building block for other approaches that rely on a dual basis. Numerical results for the obtained preconditioner demonstrate a low and constant number of generalized minimum residual (GMRES) iterations independent of the number of unknonws and the polynomial degree for canonical and realistic perfectly electrically conducting (PEC) scatterers; a key to enable the full potential of higher-order bases.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Bernd Hofmann",
+   "Thomas F. Eibert",
+   "Francesco P. Andriulli",
+   "Simon B. Adrian"
+  ],
+  "url": "https://arxiv.org/abs/2607.08848",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Developing higher-order dual bases for Calderón-preconditioned integral equations. The paper introduces an explicit B-spline-based dual basis for EFIE, enabling high-order discretizations with robust iterative convergence.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09062",
+  "source": "arXiv",
+  "title": "Robust shape reconstruction of elastic impenetrable scatterers via monotonicity spectral sampling methods",
+  "abstract": "Reconstructing the location and shape of an unknown impenetrable scatterer from far-field measurements is a fundamental inverse problem in elastic scattering. In this paper, we propose monotonicity-based shape characterization theorems and develop corresponding algorithms for rigid and traction-free impenetrable scatterers. By establishing the factorization of the elastic far-field operator and constructing localized wave functions, we derive a sharp monotonicity-based characterization criterion for determining the shape and position of the impenetrable scatterer. This criterion is based on the spectral properties of the \\emph{monotonicity operator}, defined as a specific linear combination of the far-field and Herglotz probing operators. Building on this theoretical foundation, we first present a counting-based monotonicity sampling method that evaluates the number of negative eigenvalues of the monotonicity operator. To address the inherent sensitivity of eigenvalue-counting to measurement noise, we further develop two novel monotonicity spectral sampling algorithms that exploit the magnitudes, rather than merely the signs, of the negative eigenvalues. The single-frequency monotonicity spectral sampling method provides robust stability against data perturbations, while the multi-frequency monotonicity spectral sampling method extension aggregates frequency information into a multiscale indicator that balances noise robustness with high-resolution geometric fidelity. Numerical experiments across various scatterer geometries and noise levels demonstrate sharp boundary localization and accurate reconstruction of complex concave features, confirming the effectiveness of the single-frequency and multi-frequency monotonicity spectral sampling methods.",
+  "categories": [
+   "math.AP"
+  ],
+  "authors": [
+   "Mengjiao Bai",
+   "Huaian Diao",
+   "Weisheng Zhou"
+  ],
+  "url": "https://arxiv.org/abs/2607.09062",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Reconstructing impenetrable elastic scatterers from far-field measurements. The paper develops monotonicity-based spectral sampling methods with certified minimax risk bounds for inverse elastic scattering.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09071",
+  "source": "arXiv",
+  "title": "Physics informed wavelet Fourier representation for multiscale fluid dynamics",
+  "abstract": "Multiscale fluid flows often contain localized flow structures, such as viscous shock layers, wet-dry fronts, steady viscous wakes, decaying vortical structures, and vortex-shedding patterns, whose accurate prediction requires the simultaneous preservation of global conservation trends and small-scale gradients. This study examines these flow-physics requirements through a physics-informed wavelet-Fourier (PIWF) representation for multiscale fluid dynamics. Instead of relying on a single monolithic neural approximator, the formulation separates two complementary components of the flow field within a physics-informed neural representation: long-range coherent modes through a Fourier-basis branch and localized steep-gradient or vortical features through a compactly supported wavelet branch. The outputs are fused with a residual multilayer perceptron using channel attention, and the governing equations, initial conditions, and boundary conditions are imposed directly through the physics-informed loss. The model is assessed on five canonical fluid-dynamics problems: Burgers' equation, the shallow water equations, Kovasznay flow, Taylor--Green vortex flow, and two-dimensional cylinder wake flow. The results show that PIWF improves the resolution of shock-like gradients, wet--dry interfaces, steady wake fields, decaying vortical structures, vorticity extrema, and broadband wake spectra relative to standard physics-informed neural networks and physics-informed Kolmogorov--Arnold networks. These findings indicate that a wavelet-Fourier physics-informed representation can provide a useful route for analyzing multiscale flow phenomena when high-fidelity interior reference data are limited or unavailable.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Chao Wang",
+   "Shilong Li",
+   "Yunpeng Wang",
+   "Tianbai Xiao",
+   "Zelong Yuan",
+   "Chenyue Xie",
+   "Chunyu Guo"
+  ],
+  "url": "https://arxiv.org/abs/2607.09071",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "ml-numerical-methods"
+  ],
+  "summary": "Resolving multiscale fluid dynamics with localized structures. The paper introduces a physics-informed wavelet-Fourier neural representation that separates coherent modes and steep gradients via fused Fourier-wavelet branches.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09073",
+  "source": "arXiv",
+  "title": "Pitfalls and Remedies for Multi-Task Bayesian Optimization",
+  "abstract": "Bayesian optimization routinely warm-starts a target experiment with data from related source tasks, and the multi-task Gaussian process is the textbook surrogate for the job. We revisit this default in a controlled setting and find that it misestimates the cross-task correlation even in the simplest non-trivial case, affinely related source and target tasks, where a working transfer learning method should obviously succeed. We trace the failure to two independent structural mechanisms. Per-task standardization, the textbook fix for the affine slice ambiguity, propagates a finite-sample alignment error into the recovered correlation. The marginal likelihood itself identifies the correlation only at a per-sample rate that a Gaussian process at non-overlapping designs further dilutes. We propose three conservative remedies that follow from the analysis: promoting per-task means and scales to model parameters, restricting the task covariance to non-negative correlations, and co-locating part of the source and target designs. Across synthetic multi-task problems and surrogate-based hyperparameter tuning transfer, these remedies recover the target-only baseline on the simple instances, while the broader failure persists on harder instances and across most rank-based and latent-context variants.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Carl Hvarfner",
+   "Sam Daulton",
+   "Max Balandat",
+   "Eytan Bakshy"
+  ],
+  "url": "https://arxiv.org/abs/2607.09073",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Multi-task Gaussian processes for Bayesian optimization misestimate cross-task correlations in simple affine transfer scenarios. The paper identifies structural causes of this failure and proposes three remedies: parameterizing per-task means/scales, non-negative task covariance, and co-located designs.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09088",
+  "source": "arXiv",
+  "title": "TokaGrad: End-to-end differentiable tokamak simulator for L-to-H full scenario optimization",
+  "abstract": "As fusion energy moves from theoretical feasibility toward commercialization, design of new reactor concepts, autonomous tokamak control, and high-performance scenario optimization are becoming increasingly important. Traditionally, such optimization tasks have relied on costly trial-and-error or brute-force parameter searches, based on black-box experiments or simulations. Recently, advances in differentiable programming are changing the paradigm of numerical simulation. Unlike conventional simulations, which are typically executed as locally connected step-by-step procedures, differentiable simulation represents the entire simulation pipeline as a connected computational graph. In such a framework, machine parameters, actuator waveforms, and plasma responses are linked through differentiable operations, allowing Jacobians to propagate across the full simulation. This enables direct gradient-based control and optimization using the internal sensitivities of the simulator, rather than treating the simulator as a black box. Here, we present TokaGrad, an end-to-end differentiable tokamak transport simulator for full-scenario modeling, including ramp-up, L-mode operation, and H-mode access. TokaGrad self-consistently integrates differentiable models for plasma equilibrium, transport, heating, L-H transition, and pedestal formation. To our knowledge, this is the first differentiable tokamak simulator capable of self-consistently modeling dynamic full-discharge scenarios where actuators and plasma evolve together with equilibrium, pedestal, and confinement-regime transitions. We demonstrate that, when coupled to gradient-based optimizers, TokaGrad enables reactor-design optimization, actuator control, and full-scenario waveform optimization. This framework provides a pathway toward automated, differentiable optimization of burning-plasma scenarios and reactor concepts.",
+  "categories": [
+   "math-ph",
+   "math.MP",
+   "physics.plasm-ph"
+  ],
+  "authors": [
+   "Jaemin Seo"
+  ],
+  "url": "https://arxiv.org/abs/2607.09088",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Gradient-based optimization of tokamak reactor designs and control is hindered by black-box simulators. The paper introduces TokaGrad, an end-to-end differentiable tokamak transport simulator that integrates plasma equilibrium, transport, and H-mode transitions into a single differentiable computational graph.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09106",
+  "source": "arXiv",
+  "title": "Nonexchangeable logit dynamics with cost constraints: different viewpoints and numerical analysis",
+  "abstract": "The logit dynamic, a nonlinear dynamical system, subject to a const constraint with heterogeneous agents is formulated, and its well-posedness is studied from both agent-based (stochastic differential equation: SDE) and probabilistic (Fokker-Planck equation: FPE) viewpoints. The state space of agent actions is a compact domain in a finite-dimensional Euclidean space. The SDE is of the McKean-Vlasov type and is driven by jumps with finite variations, whereas the FPE is a nonlinear integro-differential equation. A key to our mathematical analysis of the FPE is adding a regularization factor into the cost constraint to mitigate the blow-up of the logit function. This property carries over to the McKean-Vlasov SDE. We also present a numerical method based on a na\\\"ive finite difference discretization for computing the FPE along with demonstrative computational examples, showing that the regularization method does not critically affect numerical solutions while preventing the breakdown of numerical computation. Finally, we conduct another demonstrative application study in which environmental, energy, and fishery resources intersect.",
+  "categories": [
+   "math.DS"
+  ],
+  "authors": [
+   "Hidekazu Yoshioka",
+   "Tomohiro Tanaka"
+  ],
+  "url": "https://arxiv.org/abs/2607.09106",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Logit dynamics under cost constraints require regularization to prevent blow-up in numerical solutions. The paper formulates the system as a McKean-Vlasov SDE and Fokker-Planck equation, adding a regularization factor to enable finite-difference discretization and numerical analysis.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09181",
+  "source": "arXiv",
+  "title": "Optimal finite element error estimates and Newton convergence for a quasilinear elliptic problem with mixed boundary conditions",
+  "abstract": "The article studies finite element approximations of a quasilinear elliptic heat-conduction problem with inhomogeneous mixed boundary conditions. The conductivity tensor is matrix-valued, anisotropic, possibly nonsymmetric, and dependent on both position and temperature, rendering the problem nonlinear, nonmonotone, and nonpotential. The nonlinear algebraic system arising from the Galerkin discretization is solved using Newton's method, with a posteriori guarantees provided by a computable Newton-Kantorovich criterion and a mesh-dependent stopping rule that ensures that the algebraic error is asymptotically negligible relative to the discretization error. Since the discrete solution need not be unique, we prove that every discrete solution satisfies the optimal convergence rates. The analysis combines mixed-boundary elliptic regularity with an Aubin-Nitsche duality argument adapted to the quasilinear setting. Numerical experiments in two and three dimensions confirm the predicted convergence rates and demonstrate the feasibility of the proposed criterion.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Mihai Bucataru"
+  ],
+  "url": "https://arxiv.org/abs/2607.09181",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Quasilinear elliptic problems with mixed boundary conditions require rigorous finite element error analysis. The paper proves optimal convergence rates for Galerkin discretizations and couples them with a Newton-Kantorovich criterion to control algebraic errors in Newton's method.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09195",
+  "source": "arXiv",
+  "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+  "abstract": "Large language model (LLM) agents are increasingly expected to play a central role in AI-driven scientific discovery. Equipped with broad knowledge, flexible reasoning, and tool use, they have the potential to autonomously explore and solve scientific problems by repeatedly proposing hypotheses, testing them, and revising their beliefs in the light of the evidence. In current agents, however, these hypotheses, tests, and belief updates are buried in unstructured logs, and no mechanism lets the agent or the human researcher audit that process. Here we propose the Hypothesis Evolution Protocol (HEP), an agent harness that provides hypothesis generation, evaluation, and evolution as explicit, auditable operations. On materials-science research tasks, a HEP-equipped agent operates the hypothesis--test--evidence--belief cycle that planning-style agents lack, generalizes across research questions, and exploits the protocol more fully as the base LLM becomes more capable. These results mark a step toward auditable AI scientists, whose scientific reasoning can be inspected, verified, and built upon.",
+  "categories": [
+   "cs.AI",
+   "cond-mat.mtrl-sci"
+  ],
+  "authors": [
+   "Izumi Takahara",
+   "Teruyasu Mizoguchi"
+  ],
+  "url": "https://arxiv.org/abs/2607.09195",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLM-based scientific discovery lacks structured hypothesis evolution tracking. The paper proposes the Hypothesis Evolution Protocol (HEP), making hypothesis generation, testing, and belief updates explicit and auditable for materials science tasks.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09217",
+  "source": "arXiv",
+  "title": "OpenProver: Agentic and Interactive Theorem Proving with Lean 4",
+  "abstract": "In this system paper, we present OpenProver, an open-source system for LLM-driven automated theorem proving (ATP) with integrated Lean 4 formal verification. OpenProver integrates a Planner-Worker-Verifier architecture inspired by recent ATP agentic systems such as Aletheia. A Planner agent maintains a compact Whiteboard scratchpad and an unbounded Repository of intermediate findings, and decomposes mathematical work into parallel Workers. OpenProver is fully open-source, offers reproducible evaluation through automatic formal verification of generated proofs, and provides an interactive terminal interface for human-guided proof search. In interactive mode, OpenProver allows the human operator to monitor and steer the proof search process, motivated by the established human-AI synergy in interactive code generation. To showcase the potential for quantitative ablation experiments enabled by automatic formal verification, we evaluate OpenProver on ProofNet and compare it with a simple baseline. OpenProver is publicly available at https://github.com/kripner/OpenProver.",
+  "categories": [
+   "cs.AI",
+   "cs.MS"
+  ],
+  "authors": [
+   "Mat\\v{e}j Kripner",
+   "Milan Straka"
+  ],
+  "url": "https://arxiv.org/abs/2607.09217",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Automated theorem proving requires reproducible verification and human guidance. OpenProver implements a Planner-Worker-Verifier architecture with Lean 4 integration, enabling both automated and interactive proof search with formal verification.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09297",
+  "source": "arXiv",
+  "title": "Inertia-Aware Optimal Power Flow Using PINN in IBR-Dominated Power Systems",
+  "abstract": "The problem of Optimal Power Flow (OPF) is central to the secure and economic operation of modern power systems. However, increasing renewable energy penetration, and decreasing system inertia pose significant challenges to conventional optimization-based OPF solvers. While machine learning approaches have demonstrated substantial computational speed-ups, purely data-driven methods often suffer from data dependency, limited generalization, and lack of guaranteed physical feasibility. This paper suggests a physics-informed neural network (PINN) framework for solving the OPF problem in renewable energy-dominated, low-inertia power systems. In contrast to conventional OPF formulations, the model explicitly incorporates a location-aware inertia constraint based on the concept of system inertia strength, which accounts for the electrical distance between generation units and disturbance locations. Simulation results on a 6 GW test system demonstrate high accuracy. The mean absolute error (MAE) for both the training and testing datasets is approximately 0.045% of the total system capacity. The findings demonstrate that the proposed PINN framework is capable of producing highly accurate OPF solutions while ensuring compliance with both physical laws and inertia-related constraints. Overall, the findings highlight the potential of physics-informed learning to enable secure, efficient, and computationally scalable OPF for future low-inertia power systems.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Mahyar Tofighi-Milani",
+   "Sajjad Fattaheian-Dehkordi",
+   "Franz Martin Rohrhofer",
+   "Matti Lehtonen"
+  ],
+  "url": "https://arxiv.org/abs/2607.09297",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Low-inertia power systems require OPF solutions that respect location-aware inertia constraints. The paper develops a PINN framework that explicitly enforces inertia strength constraints derived from electrical distance to disturbance locations.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09348",
+  "source": "arXiv",
+  "title": "DKCD: Domain Knowledge-Enhanced Causal Discovery from Unstructured Data",
+  "abstract": "Causal discovery from unstructured data is a challenging yet underexplored task in high-expertise domains such as healthcare, finance, and education. Existing methods typically leverage the general knowledge of large language models (LLMs) to identify causal factors from unstructured data and annotate them into structured data for causal graph construction. However, they remain limited by two key challenges (CHs): (CH1) insufficient identification of latent factors, which are implicit in the data yet essential for causal discovery, due to the lack of domain-specific knowledge; and (CH2) unreliable factor annotation, caused by the lack of domain-grounded reasoning, which propagates errors to the resulting causal graphs. To address these challenges, we introduce a novel Domain Knowledge-enhanced Causal Discovery framework (DKCD) for causal discovery from unstructured data in high-expertise domains with three interconnected components: (1) Knowledge Mining: It retrieves relevant domain knowledge based on observable factors to support subsequent causal reasoning. (2) Knowledge-guided Causal Reasoning: Reasoning with relevant knowledge, it discovers latent causal factors to address CH1 and generates key causal clues for more accurate data annotation to address CH2. (3) Causal Structure Discovery: It constructs the final causal graphs based on a more complete factor set and accurate annotations. Experiments on two domain-specific datasets show that DKCD significantly improves both causal factor identification and causal graph construction.",
+  "categories": [
+   "cs.CL"
+  ],
+  "authors": [
+   "Xin Li",
+   "Jin Li",
+   "Shoujin Wang",
+   "Kun Yu",
+   "Fang Chen"
+  ],
+  "url": "https://arxiv.org/abs/2607.09348",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Causal discovery from unstructured data in expert domains suffers from latent factor omission. DKCD integrates domain knowledge retrieval and causal reasoning to identify latent factors and construct causal graphs via a three-stage pipeline.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09382",
+  "source": "arXiv",
+  "title": "Learning Physics-Informed Surrogate Model of Linear Elastic Displacement Fields from Geometry",
+  "abstract": "This work aims to develop a fast and physically consistent surrogate model for real-time structural health monitoring of fractured elastic domains. We propose a physics-informed DeepONet framework that predicts displacement fields from both boundary conditions and fracture geometry, using a dedicated encoding strategy for the latter and without relying on finite-element-generated training data. The traction-free condition on the fracture boundary is imposed weakly through a localized penalty term. The presented numerical example focuses on one representative fracture geometry, demonstrating the feasibility of the formulation and laying the groundwork for extensions to surrogate modeling across diverse fracture geometries.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Rodolphe Barlogis",
+   "Ferhat Tamssaouet",
+   "Quentin Falcoz",
+   "St\\'ephane Grieu"
+  ],
+  "url": "https://arxiv.org/abs/2607.09382",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "physics-informed-ml"
+  ],
+  "summary": "Real-time structural health monitoring of fractured elastic domains requires fast displacement field prediction. The paper develops a physics-informed DeepONet that encodes fracture geometry and weakly enforces traction-free boundary conditions through localized penalty terms.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09392",
+  "source": "arXiv",
+  "title": "Full cross-correlation inversion for quantitative passive imaging with time-harmonic acoustic waves",
+  "abstract": "We consider the inverse problem for the quantitative reconstruction of physical properties in the context of passive imaging, where ambient wavefields are used to infer a medium. The data are modeled as a superposition of waves generated by stochastic sources. In this work, we focus on time-harmonic acoustic wave propagation and assume that the stochastic sources exciting the medium are zero-mean and spatially uncorrelated. Under these assumptions, the expected value of the cross-correlation between signals recorded at two locations can be related to the deterministic Green's function and the covariance of the source terms. We follow a first-order formulation of the wave equation, which enables the treatment of correlations between different types of wavefields. A numerical framework is developed for the resulting nonlinear inverse problem. The quantitative reconstruction is carried out using an iterative minimization scheme, in which the gradient of the misfit functional is computed via the adjoint-state method. Numerical experiments in two and three dimensions are performed using synthetic data, and inversions based on the expected value of cross-correlations are compared with those relying on direct wavefield measurements from active-source acquisitions.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "math.AP"
+  ],
+  "authors": [
+   "Jean Dutheil",
+   "Florian Faucher"
+  ],
+  "url": "https://arxiv.org/abs/2607.09392",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Quantitative reconstruction of physical properties from passive acoustic wavefield data requires solving a nonlinear inverse problem. The paper develops an adjoint-state method for iterative minimization using cross-correlation measurements derived from stochastic sources and Green's functions.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09446",
+  "source": "arXiv",
+  "title": "Topology-Preserving Mesh Adaptation for Sharp-Interface Multiphase PFEM",
+  "abstract": "This paper presents a robust, fully Lagrangian framework based on the Particle Finite Element Method (PFEM) capable of simulating multiphase flows with an arbitrary number of immiscible phases. Interface-tracking methods can sometimes suffer from numerical diffusion or allow the underlying mesh resolution to prematurely dictate topological changes. To address these limitations, we introduce a dynamic mesh adaptation strategy that naturally preserves sharp geometric interfaces without relying on classical constrained triangulation. A node-empty disk is assigned to each segment of the discretized interface, ensuring that the edge is part of the Delaunay triangulation. Our approach decouples the interface physics from the grid size, allowing the integration of sub-grid physical models to properly govern topological changes independently of the user-defined mesh size. The capabilities and accuracy of the framework are validated against standard multiphase benchmarks, closely matching references while maintaining a remarkably low overall node count. We demonstrate the scalability and geometric versatility of the method, in particular with a challenging 16-phase Rayleigh-Taylor simulation.",
+  "categories": [
+   "cs.CE",
+   "cs.CG"
+  ],
+  "authors": [
+   "F\\'elix Ruyffelaere",
+   "Michel Henry",
+   "Jonathan Lambrechts",
+   "Jean-Fran\\c{c}ois Remacle"
+  ],
+  "url": "https://arxiv.org/abs/2607.09446",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Interface tracking in multiphase PFEM simulations risks numerical diffusion or mesh-driven topological errors. The paper introduces dynamic mesh adaptation with node-empty disks to preserve sharp interfaces while decoupling physics from grid size.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09474",
+  "source": "arXiv",
+  "title": "ProofCouncil: An LLM Agent for Solving Open Mathematical Problems",
+  "abstract": "Large language models (LLMs) have shown increasing promise in solving open problems in mathematics. However, their performance can be further improved through agentic workflows tailored to real-world mathematical practice. To this end, we introduce ProofCouncil, a mathematical agent that is designed to tackle open problems using an author-critic architecture. ProofCouncil served as a submission to the second batch of FirstProof, a challenge consisting of 10 real-world mathematical problems that agents must solve autonomously. Its submissions for 6 of the 10 problems were judged by the referees to be correct up to at most minor revisions, showing the best performance among participating teams. We also evaluate ProofCouncil on 30 open problems collected from mathematical researchers. Among the 21 solutions that received human feedback, 5 were judged completely correct, 2 more were judged promising pending final verification, and a further 8 contained useful partial progress. In this short paper, we describe the development of ProofCouncil and the agent-building library used to create it, which we release as open source to the community.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Johannes Schmitt",
+   "Tim Gehrunger",
+   "Jasper Dekoninck",
+   "Gergely B\\'erczi",
+   "Uri Kreitner",
+   "Liam Price",
+   "David Holmes"
+  ],
+  "url": "https://arxiv.org/abs/2607.09474",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Solving open mathematical problems autonomously requires agentic workflows. The paper develops ProofCouncil, an LLM-based author-critic system that achieved top performance in the FirstProof challenge by iteratively generating and verifying proofs.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09574",
+  "source": "arXiv",
+  "title": "On Maximal Total Entropy Production Models for Steady Evaporation of a Calorically Perfect Polyatomic Gas",
+  "abstract": "This study investigates the boundary conditions for fluid-dynamic equations at the interface of a gas and its condensed phase during steady evaporation of a polyatomic gas. Evaporation curves illustrating the dependence of the temperature and pressure ratios on the Mach number are considered for a calorically perfect gas whose molecules behave like rigid rotors. At the condensed phase, complete absorption conditions are assumed. Also an extension to cases in which a part of the molecules is diffusely reflected at the condensed phase is also considered. We revisit the half-space evaporation problem for polyatomic gases based on previous results, applied to a slightly modified entropy functional. The structure of the (modified) maximal total entropy production curves is investigated, and simple functions that accurately fit the numerical results are proposed. Functions of the proposed form, with modified coefficients, also fit the evaporation curves previously obtained by different numerical methods surprisingly well. The approximation is performed for different numbers of internal degrees of freedom or ratios of specific heats. Simple functions that depend on the ratio of specific heats are found to fit the obtained evaporation curves for different ratios of specific heats very well.",
+  "categories": [
+   "math.AP",
+   "math-ph",
+   "math.MP"
+  ],
+  "authors": [
+   "Niclas Bernhoff",
+   "Eddie Wadbro"
+  ],
+  "url": "https://arxiv.org/abs/2607.09574",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Modeling steady evaporation of polyatomic gases requires boundary conditions preserving thermodynamic consistency. The paper analyzes maximal entropy production models, deriving simple fitting functions for evaporation curves across specific heat ratios.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09645",
+  "source": "arXiv",
+  "title": "Deep Gaussian Processes on Directed Acyclic Graphs",
+  "abstract": "Many real-world processes can be represented as compositions of functions along a directed acyclic graph (DAG). In causal modelling, these correspond to the underlying mechanisms; in engineering, to multiple fidelity levels; and in gene-regulatory networks, to transcription factors. These functions are partially observed across the DAG, with noisy and heterogeneously sampled measurements, posing significant challenges for reconstruction, uncertainty propagation, and inference. To tackle these challenges, we place priors over functions and naturally arrive at Deep Gaussian Processes over DAGs. We theoretically study their prior-collapse behaviour, and the effect of graph topology and intermediate observations on the preservation of information. We obtain almost-sure lower bounds on the asymptotic frequency of depths at which the distinction between inputs is preserved, identify broad kernel classes for which these hold, and prove an observation by \\cite{dunlop2018} on the role of input connections. We offer a structured variational approximation that retains graph dependencies, preserves compositional uncertainty, and captures the explaining-away behaviour of colliders. Finally, we empirically validate our theoretical results and our methodology, and model a latent-collider DAG, a protein signalling network, and a multi-fidelity heavy-ion collision emulation task, attaining state-of-the-art performance while recovering low-fidelity contributions and yielding interpretability of the simulator hierarchy.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "math.ST",
+   "stat.CO",
+   "stat.ME",
+   "stat.TH"
+  ],
+  "authors": [
+   "Federico L. Perlino",
+   "Oliver Hamelijnck",
+   "Adam M. Johansen",
+   "Theodoros Damoulas"
+  ],
+  "url": "https://arxiv.org/abs/2607.09645",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Modeling functions on DAGs with uncertainty propagation requires structured probabilistic methods. The paper introduces Deep Gaussian Processes over DAGs with a variational approximation preserving graph dependencies and compositional uncertainty.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09311",
+  "source": "arXiv",
+  "title": "An extension of a theorem of Chevet",
+  "abstract": "We adopt a modern approach to extend a comparison inequality of Chevet for Gaussian processes to a broader class of functions. Furthermore, we consider centered Gaussian random vectors associated with a family of $n+1$ vectors on the unit sphere $S^{n-1}$ and investigate configurations of the vertices for which these new functionals could be maximum for the regular simplex.",
+  "categories": [
+   "math.FA",
+   "math.PR"
+  ],
+  "authors": [
+   "Olivier Gu\\'edon (LAMA)",
+   "Fabien Souli (LAMA)"
+  ],
+  "url": "https://arxiv.org/abs/2607.09311",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Extending Chevet's comparison inequality for Gaussian processes to broader function classes. The paper investigates configurations of Gaussian random vectors on the unit sphere where certain functionals are maximized, focusing on the regular simplex.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09503",
+  "source": "arXiv",
+  "title": "What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility",
+  "abstract": "A fundamental challenge in 3D reconstruction and robotic localization is co-visibility: determining which image pairs share overlapping visible surfaces, particularly in scenarios with minimal overlap. We demonstrate that VGGT implicitly encodes co-visibility as an emergent behavior: without any supervision for this task, its internal representations exhibit a clear hierarchical structure mirroring that of large language models, i.e. early layers build a 3D-aware scene representation, while late layers act as dedicated co-visibility reasoners. In particular, we identify layer L17 as a negative anchor that consistently routes non-co-visible pairs for this backbone, regardless of the evaluation setting, providing task-grounded evidence of layer specialization in a geometry-grounded foundation model. Building on this, we introduce Co-VGGT, which freezes VGGT and trains only a lightweight layer-wise mixture-of-experts head (less than 7.5M parameters) to classify co-visibility from RGB alone, treating each layer as a specialized expert whose geometric abstraction is adaptively weighted per input pair. On the Co-VisiON benchmark, Co-VGGT surpasses the human annotation baseline and improves over prior work by more than 25% pairwise and 10% multiview. Pairwise predictions are well-calibrated (ECE=0.030), enabling direct use as edge weights in visibility graphs for downstream SfM and SLAM pipelines without post-hoc correction. Code and data are available.",
+  "categories": [
+   "cs.CV",
+   "cs.AI"
+  ],
+  "authors": [
+   "Filippo Ziliotto",
+   "Luciano Serafini",
+   "Lamberto Ballan",
+   "Tommaso Campari"
+  ],
+  "url": "https://arxiv.org/abs/2607.09503",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Probing geometric foundation models for co-visibility in 3D reconstruction. The paper identifies layer specialization in VGGT and introduces a lightweight mixture-of-experts head to classify co-visibility from RGB, leveraging implicit 3D-aware representations.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09572",
+  "source": "arXiv",
+  "title": "A Cloud-Accessible Open-Source Framework for the Electromagnetic Modelling of Applied Superconductors",
+  "abstract": "We present the H-cloud formalism, a cloud-accessible and open-source finite-element framework for electromagnetic modelling of applied superconductors. The proposed method expresses the nonlinear electromagnetic response of type-II superconductors in a curl-conforming discretisation based on N\\'ed\\'elec finite elements, where the tangential applied-field boundary condition, nonlinear E-J power law, and fully implicit time-discrete residual are stated explicitly at the variational level, all within a scripted Python finite-element workflow. The weak form is used as the basis for forward simulation and for extension to adjoint differentiation and PDE-constrained optimisation, while keeping the governing assumptions, boundary conditions, and solver structure fully visible to the user. The implementation is realised in Firedrake with UFL and PETSc-backed nonlinear solvers, allowing the identical script to run on local machines and in browser-accessible environments such as Google Colab without reformulating the problem. The method is verified on the canonical magnetisation benchmark of a cylindrical superconductor under Bean-like penetration conditions and then benchmarked against an independently constructed COMSOL model for a practical high temperature superconducting Bi2212 wire. Across matched mesh studies, the open-source workflow reproduces the commercial-reference magnetisation loops to within approximately \\(1\\%\\) , with relative peak errors below 1.5%, while cloud execution preserves the same numerical solution at rather modest additional runtime considering the use of (freely available) reduced hardware resources. The proposed framework provides a rigorous, reproducible, and portable route for superconducting simulation, benchmarking, and future optimisation-led modelling of applied and functional superconductors, shareable and executable into open cloud environments.",
+  "categories": [
+   "cond-mat.supr-con",
+   "math-ph",
+   "math.MP"
+  ],
+  "authors": [
+   "Yusen Guo",
+   "Alberto Paganini",
+   "Harold S. Ruiz"
+  ],
+  "url": "https://arxiv.org/abs/2607.09572",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Electromagnetic modeling of superconductors with classical finite-element methods requires handling nonlinear responses and boundary conditions. The paper introduces the H-cloud formalism, a Firedrake-based finite-element framework with explicit variational weak forms for forward simulation, adjoint differentiation, and PDE-constrained optimization, validated against COMSOL benchmarks.",
+  "added": "2026-07-13"
+ },
+ {
+  "id": "arxiv:2607.09639",
+  "source": "arXiv",
+  "title": "A Quantum Path to Partial Differential Equations",
+  "abstract": "Partial differential equations are a promising application area for fault-tolerant quantum algorithms, but the subject lies between two communities with different languages: numerical analysis and quantum computation. These lecture notes provide a numerically grounded introduction for readers entering from either field. Block encoding is the organizing principle: once a discretized differential operator is embedded in a unitary, primitives such as quantum singular value transformation, Hamiltonian simulation, linear combinations of unitaries, amplitude amplification, and measurement can be assembled into algorithms for elliptic, hyperbolic, and parabolic PDEs. Each chapter begins with a standard finite difference or finite element discretization and follows the full pipeline from the continuous PDE to quantum encoding, transformation, and extraction of a quantity of interest. Particular attention is paid to the factors governing end-to-end performance, including discretization error, state preparation, normalization, postselection, and measurement cost. A final chapter introduces nonlinear problems through Carleman and Koopman-von Neumann linearizations. The aim is not a comprehensive survey or a claim of universal quantum advantage, but a mathematically transparent entry point and a shared vocabulary for researchers in both communities.",
+  "categories": [
+   "quant-ph",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Xiantao Li"
+  ],
+  "url": "https://arxiv.org/abs/2607.09639",
+  "published": "2026-07-13",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "foundations"
+  ],
+  "summary": "Quantum algorithms for PDEs require bridging numerical analysis and quantum computation. The paper organizes quantum PDE solvers via block encoding and primitives like QSVT, with end-to-end pipelines for elliptic/hyperbolic/parabolic PDEs and nonlinear linearizations.",
+  "added": "2026-07-13"
  }
 ]
