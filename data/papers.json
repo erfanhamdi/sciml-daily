@@ -27318,5 +27318,631 @@
   ],
   "summary": "Detecting human falls as stability-loss events requires modeling coupled dynamical systems. The paper introduces a dual-LTC neural architecture with physics-informed stability metrics and Lyapunov-inspired classifiers to capture mechanical inertia and support-system dynamics.",
   "added": "2026-07-15"
+ },
+ {
+  "id": "arxiv:2607.13042",
+  "source": "arXiv",
+  "title": "Automatic Differentiation from Scratch: How PyTorch Computes Gradients in Physics-Informed Neural Networks",
+  "abstract": "This paper traces, with explicit numerical values, how PyTorch's automatic differentiation (AD) engine computes gradients for Physics-Informed Neural Network (PINN) training -- a setting that requires two levels of differentiation: computing the physics derivative $\\hat{y}'(t)=d\\hat{y}/dt$ through the network, and computing parameter gradients $\\nabla_\\theta L$ of a loss that itself depends on $\\hat{y}'(t)$. Using a 1-3-3-1 multilayer perceptron and the initial value problem $y'(t)+y(t)=0$, $y(0)=1$, we trace the complete pipeline at every node: the computational graph built during the forward pass, the reverse-mode backward traversal that computes all 22 parameter gradients in a single pass, and the graph-on-graph mechanism by which \\texttt{create\\_graph=True} enables correct differentiation through the physics-informed residual. Every adjoint value is verified against the hand derivations of Tahimi (2026), connecting the $P/Q$ sensitivity framework to the vector--Jacobian products used by PyTorch's autograd engine.",
+  "categories": [
+   "cs.LG",
+   "cs.MS",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Abdeladhim Tahimi"
+  ],
+  "url": "https://arxiv.org/abs/2607.13042",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation",
+   "physics-informed-ml"
+  ],
+  "summary": "Understanding how automatic differentiation computes gradients in PINNs requires tracing two levels of differentiation. The paper explicitly traces PyTorch's AD pipeline for a PINN solving an IVP, verifying adjoint values against hand derivations to connect vector–Jacobian products to sensitivity frameworks.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13074",
+  "source": "arXiv",
+  "title": "When is the combined load identifiable from a stress-intensity profile? A coupled forward-inverse study on SIFBench finite-element data",
+  "abstract": "This work studies the inverse problem of recovering the relative magnitudes of the tension, bending, and bearing loads acting on a crack from its stress-intensity-factor profile along the crack front, using the public SIFBench finite-element data. The central claim is not forensic load recovery on field cases, but a rigorous characterization of when the combined load is identifiable at all, together with an estimator that returns calibrated uncertainty precisely in the regimes where it is not. For a known geometry the forward map from loads to profile is exactly linear, and identifiability reduces to a single geometric question: whether the three elementary load profiles are linearly independent as functions along the front. When they are nearly dependent, many different load combinations produce almost the same profile and the inverse problem is illposed; the analysis shows that the degree of ill-posedness is controlled by an intrinsic stability margin, not by the conditioning number alone. A single crack-front operator serves both as a structured forward surrogate and as the differentiable map required by a simplex-constrained, set-valued inverse estimator. On the SIFBench corner-crack scenario the empirical behaviour matches the theory: the typical geometry is well posed while a sizable minority is genuinely ill-posed, so a point estimate is reliable on the majority and provably uninformative on the rest. Validation is on controlled synthetic noise; no real fracture cases are used or claimed.",
+  "categories": [
+   "math.NA",
+   "cond-mat.mtrl-sci",
+   "cs.AI",
+   "cs.LG",
+   "cs.NA"
+  ],
+  "authors": [
+   "Giansalvo Cirrincione",
+   "Filippo Grassia"
+  ],
+  "url": "https://arxiv.org/abs/2607.13074",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Determining when combined mechanical loads are identifiable from stress-intensity profiles requires analyzing linear independence of FE-derived load profiles. The paper develops a set-valued inverse estimator with calibrated uncertainty, validated on SIFBench FE data to distinguish well-posed and ill-posed cases.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13129",
+  "source": "arXiv",
+  "title": "Tensor-Network Finite Elements for Analytic Operator Equations",
+  "abstract": "Operator equations (OEs) underpin quantitative modeling across science and engineering. Finite-element (FE) methods discretize continuous OEs into finite-dimensional algebraic systems, whereas tensor networks (TNs) provide flexible variational representations of correlated discrete systems. Here, we develop a framework that connects FE with TN for analytic OEs. The power of this method comes from its ability to convert highly non-linear partial differential equations into linear matrix equations. In particular, we show that FE discretization induces a hierarchy of multilinear interaction tensors, through which differential, integral, nonlinear, memory, and delay equations can be expressed within a common algebraic structure. The resulting systems are reformulated as weighted-residual optimization problems over TN degrees of freedom. Matrix-product-state calculations for one-dimensional linear and nonlinear diffusion reproduce conventional solutions with controlled error while preserving continuity and Neumann boundary conditions. The framework provides a common variational language for analytic OEs and establishes a direct connection between FE numerical formalism and TN variational algorithms, offering a general foundation for TN-based and quantum-inspired approaches to solving OEs.",
+  "categories": [
+   "math.NA",
+   "cond-mat.other",
+   "cs.NA",
+   "hep-lat",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Abhijatmedhi Chotrattanapituk",
+   "Michael J. Landry",
+   "Chu-Liang Fu",
+   "Mingda Li"
+  ],
+  "url": "https://arxiv.org/abs/2607.13129",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Solving analytic operator equations with finite elements requires handling multilinear interaction tensors. The paper unifies FE discretization with tensor-network variational optimization, demonstrating solutions to linear/nonlinear PDEs while preserving boundary conditions.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13174",
+  "source": "arXiv",
+  "title": "Towards end-to-end optimization in multimaterial 3D printing",
+  "abstract": "Multimaterial 3D printing enables the fabrication of functionally graded components, but optimizing their spatial material distribution alongside structural topology remains a formidable challenge due to high-dimensional design spaces and complex constitutive modeling. This paper presents an end-to-end computational framework integrating sparsified physics-augmented neural networks with finite-element-based topology optimization. By extracting closed-form, composition-aware hyperelastic constitutive laws from experimental data, this approach facilitates exact symbolic differentiation via the adjoint state method implemented with FEniCSx, efficiently circumventing the bottlenecks of applying neural network constitutive models. This pipeline is deployed on soft robotic gripper applications, demonstrating continuous composition optimization for highly anisotropic contact responses, and the concurrent optimization of macroscopic topology and material distribution under non-failure stretch constraints. This methodology could replace laborious empirical prototyping, establishing interpretable machine-learning models as practical, robust design primitives for advanced multimaterial additive manufacturing.",
+  "categories": [
+   "physics.comp-ph",
+   "cs.CE",
+   "cs.RO"
+  ],
+  "authors": [
+   "Xue-Ling Luo",
+   "Steven Yang",
+   "Jingye Tan",
+   "Robert F. Shepherd",
+   "Noy Cohen",
+   "Nikolaos Bouklas"
+  ],
+  "url": "https://arxiv.org/abs/2607.13174",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Optimizing multimaterial 3D printing requires concurrent topology and material distribution design. The paper integrates physics-augmented neural networks with FEM-based topology optimization, deriving closed-form hyperelastic laws for exact adjoint differentiation.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13224",
+  "source": "arXiv",
+  "title": "Gaussian FSBP operators: Comparison and application to numerical methods for hyperbolic conservation laws",
+  "abstract": "Function-space summation-by-parts (FSBP) operators enable conservative and energy-stable numerical methods for hyperbolic conservation laws based on general, non-polynomial approximation spaces. Recent works show that using generalized Gaussian quadrature significantly reduces the number of grid points required compared to existing constructions that have mostly focused on equidistant grids. In this paper, we compare open and closed FSBP operators constructed with generalized Gaussian quadratures and apply them to numerically solve hyperbolic conservation laws. Furthermore, to support open node distributions, we extend the FSBP framework by introducing function-space exact extrapolation operators and operationalize them in numerical schemes for solving hyperbolic conservation laws. Our numerical experiments include the one-dimensional linear advection, non-viscous Burgers, and compressible Euler equations of gas dynamics. We observe that applying FSBP operators in numerical schemes can improve efficiency and accuracy. Notably, we demonstrate these advantages in more challenging time-dependent settings compared to other recent works on Gaussian FSBP operators.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Jan Glaubitz",
+   "Henry Haase",
+   "Philipp \\\"Offner",
+   "Finnja Stafforst"
+  ],
+  "url": "https://arxiv.org/abs/2607.13224",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Function-space summation-by-parts operators enable conservative numerical methods for hyperbolic PDEs. The paper constructs Gaussian FSBP operators with extrapolation, demonstrating improved efficiency/accuracy in solving advection, Burgers, and Euler equations.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13246",
+  "source": "arXiv",
+  "title": "Reassessing Muon for Matrix Factorization",
+  "abstract": "Muon has recently emerged as a strong optimizer for large-scale deep learning, where it reshapes gradient updates through approximate orthogonalization and has been reported to outperform Adam and AdamW in large language model training. Its empirical success has motivated a growing body of theoretical work that interprets Muon as steepest descent under the spectral norm. Yet it remains unclear which of Muon's advantages stem from its update rule itself and which are artifacts of the scale, architecture, and data of modern deep networks. In this work, we isolate the optimizer from these confounding factors by studying Muon on a simple, well-understood, and spectrally structured problem: low-rank matrix factorization. Through a controlled comparison against carefully tuned adaptive baselines, we find that Muon does not consistently outperform AdamW in this setting and that several previously reported advantages are sensitive to hyperparameter choices. Our results provide a more nuanced picture of when spectrum-aware orthogonalization is beneficial and argue for evaluating modern optimizers on controlled problems in addition to end-to-end benchmarks.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Ali Parviz",
+   "Gal Mishne",
+   "Alex Cloninger"
+  ],
+  "url": "https://arxiv.org/abs/2607.13246",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Assessing the Muon optimizer's efficacy requires controlled studies on structured problems like low-rank matrix factorization. The paper compares Muon against AdamW in this setting, finding hyperparameter sensitivity challenges its purported advantages.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13253",
+  "source": "arXiv",
+  "title": "A linear, fully decoupled, and unconditionally energy-stable SAV-FEM for the Cahn--Hilliard--Navier--Stokes model",
+  "abstract": "In this paper, we develop a linear, fully decoupled, and unconditionally energy-stable fully discrete finite element scheme for the Cahn--Hilliard--Navier--Stokes (CHNS) system by employing the scalar auxiliary variable (SAV) approach. Unlike existing SAV-based formulations that typically introduce multiple auxiliary variables or additional techniques to handle different nonlinearities, we introduce only one scalar auxiliary variable together with a novel update of the auxiliary variable to reformulate all nonlinear terms arising from the Cahn--Hilliard and Navier--Stokes equations, yielding an equivalent reformulation of the original CHNS system. An implicit--explicit (IMEX) Euler scheme is applied for temporal discretization, where the linear terms are treated implicitly and the nonlinear terms explicitly, while a finite element method is adopted for spatial discretization. The resulting fully discrete scheme can be efficiently decomposed into two linear subproblems and one scalar quadratic algebraic equation, which significantly simplifies the implementation. Furthermore, we prove that the proposed scheme satisfies an unconditional discrete energy dissipation law and establish its stability with respect to several relevant norms. Optimal-order $L^2$ error estimates are also derived for the fully discrete finite element approximation. Finally, a series of numerical experiments are presented to verify the theoretical results and demonstrate the efficiency of the proposed method.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Jinting Yang",
+   "Nianyu Yi",
+   "Peimeng Yin"
+  ],
+  "url": "https://arxiv.org/abs/2607.13253",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Solving the Cahn–Hilliard–Navier–Stokes system with energy stability and decoupling is challenging. The paper introduces a linear, fully decoupled SAV-FEM scheme that uses one auxiliary variable and an IMEX Euler temporal discretization, proving unconditional energy stability and optimal error estimates.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13289",
+  "source": "arXiv",
+  "title": "Model predictive control for laser thermal processing: operator learning, closed-loop validation, and out-of-distribution analysis",
+  "abstract": "Laser-based thermal processing, such as laser powder bed fusion, requires tight regulation of the peak surface temperature: heat accumulates where the moving source re-enters previously heated material, driving the temperature out of its process window and causing defects. High-fidelity thermal models capture this physics but are too slow for online optimization, which motivates fast, differentiable, and generalizable surrogates. We develop and validate a complete surrogate-based control pipeline that regulates the maximum surface temperature of a moving laser on a 304-stainless-steel substrate. We also determine conditions under which our surrogate can be trusted inside the control loop by probing its out-of-distribution limits. A key component of our surrogate is a multi-step deep operator network bespoke for moving sources: its branch subnetwork encodes the future power and trajectory (position and velocity) sequence, while its trunk encodes the current peak temperature and the temperature at the future laser locations, yielding a one-shot five-step prediction. By way of illustration, we use this surrogate as a smooth (algebraic-rectifier) nonlinear program inside a receding-horizon model predictive controller solved in CasADi/IPOPT. The surrogate forward pass is over thousand times faster than the equivalent finite-difference steps. We show that aggregate open-loop accuracy is necessary but not sufficient for control-readiness: two surrogates with near-identical offline error behave drastically differently in closed loop. A controlled two-ensemble data design reduces a 91 K path-corner underprediction failure to 1.4 K, and a calibrated one-sided constraint margin of 13 K yields zero violations of the true upper bound on all tested paths.",
+  "categories": [
+   "math.OC"
+  ],
+  "authors": [
+   "Smajil Halilovic",
+   "Yuchen Zhang",
+   "Daniel M. Tartakovsky"
+  ],
+  "url": "https://arxiv.org/abs/2607.13289",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "differentiable-simulation"
+  ],
+  "summary": "Regulating maximum surface temperature in laser thermal processing requires fast differentiable surrogates. The paper develops a multi-step deep operator network for one-shot five-step prediction and integrates it into a CasADi/IPOPT model predictive controller, validating closed-loop performance.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13317",
+  "source": "arXiv",
+  "title": "A Weighted Integral-Regularized Finite Difference Scheme for the Tempered Fractional Laplacian",
+  "abstract": "The intrinsic singularity of the tempered fractional Laplacian (TFL) remains a major challenge in developing numerical methods that are simultaneously accurate, efficient, and easy to implement. We develop a weighted integral-regularized finite difference (WIRFD) method that regularizes the singular integrand via a multidimensional Taylor expansion incorporating a smooth window function. The resulting integral is decomposed into a regularized term, which is discretized by a punctured trapezoidal rule, and a directly evaluated correction term. For the multidimensional TFL operator, we derive an $O(h^{4-\\alpha})$ truncation error bound in the $l^{\\infty}$-norm for $\\alpha\\in(0,2)$ and $u\\in C^s(\\mathbb{R}^d)$ with $s\\geq 8$ by introducing a smooth auxiliary function together with the aliasing formula. For the one-dimensional TFL equation, we establish stability in both the $l^2$- and $l^{\\infty}$-norms and optimal $O(h^{4-\\alpha})$ convergence for $\\alpha\\in[1,2)$ based on the strict diagonal dominance of the discrete matrix and a lower bound for its minimum eigenvalue. The Toeplitz structure of the discrete matrix enables FFT-based matrix-vector multiplication, and the resulting linear systems are solved efficiently by a preconditioned conjugate gradient (PCG) method. Numerical experiments corroborate the theoretical results, demonstrating the accuracy, efficiency, and robustness of the proposed method.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Mingyi Wang",
+   "Lisen Ding",
+   "Dongling Wang"
+  ],
+  "url": "https://arxiv.org/abs/2607.13317",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [],
+  "summary": "The tempered fractional Laplacian's singularity complicates numerical discretization. The paper proposes a weighted integral-regularized finite difference method with a Taylor-expansion-based correction, achieving O(h^{4−α}) truncation error and FFT-accelerated solves.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13414",
+  "source": "arXiv",
+  "title": "Non-Expansive Two-Time-Scale Stochastic Approximation: A Fixed-Schedule One-Quarter Barrier and Bias-Corrected Acceleration",
+  "abstract": "Non-expansive two-time-scale stochastic approximation is governed by a slow stochastic Krasnoselskii--Mann fixed-point iteration rather than by contraction to a unique equilibrium. We study this regime under a contractive fast map and a non-expansive reduced slow map. We first prove a finite-horizon lower bound showing that, for any prescribed slow stepsize schedule $(\\beta_k)$, the classical KM residual scale $(\\sum_{i<N}\\beta_i(1-\\beta_i))^{-1}$ is worst-case sharp for the corresponding unregularized KM update. Combined with the raw fast-tracking leakage scale, this explains the previously observed $k^{-1/4+o(1)}$ last-iterate mean-square residual exponent. We then introduce a residual-preconditioned slow oracle that cancels the first-order dependence on the fast tracking error. In a nested Tikhonov-KM algorithm, the uncorrected oracle yields total-sample rate $T^{-1/4+o(1)}$, while the corrected oracle yields $T^{-1/3+o(1)}$. This improvement comes from changing the slow-oracle bias from first order to second order in the fast error after all inner-loop samples are counted. Finally, we show that the repeated inner-loop cost of the nested method can be avoided in a smooth derivative-oracle model. A single-loop algorithm that tracks both the fast equilibrium and the leakage preconditioner online achieves $T^{-1/2+o(1)}$ with $O(1)$ primitive samples per iteration.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Dhruv Sarkar",
+   "Vaneet Aggarwal"
+  ],
+  "url": "https://arxiv.org/abs/2607.13414",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Non-expansive two-time-scale stochastic approximation lacks tight convergence guarantees. The paper introduces a residual-preconditioned slow oracle and nested Tikhonov-KM algorithm, improving convergence via second-order bias cancellation and achieving T^{-1/2+o(1)} rates.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13566",
+  "source": "arXiv",
+  "title": "Spectral-Informed Neural Networks Outperform Spectral Methods in High-dimensional PDEs",
+  "abstract": "For low-dimensional problems ($d\\leq3$), spectral methods can achieve exceptionally high accuracy. For middle-dimensional problems ($4 \\leq d \\lesssim 10$), spectral methods remain feasible through specific techniques such as sparse grids or hyperbolic cross. However, for high-dimensional problems ($d\\gg 10$), spectral methods suffer frome the curse of dimensionality. Physics-informed neural networks (PINNs) have emerged as a promising approach to overcome this challenge, offering scalability to high dimensions, but often suffer from limited accuracy and efficiency. Recently proposed spectral-informed neural networks (SINNs) combine spectral methods with PINNs, operating directly in the spectral domain to avoid spatial derivative computations and to reduce memory consumption. In this work, we introduce Modified SINNs, which integrate coefficient decay scaling and basis embeddings motivated by harmonic analysis to enhance accuracy in high-dimensional problems and enable accurate approximation of unknown spectral coefficients. Numerical experiments on steady and time-dependent partial differential equations demonstrate that Modified SINNs outperform sparse grid spectral methods on middle-dimensional problems with incomplete spectral information and achieve superior accuracy compared to PINNs on high-dimensional problems.",
+  "categories": [
+   "math.NA",
+   "cs.AI",
+   "cs.CE",
+   "cs.LG",
+   "cs.NA"
+  ],
+  "authors": [
+   "Tianchi Yu",
+   "Ivan Oseledets"
+  ],
+  "url": "https://arxiv.org/abs/2607.13566",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "physics-informed-ml"
+  ],
+  "summary": "High-dimensional PDEs challenge spectral methods and PINNs. Modified spectral-informed neural networks integrate coefficient decay scaling and basis embeddings to outperform sparse grid spectral methods and PINNs.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13574",
+  "source": "arXiv",
+  "title": "Approximation of solutions of parameter-dependent problems by residual neural networks",
+  "abstract": "We develop a convergent scheme to train neural networks involving analytic activation functions based on gradient flows. Convergence properties are guaranteed by Lojasiewicz theory. The main advantage of this approach is its simplicity of implementation. The coefficients of the network are approximated by solving a system of ordinary differential equations. We test the method by constructing residual neural network approximations of solutions of parametric problems. The dependence of the solutions of simple ordinary differential equations on a few parameters is correctly reproduced. The solutions of inverse problems involving wave constraints which depend on a few parameters can be reasonably approximated, even in regions in which the problem is severely ill posed.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA",
+   "math.AP"
+  ],
+  "authors": [
+   "Ana Carpio"
+  ],
+  "url": "https://arxiv.org/abs/2607.13574",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Parametric ODE solutions require efficient approximation. The paper trains residual neural networks via gradient flows with Lojasiewicz-theory guarantees to reproduce parameter-dependent solutions.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13608",
+  "source": "arXiv",
+  "title": "Automatic Ordinary Differential Equations Discovery For Biological Systems Using Large Language Model Powered Agentic System",
+  "abstract": "Automatic scientific discovery has long been a goal of computational scholars - a machine that can discover nature's secrets on its own, moving computational systems beyond data-fitting tools toward the generation and refinement of mechanistic models of the universe. Recent advances in symbolic regression (SR) and large-language-model (LLM)-based agents suggest that such systems can recover equations from data, incorporate domain priors, and automate parts of the research workflow. However, most existing approaches either focus on narrow equation-discovery benchmarks or broad end-to-end automation pipelines, while biological systems remain comparatively underexplored. Here, we introduce the MEDA system, an LLM- and SR-powered agentic framework for discovering ordinary-differential-equation (ODE) models of biological and biologically inspired dynamical systems. MEDA retrieves background knowledge, defines admissible variables, generates mechanistic constraints, proposes candidate ODEs, and fits and evaluates them. We evaluate it across canonical model retrieval, reasoning-based extrapolation to unseen variants, and open-ended discovery, with and without experimental data. Across these settings, MEDA recovered the correct state variables, achieved strong structural recovery in retrieval and extrapolation tasks, and produced biologically plausible discovery-oriented models. Ablation and robustness analyses show that knowledge-guided formalization and mechanistic constraints are load-bearing components, whereas numerical fitting alone can preserve trajectory-compatible but biologically incorrect equations.",
+  "categories": [
+   "cs.AI",
+   "math.DS"
+  ],
+  "authors": [
+   "David Krongauz",
+   "Arad Zulti",
+   "Eran Segal",
+   "Teddy Lazebnik"
+  ],
+  "url": "https://arxiv.org/abs/2607.13608",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Automating ODE discovery for biological systems is challenging. The MEDA system combines LLM agents with symbolic regression to generate and evaluate mechanistic ODE models, guided by knowledge and constraints.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13609",
+  "source": "arXiv",
+  "title": "Gauge-Invariant, Parameter-Insensitive Regularization for Potential Recovery from Flow on Directed Graphs",
+  "abstract": "Recovering a latent potential from observed flow on a directed graph (a discrete Poisson problem with Dirichlet boundaries) is ill-posed, and the standard fix backfires: ridge regularization shrinks toward a gauge-meaningless origin, collapsing and reversing the recovered ordering ($+0.81\\to-0.42$ rank correlation against a planted ground truth). The gauge-invariant graph Dirichlet energy removes the hazard and delivers parameter-insensitivity: the estimate is stable across four orders of magnitude in $\\lambda$, whereas ridge inverts the ordering for every $\\lambda>0$. We prove the reduced solve is SPD and preserves dynamic range exactly where ridge collapses it, and localize absorbing boundaries from flow alone via a Poisson residual. The $H^1$ seminorm is classical; what is new is the gauge diagnosis, the parameter-insensitivity it buys, and an ablation showing the result is robust to the extraction method. On three public clickstream corpora the gauge-invariant estimate retains $28$--$41\\%$ of the interior dynamic range while ridge collapses to as little as $0.2\\%$. The same gauge invariance carries into graph neural networks -- neutralizing the constant mode per layer prevents the oversmoothing that collapses a deep directed GCN -- linking this classical inverse problem to a central question in graph learning.",
+  "categories": [
+   "cs.LG",
+   "cs.IR",
+   "eess.SP",
+   "stat.ML"
+  ],
+  "authors": [
+   "Mohammad Forouhesh"
+  ],
+  "url": "https://arxiv.org/abs/2607.13609",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Recovering potentials from flow on directed graphs is ill-posed with standard regularization. The paper introduces gauge-invariant graph Dirichlet energy regularization to stabilize estimates and preserve dynamic range.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13610",
+  "source": "arXiv",
+  "title": "Accelerating gas-network feasibility screening with a physics-informed graph neural network surrogate",
+  "abstract": "Large-scale gas-network scenario evaluation is a computational bottleneck in integrated energy-system planning, particularly when gas infrastructure interacts with power, heat, hydrogen, and sector-coupling pathways. Conventional nonlinear hydraulic solvers provide reliable feasibility assessment but are costly for stochastic screening, whereas unconstrained learning-based surrogates may produce hydraulically infeasible states. This study develops a physics-informed graph neural network surrogate for steady-state gas-network simulation and feasibility screening. The model uses an edge-centric architecture to predict pipe-level squared-pressure differences and flows. A differentiable projection layer enforces nodal mass conservation on predicted flows, while a Laplacian reconstruction maps edge pressure differences to topologically consistent nodal pressures. The framework is evaluated on GasLib-134, GasLib-135, and GasLib-582 using stochastically generated operating scenarios. On the meshed 582-node benchmark trained with 5000 scenarios, the surrogate achieves a pressure mean absolute error of 1.05~bar, corresponding to 1.3\\% of the realized pressure range, with $R^2 = 0.981$. Projected-flow predictions reach $R^2 = 0.972$, and mass-balance residuals are reduced to numerical precision, on the order of $10^{-5}$--$10^{-4}$~Nm$^3$/s. Compared with the MYNTS reference solver, inference is reduced from seconds to milliseconds, with the largest benchmark evaluated in less than 40~ms. Loadability and out-of-distribution stress-test evaluations demonstrate robust feasibility screening under high-load conditions, while strongly localized demand concentrations are identified as cases requiring solver-based verification near feasibility limits. The framework provides a physically constrained planning accelerator for high-volume scenario screening and prioritization.",
+  "categories": [
+   "cs.CE"
+  ],
+  "authors": [
+   "Dongrui Jiang",
+   "Jochen Garcke",
+   "Okan Akca",
+   "Jeremias Hollnagel",
+   "Bernhard Klaassen",
+   "Mehrnaz Anvari",
+   "Joachim M\\\"uller-Kirchenbauer"
+  ],
+  "url": "https://arxiv.org/abs/2607.13610",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "ml-numerical-methods"
+  ],
+  "summary": "Steady-state gas-network feasibility screening is computationally expensive. A physics-informed GNN surrogate with differentiable projection enforces mass conservation and Laplacian pressure reconstruction, accelerating scenario evaluation.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13611",
+  "source": "arXiv",
+  "title": "Error Analysis of a Fully-Discrete Implicit $\\theta$-Scheme with WG-FEM for Parabolic Singularly Perturbed Boundary Turning Point Problems",
+  "abstract": "In this article, we introduce a weak Galerkin finite element method (WG-FEM) for a class of parabolic singularly perturbed boundary turning point problems (SPBTPPs). The proposed numerical scheme employs an implicit $\\theta$-scheme for temporal discretization over a uniform mesh and applies WG-FEM spatial discretization on a layer-adapted Shishkin mesh. Rigorous stability estimates are established for both the semi-discrete and fully-discrete formulations. Furthermore, we derive error estimates in the energy norm and prove that the convergence of the scheme is uniform with respect to the perturbation parameter. Numerical tests are conducted to verify the theoretical findings and illustrate the efficiency of the proposed method. In addition, the theoretical framework developed in this work lays the foundation for future extensions to higher-dimensional problems using ADI-type operator splitting WG-FEM schemes.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Aayushman Raina",
+   "Srinivasan Natesan"
+  ],
+  "url": "https://arxiv.org/abs/2607.13611",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Parabolic singularly perturbed boundary turning point problems require robust numerical methods. The paper develops a weak Galerkin FEM with Shishkin meshes and implicit θ-scheme, proving uniform convergence w.r.t. perturbation parameter.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13763",
+  "source": "arXiv",
+  "title": "MxGPS: Multiplex Graph Transformers for a Power Grid Foundation Model",
+  "abstract": "Single-task fine-tuning of graph neural networks (GNNs) for power grid problems exhibits a systematic failure mode: models that achieve the lowest in-distribution error degrade the most under topology shift. We term this topology overfitting: the tendency of task-specific gradient signals to encode relational structure particular to the training topologies rather than the underlying physics, causing models to fail on unseen grids despite strong in-distribution performance. To expose and address this failure mode, we introduce MxGPS (Multiplex GPS), a multiplex graph transformer that runs K task-specialised GPS branches over a shared node encoder, jointly trained on Static State Estimation (SSE) and AC Power Flow (PF) via a self-supervised pre-training and multi-task fine-tuning protocol, with a cross-branch attention module evaluated in ablation. The joint SSE+PF objective forces the shared encoder to simultaneously satisfy complementary gradient signals, preventing it from overfitting to topology-specific relational structure. Under a 3-fold sliding-window cross-validation spanning four unseen topologies (14-, 24-, 162-, and 300-bus), MxGPS attains 0% boundary violation rate (BVR) on all four zero-shot Power Flow topologies. Critically, models with substantially lower in-distribution PF error degrade by 190% to 1400% under topology shift, whereas MxGPS degrades by only 39%, an inversion that directly implicates topology overfitting as the failure mechanism rather than insufficient model capacity. With only 1.6M parameters (12x fewer than the GridFM reference baseline), MxGPS demonstrates that multi-task joint training is a principled and parameter-efficient mechanism for topology-agnostic generalisation in power grid foundation models.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Charilaos Papaioannou",
+   "Ioannis Tsantilas",
+   "Dimitris Giannakakos",
+   "Vasilis Michalakopoulos",
+   "Sotiris Pelekis",
+   "Vangelis Marinakis",
+   "Arsam Aryandoust",
+   "Antonello Monti",
+   "Ricardo J. Bessa",
+   "Perdo P. Vergara",
+   "Jochen Cremer",
+   "Elissaios Sarmas"
+  ],
+  "url": "https://arxiv.org/abs/2607.13763",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Power grid models overfit to training topology-specific structure, degrading under distribution shift. The paper introduces MxGPS, a multiplex graph transformer jointly trained on static state estimation and AC power flow to enforce physics-aware generalization via multi-task learning.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13866",
+  "source": "arXiv",
+  "title": "Evaluation of State-of-the-Art Deep Learning Architectures for Aerodynamical Predictions",
+  "abstract": "Surrogate models are used to substitute classical numerical solvers in engineering applications where the computational cost of the latter becomes infeasible. For instance, in aerodynamics such models offer cost-effective alternatives to computational fluid dynamics in problems such as shape optimization and load analysis, which oftentimes require high-fidelity simulations for a multitude of different parameter combinations. A specific class of deep learning-based surrogate models termed operator learning models directly approximates the solution operators to the partial differential equations underlying the physical phenomenon, thereby learning to replicate solutions to entire families of problems. However, while nowadays numerous architectures of this type get published, corresponding benchmark studies remain scarce. In this article, we advance the study of AI-based surrogate methods by thoroughly benchmarking four state-of-the-art operator learning models on their aptitude for applications in aerospace engineering. In two experiments, we assess the models' capabilities of predicting the surface pressure distribution on two-dimensional airfoil shapes of varying complexity and on an industrial-scale three-dimensional aircraft configuration. Thereby, we evaluate the models' abilities to fulfill frequent requirements in aerodynamics such as capturing discontinuities (shocks) in the solutions, scalability towards excessive amounts of mesh points and handling of data scarcity. Accompanied by a careful analysis, our findings drive forward the field of AI-based surrogate modeling by providing detailed insights into the strengths and weaknesses of the individual architectures, thus allowing to identify priorities for future developments. In particular the Bi-Stride Multi-Scale Graph Neural Network and Transolver(++) are highlighted as promising surrogate models for aerodynamical applications.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Jan Scherz",
+   "Derrick Hines",
+   "Philipp Bekemeyer"
+  ],
+  "url": "https://arxiv.org/abs/2607.13866",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Operator learning models need evaluation on aerodynamics tasks with shock capture and scalability. The paper benchmarks four state-of-the-art operator models (e.g., Bi-Stride Multi-Scale GNN, Transolver++) on 2D airfoil and 3D aircraft pressure prediction.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13888",
+  "source": "arXiv",
+  "title": "An Order-One Lower Bound on the Error of Scalable Generalized Multiscale Finite Element Space Constructions",
+  "abstract": "Several coefficient-adapted methods provide optimal-order approximation for elliptic equations with rough coefficients. Prominent examples include localized orthogonal decomposition, multiscale spectral GFEM, and constraint energy-minimizing GMsFEM. Their proven accuracy, however, is obtained by allowing the localization radius or the local spectral dimension to grow as the coarse scale \\(H\\) tends to zero. Classical MsFEM has an FEM-like local construction, but its available analysis does not give a coefficient-uniform \\(\\bigO(H)\\) energy estimate over the full bounded-contrast measurable coefficient class. Motivated by this gap, we formalize an FEM-like notion of structural scalability. A chosen spatially local basis has uniformly bounded overlap, hence \\(\\bigO(1)\\) stiffness entries per row, and every anchored local span uses coefficient information from only \\(\\bigO(1)\\) coarse-element layers. We prove that no deterministic construction satisfying fixed bounds on the support radius, coefficient-information radius, and local multiplicity can converge uniformly over the coefficient class. In fact, its worst-case \\(L^2\\)-to-energy Galerkin error remains bounded below by a positive constant independent of \\(H\\). The lower bound is established using a fixed finite family of smooth periodic coefficients and smooth right-hand sides. The proof combines coefficients that coincide on local patches, a finite-dimensional approximation lower bound for corrector fields, a positive-density mesh argument, and strong periodic corrector convergence. Thus uniform optimal accuracy requires at least one local construction parameter to grow or requires coefficient information beyond the fixed-visibility model.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Changqing Ye"
+  ],
+  "url": "https://arxiv.org/abs/2607.13888",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Scalable FEM-like methods with fixed support radius cannot achieve uniform accuracy over rough coefficients. The paper proves a lower bound on Galerkin error using periodic coefficients and corrector analysis, showing structural scalability requires growing parameters.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.14001",
+  "source": "arXiv",
+  "title": "Lyapunov Exponent as Physics-Informed Dense Reward: RL Discovery of Stabilization Beyond the Kapitza Pendulum",
+  "abstract": "We suggest using the Lyapunov characteristic exponent (LCE) as a dense reward signal for the reinforcement learning problem of stabilizing the inverted pendulum with vertical motion. With LCE, the agent not only successfully found the oscillatory motion known as the Kapitza pendulum but also damped the pendulum's pivoting, leaving it in a strictly upright position.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Slava Andrejev"
+  ],
+  "url": "https://arxiv.org/abs/2607.14001",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Stabilizing an inverted pendulum with vertical motion requires novel control strategies. The paper uses the Lyapunov characteristic exponent as a dense RL reward to discover both Kapitza-like oscillatory stabilization and damped upright balancing.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.14086",
+  "source": "arXiv",
+  "title": "Leveraging unlabelled data for generalizable neural population decoding",
+  "abstract": "Robust and accurate neural decoders are integral to neurotechnologies such as brain-computer interfaces and closed-loop experiments. Recent work has shown that tokenizing neural data at the spike level facilitates multi-session pretraining and delivers state-of-the-art decoding performance. However, current spike-based models are restricted to supervised learning (SL), limiting training to datasets with paired behavioural labels. To address this limitation, we introduce MOJO (Masked autOencoder-based JOint training), a training framework for spike-tokenizing models that jointly leverages self-supervised learning (SSL) via masked autoencoding and SL objectives. We evaluate MOJO on three spiking datasets spanning monkey motor cortex during reaching tasks and multi-regional mouse recordings during vision and decision making tasks, demonstrating superior performance over purely SL-trained models. This improvement is especially pronounced when training with limited labelled data, particularly in few-shot finetuning, where only a small amount of labelled data from a new session is available. Incorporating SSL also yields more interpretable neuronal representations, improving performance on brain region classification and spike-statistics prediction without explicit optimization for these tasks. We further show that MOJO generalizes beyond spiking data to human electrocorticography during speech, where it continues to outperform purely SL-trained models and achieves performance comparable to neuro-foundation models (NFMs) designed specifically for continuous signals. Overall, augmenting spike-tokenizing models with SSL improves performance in label-impoverished settings and enables the use of unlabelled data across various tasks and species, while generalizing to other neural modalities. These results suggest a path towards more flexible and scalable data usage when training NFMs.",
+  "categories": [
+   "cs.LG",
+   "q-bio.NC"
+  ],
+  "authors": [
+   "Ximeng Mao",
+   "Nanda H. Krishna",
+   "Avery Hee-Woon Ryoo",
+   "Matthew G. Perich",
+   "Guillaume Lajoie"
+  ],
+  "url": "https://arxiv.org/abs/2607.14086",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Neural decoding models struggle with limited labeled data across sessions. The paper introduces MOJO, a joint SSL+SL framework for spike-tokenizing models that improves few-shot generalization and interpretability via masked autoencoding.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2509.06130",
+  "source": "arXiv",
+  "title": "A general framework for knowledge integration in machine learning for electromagnetic scattering using quasinormal modes",
+  "abstract": "Neural networks have been demonstrated to be able to accelerate the modeling and inverse design of optical and electromagnetic devices by serving as fast surrogates for electromagnetic solvers. Nevertheless, such neural networks can be unreliable and normally require extreme amounts of data to train. Here it is shown that these limitations can be alleviated by constraining neural-network models using prior knowledge about the governing physics. We propose a universal physics-informed neural network framework for electromagnetic scattering based on the quasinormal mode expansion of the scattering matrix. The neural networks learn the resonant structure underlying the scattering spectrum, are guaranteed to obey energy conservation and causality, and are shown to have significantly improved data efficiency for photonic-crystal slabs and all-dielectric free-form metasurfaces. Furthermore, the framework allows additional problem-specific constraints, such as losslessness, symmetries, and number of modes, to be imposed manually when they are available. The method can be applied to a wide range of optical and electromagnetic devices owing to the generality of the quasinormal mode formalism.",
+  "categories": [
+   "physics.optics",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Viktor A. Lilja",
+   "Albin J. Sv\\\"ardsby",
+   "Timo Gahlmann",
+   "Philippe Tassin"
+  ],
+  "url": "https://arxiv.org/abs/2509.06130",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Neural networks for electromagnetic scattering lack physics constraints and data efficiency. The paper integrates quasinormal mode expansions into NNs to enforce energy conservation, causality, and resonant structure, improving data efficiency for metasurfaces.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.12810",
+  "source": "arXiv",
+  "title": "Symmetry-Informed Deep Learning for Electromagnetic Scattering",
+  "abstract": "Deep learning can accelerate the modeling of electromagnetic devices by replacing costly simulations with neural networks trained to map design parameters to scattering parameters. However, data efficiency remains a central bottleneck, as training data is typically generated through expensive numerical simulations. Here we show that symmetry provides a powerful and largely untapped route to overcoming this limitation in electromagnetic scattering problems. Leveraging the equivariance of Maxwell's equations, we obtain general transformation rules that map symmetries of electromagnetic devices to corresponding transformations of their scattering parameters. This enables both systematic data augmentation and the construction of exactly equivariant neural networks. We implement the framework for both discrete and continuous symmetry groups and demonstrate its effectiveness on photonic-crystal slabs and free-form diffraction gratings. Incorporating symmetry improves data efficiency by an order of magnitude compared to standard architectures, while equivariant models additionally enforce physical constraints exactly. Our approach is general and complementary to existing physics-informed strategies, provides a first-principles framework for constructing physically grounded surrogate models, and establishes symmetry as a unifying inductive bias for data-efficient and physically consistent learning in computational electromagnetics and beyond.",
+  "categories": [
+   "physics.optics",
+   "cond-mat.mtrl-sci",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Viktor A. Lilja",
+   "Philippe Tassin"
+  ],
+  "url": "https://arxiv.org/abs/2607.12810",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Data efficiency in electromagnetic scattering models is limited. The paper enforces Maxwell symmetry equivariance via systematic data augmentation and exactly equivariant NNs, improving photonic-crystal and grating modeling by 10x data efficiency.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13107",
+  "source": "arXiv",
+  "title": "DeepCormack: Fermi surface tomography using model-based data-driven algorithms",
+  "abstract": "The experimental reconstruction of the 3D two-photon momentum density (TPMD) via angular correlation of electron-positron annihilation radiation (ACAR) is a particularly useful method for studying material Fermi surfaces. It does not rely on low temperatures, UHV conditions, or strong magnetic fields, and enables the study of the spin-resolved electronic structure of materials. Yet, it remains a challenging inverse problem. Typically, 10^8 positron annihilation events are measured for 3--6 projections of the TPMD at different angles. The standard reconstruction approach is an ACAR adaptation of Cormack's method (the MCM) that leverages the inherent symmetry in the crystal's structure. However, the poor signal-to-noise ratio means collecting data of sufficient quality for Fermi surface studies can take months per sample. We present DeepCormack, a family of data-driven model-based reconstruction algorithms that augments the MCM by integrating supervised deep-learning models (CNN, MLP, and UNet) at various stages. To overcome the lack of large experimental training sets, we propose a method which leverages singular value decomposition with dynamic mode decomposition to generate realistic synthetic TPMD volumes, requiring only a single reference momentum density computed via density functional theory. On test data, DeepCormack improves reconstruction quality over MCM by about 8.5 dB PSNR at 200M counts and remains stable at reduced counts, enabling significantly faster acquisition times. Generalisation to experimental data depends strongly on how well the training distribution from the reference momentum density matches the sample. We therefore recommend pairing DeepCormack with a DFT calculation of the target material to create sample-specific training data. Our proposed method offers either much higher quality reconstructions, or enables significantly faster ones, on the order of weeks.",
+  "categories": [
+   "cond-mat.mtrl-sci",
+   "cond-mat.str-el",
+   "cs.LG"
+  ],
+  "authors": [
+   "Georg F. B. Lovric",
+   "Bryn Drury",
+   "Carola-Bibiane Sch\\\"onlieb",
+   "Stephen B. Dugdale",
+   "Ander Biguri"
+  ],
+  "url": "https://arxiv.org/abs/2607.13107",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Reconstructing 3D two-photon momentum density from ACAR data is slow and noise-prone. DeepCormack integrates deep learning with the MCM algorithm, using synthetic DFT-based training data to improve reconstruction quality and reduce acquisition time.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13204",
+  "source": "arXiv",
+  "title": "Efficient Computing for Medical Image Acquisition and Reconstruction",
+  "abstract": "Medical imaging systems such as CT, MRI, PET, and SPECT do not directly acquire images. Instead, they measure physical signals that encode anatomical or physiological information, and image reconstruction recovers the underlying image by solving an inverse problem. Although these imaging modalities are governed by different imaging physics, they share a common computational framework that naturally connects medical physics, linear algebra, probability, numerical optimization, and efficient computing. As medical imaging systems acquire increasingly large and higher-dimensional datasets, image reconstruction has become one of the primary computational bottlenecks in modern medical imaging. Advanced reconstruction methods, including analytical reconstruction, iterative optimization, and statistical model-based reconstruction, substantially improve image quality while reducing radiation dose or scan time, but at significantly increased computational cost. Efficient computing has therefore become essential for achieving clinically practical reconstruction times. This chapter presents a unified computational perspective on medical image acquisition and reconstruction across CT, MRI, PET, and SPECT. It first reviews the imaging physics and data acquisition process for each modality and derives a generalized mathematical framework for image reconstruction. Building on this framework, the chapter discusses analytical, iterative, and statistical reconstruction methods together with their computational characteristics. Finally, it examines efficient computing considerations, including optimization algorithms, physics-aware forward operators, memory-efficient implementations, and parallel computing strategies. Together, these topics demonstrate how the integration of imaging physics, mathematical modeling, and efficient computing enables accurate and scalable medical image reconstruction.",
+  "categories": [
+   "eess.IV",
+   "cs.CV",
+   "math-ph",
+   "math.MP"
+  ],
+  "authors": [
+   "Xiao Wang",
+   "Jayasai Rajagopal",
+   "Md Safaiat Hossain",
+   "Peng Chen",
+   "Mohamed Wahib",
+   "Enzhi Zhang",
+   "Emma J. Reid"
+  ],
+  "url": "https://arxiv.org/abs/2607.13204",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "foundations"
+  ],
+  "summary": "Medical image reconstruction requires solving inverse problems efficiently across modalities. The paper reviews analytical, iterative, and statistical methods, emphasizing computational frameworks and optimization strategies for scalable implementations.",
+  "added": "2026-07-16"
+ },
+ {
+  "id": "arxiv:2607.13918",
+  "source": "arXiv",
+  "title": "Partially Correlated Verifier Cascades in LLM Harnesses: Concave Log-Odds, Polynomial Reliability, and Blind-Spot Ceilings",
+  "abstract": "Serial verification gates are a core reliability primitive in LLM harnesses: a candidate answer is returned only if $k$ verifier calls all accept it. Under conditionally independent gates, the recent Odds Law (arXiv:2606.15712) shows that posterior log-odds grow linearly in $k$, so failure decays exponentially, and states that \"a tight theory of partially correlated verifier cascades remains open.\" This note gives a minimal such theory. Modeling the per-instance false-accept rate on the generator's own errors as a latent variable $\\alpha \\sim G$ (de Finetti), the exact cascade posterior is $\\ell_k = \\ell_0 - \\ln m_k$, with $m_k$ the $k$-th moment of $G$. Then: (i) $\\ell_k$ is concave in $k$ for every non-degenerate $G$ -- the Odds Law is its tangent at the first gate and an upper bound; (ii) for Beta$(a,b)$ latents, failure decays polynomially, $1-r_k \\asymp k^{-b}$, with correlation parameter $\\rho_v = 1/(a+b+1)$; (iii) a blind-spot atom of mass $1-\\pi$ at $\\alpha=1$ caps the evidence extractable from any number of gates at $-\\ln(1-\\pi)$ nats, so reliability saturates below 1; (iv) letting the true-accept rate also vary ($\\beta \\sim H$) yields a trichotomy -- gates eventually always help, plateau, or actively harm -- decided by the upper-tail exponents of $G$ and $H$, with closed-form crossover $k^\\dagger$. The mechanism is survivorship: errors surviving gates are the high-$\\alpha$ ones. The theory is measurable: $R$ repeated verdicts per instance identify the first $R$ moments of $G$, so two verdicts identify $\\rho_v$; beta-binomial likelihood and NPMLE recover the reliability curve and the ill-posed ceiling. In synthetic tests, independence-based extrapolation underestimates failure by 20x at $k=5$ and ~3000x at $k=10$; the correlated fit at $R=8$ tracks held-out depths. The practical lever is decorrelation -- changing model family, modality, or evidence source -- not adding gates.",
+  "categories": [
+   "math.ST",
+   "cs.AI",
+   "cs.LG",
+   "stat.TH"
+  ],
+  "authors": [
+   "Jiangang Han"
+  ],
+  "url": "https://arxiv.org/abs/2607.13918",
+  "published": "2026-07-16",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Understanding the reliability of verifier cascades in LLM harnesses requires modeling partial correlations. The paper develops a mathematical theory using latent variables and moment analysis to characterize cascade posterior log-odds, failure decay rates, and reliability ceilings.",
+  "added": "2026-07-16"
  }
 ]
