@@ -28934,5 +28934,222 @@
   ],
   "summary": "Dynamic portfolio optimization under transaction costs and multi-period strategies is challenging. The paper formulates it as an HJB equation solved via PINNs trained on offline data, translating signals into cost-aware allocations with improved Sharpe ratios.",
   "added": "2026-07-17"
+ },
+ {
+  "id": "arxiv:2607.15289",
+  "source": "arXiv",
+  "title": "A persistent-homology-Gaussian prior for solving infinite-dimensional Bayesian inverse scattering problems",
+  "abstract": "Bayesian inference methods have been developed to address inverse problems in function spaces where the unknown parameters are of infinite dimension. However, conventional Gaussian priors remain inadequate for reconstructing discontinuous or sharply varying target functions encountered in practical applications like obstacle reconstruction. Although hybrid priors have emerged as a promising solution, significant challenges remain in developing theoretically rigorous and computationally tractable frameworks in engineering applications. To address these issues, we propose a persistent-homology-Gaussian (PHG) prior for solving the acoustic obstacle scattering inverse problem in the infinite-dimensional Bayesian setting, which combines a weighted persistence-based regularization term with a periodic Gaussian reference measure through a Gibbs tilt. Then, the complex boundary is represented by a log-radial function on the unit circle, so that the reconstruction from far-field data is formulated as a function-space inverse problem. The well-posedness of the resulting posterior measure is established in the Hellinger, total variation, and Wasserstein-\\(p\\) metrics. Furthermore, the convergence of finite-dimensional posterior approximations is obtained, and posterior sampling is performed by a preconditioned Crank--Nicolson (pCN) method. Numerical experiments show that the proposed PHG prior yields accurate and stable reconstructions under more extensive noisy conditions, providing explicit control of multiscale topological features and better performance compared to other conventional priors.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Zhiyuan Wang",
+   "Hang Qi",
+   "Xiaofei Guan",
+   "Zhiliang Deng",
+   "Xiaomei Yang"
+  ],
+  "url": "https://arxiv.org/abs/2607.15289",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Reconstructing discontinuous functions in infinite-dimensional Bayesian inverse scattering problems is challenging with conventional priors. The paper introduces a persistent-homology-Gaussian (PHG) prior combining topology-aware regularization with a Gaussian reference measure, enabling stable reconstructions of acoustic obstacles from far-field data.",
+  "added": "2026-07-20"
+ },
+ {
+  "id": "arxiv:2607.15291",
+  "source": "arXiv",
+  "title": "A Physics-Informed Neural Network with a Modified Lorentzian Activation for Nonlocal Gradient-Flow Equations in Dynamic Density Functional Theory",
+  "abstract": "We develop a physics-informed neural network (PINN) framework for nonlocal partial differential equations arising in dynamic density functional theory (DDFT). Such equations are challenging for standard PINN methods because they involve nonlinearities, nonlocal interaction terms, and an underlying gradient-flow structure, often leading to slow convergence and difficult optimization. We adapt the PINN methodology to DDFT gradient-flow equations and introduce two computational components: a modified Lorentzian activation function that behaves approximately linearly for small inputs and decays toward zero as the input magnitude increases, and a precomputed discrete operator for evaluating the nonlocal convolution term efficiently during training. The method is tested on four examples in one and two space dimensions. In the first example, the exact stationary solution is known, while in the remaining cases the neural-network approximations are validated against reference solutions computed using continuous and discontinuous Galerkin finite element discretizations. Accuracy and physical consistency are assessed through $L^1$, $L^2$, and $L^\\infty$ errors, together with mass conservation and free-energy dissipation. The results show that the proposed activation function accelerates convergence relative to the standard $\\tanh$ function, while the overall framework maintains good agreement with the reference solutions and captures the expected gradient-flow behaviour. These findings demonstrate the potential of the proposed PINN framework for solving nonlocal gradient-flow equations arising in DDFT.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA"
+  ],
+  "authors": [
+   "Dimitrios Gourzoulidis",
+   "Soumaya Elkantassi",
+   "Serafim Kalliadasis"
+  ],
+  "url": "https://arxiv.org/abs/2607.15291",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Solving nonlocal gradient-flow equations in dynamic density functional theory (DDFT) with standard PINNs is challenging due to nonlocal interactions. The paper introduces a modified Lorentzian activation function and a precomputed nonlocal operator to improve PINN convergence and physical consistency in DDFT applications.",
+  "added": "2026-07-20"
+ },
+ {
+  "id": "arxiv:2607.15702",
+  "source": "arXiv",
+  "title": "A Statistical Formulation Gap for Nonlinear Multiscale Physics-Informed Learning",
+  "abstract": "We prove a finite-sample formulation gap for physics-informed learning of nonlinear multiscale elliptic equations. For a uniformly monotone divergence-form class with coefficients oscillating at scale $\\epsilon$, we derive a finite-width, finite-sample, and finite-iteration error bound for a boundary-compatible variational neural solver. Its stability, sampling, and optimization constants are independent of $\\epsilon$, while all unresolved scale dependence is isolated in the best-approximation error. We then construct a minimal obstruction witness for a one-dimensional periodic diffusion equation with cubic reaction. Already on the one-parameter family $v_c(x)=cx(1-x)$, the empirical Rademacher complexity of the strong residual is bounded below by a constant multiple of $(\\epsilon\\sqrt{N})^{-1}$, while that of the squared strong-residual loss is bounded below by a constant multiple of $(\\epsilon^2\\sqrt{N})^{-1}$. These are optimizer-independent properties of the sampled residual and loss classes, rather than neural-tangent-kernel conditioning statements. The corresponding variational energy complexity is bounded above by a constant multiple of $N^{-1/2}$ uniformly in $\\epsilon$. A tensor-product construction shows that the same obstruction rates persist in every spatial dimension. Numerical evaluation gives fitted exponents $0.9971$, $1.9860$, and $-0.0028$ for the strong residual, squared strong loss, and variational energy, respectively. Thus, differentiating the microscopic coefficient creates finite-sample statistical ill-conditioning. The variational formulation removes this statistical penalty but does not remove the separate multiscale approximation problem.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA",
+   "math.AP"
+  ],
+  "authors": [
+   "Ronald Katende"
+  ],
+  "url": "https://arxiv.org/abs/2607.15702",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Analyzing finite-sample errors in physics-informed neural solvers for multiscale elliptic PDEs. The paper derives ε-independent error bounds and identifies statistical ill-conditioning from differentiating microscopic coefficients, isolating unresolved scale dependence in approximation error.",
+  "added": "2026-07-20"
+ },
+ {
+  "id": "arxiv:2607.15751",
+  "source": "arXiv",
+  "title": "Trainable Spline Representations for Physics-Informed Learning",
+  "abstract": "This work introduces Physics-Informed Splines (PI-Splines), a structured spline-based architecture for physics-informed learning. Instead of representing the solution of a differential equation with a neural network, PI-Splines directly parametrize the unknown field through a tensor-product B-spline expansion with trainable control coefficients. This formulation preserves the residual-based training paradigm of Physics-Informed Neural Networks while providing compact support, explicit smoothness control, analytical derivatives, and a direct geometric interpretation of the trainable parameters. When compatible with the spline representation, boundary conditions can be imposed strongly by fixing suitable boundary control coefficients. The proposed method is evaluated on several benchmark problems of increasing difficulty and compared with standard physics-informed frameworks under matched governing equations, collocation sets, loss terms, and optimization procedures, so as to isolate the effect of the approximation architecture. Numerical experiments show that PI-Splines provide a competitive and stable alternative to neural physics-informed architectures, particularly in settings where structured representations, locality, and parameter efficiency are desirable.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Giovanni Canali",
+   "Nicola Demo",
+   "Gianluigi Rozza"
+  ],
+  "url": "https://arxiv.org/abs/2607.15751",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Addressing numerical stability and parameter efficiency in physics-informed learning. The paper introduces PI-Splines, a B-spline-based architecture with strong boundary condition enforcement, offering analytical derivatives and explicit smoothness control as an alternative to neural networks.",
+  "added": "2026-07-20"
+ },
+ {
+  "id": "arxiv:2607.15907",
+  "source": "arXiv",
+  "title": "A Semiparametric Framework for Stochastic Fundamental Diagram Modeling",
+  "abstract": "The stochastic fundamental diagram (SFD) provides a probabilistic description of the relationship between traffic density and flow or speed, enabling uncertainty-aware traffic modeling. However, existing stochastic models frequently struggle to accommodate rigorous physical constraints while retaining sufficient flexibility to capture complex nonlinear patterns. To address this, we propose a novel semiparametric SFD modeling framework by leveraging specially designed functional forms. These functions intrinsically satisfy physical constraints defined on the moments of the conditional flow distribution given traffic density while incorporating neural-network-based structures to capture complex empirical patterns. We derive a system of moment-matching equations to convert physical constraints into the parameterization of the conditional distribution, proving that a unique solution exists for the location-scale family of distributions, thereby guaranteeing model well-posedness. Furthermore, we demonstrate that the framework can be extended to non-location-scale distributions, including those requiring additional boundary constraints. Empirical evaluations on a real-world dataset reveal that our approach consistently outperforms representative baselines, delivering superior probabilistic accuracy and robust uncertainty quantification, particularly in congested regimes. Overall, the proposed framework provides a theoretically grounded and flexible foundation for stochastic traffic flow modeling.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Pengnan Chi",
+   "Xiaoliang Ma",
+   "Magnus Jansson",
+   "Magnus Nordenvaad"
+  ],
+  "url": "https://arxiv.org/abs/2607.15907",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Modeling stochastic traffic flow with physical constraints on density-flow relationships. The paper proposes a semiparametric framework combining neural networks and moment-matching equations to enforce constraints while capturing nonlinear patterns, validated on real-world traffic data.",
+  "added": "2026-07-20"
+ },
+ {
+  "id": "arxiv:2607.16003",
+  "source": "arXiv",
+  "title": "Accelerated Exact Recovery from Noisy Data via Averaging and Noise-Aware Adaptive Bregman-Kaczmarz",
+  "abstract": "The adaptive Bregman-Kaczmarz method recovers the exact, noise-free solution of a linear inverse problem even when every measurement it queries is corrupted, provided the corruption is fresh, independent and zero-mean. A block version was proposed for parallel hardware, but whether larger blocks actually converge faster was left open. We show the answer hinges on how the block is used: replacing the block sum with a block average collapses the analysis onto a single positive-semidefinite matrix, through which we prove that the guaranteed convergence improves monotonically with the batch size, with a total gain governed by the stable rank of the system matrix. We then address heterogeneous noise by introducing a noise-aware weighting that down-weights unreliable measurements, and prove it is strictly better than uniform weighting whenever the noise is not proportional to the row norms - a condition that essentially never holds in practice. The two improvements are compatible and their benefits combine. Finally, we show the adaptive step size interpolates automatically between a fast initial phase and a slowly vanishing tail that carries the error exactly to zero, and we explain how its hyperparameters can be estimated without knowing the true solution. Numerical experiments under sparse, heterogeneous noise illustrate these findings and confirm that the heuristic estimates produce effective step sizes.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "math.OC"
+  ],
+  "authors": [
+   "Lionel Tondji",
+   "Abakar A. Mahamat",
+   "Idriss Tondji"
+  ],
+  "url": "https://arxiv.org/abs/2607.16003",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Recovering exact solutions from noisy linear inverse problems requires robust iterative methods. The paper improves the adaptive Bregman-Kaczmarz method with block averaging and noise-aware weighting, proving convergence gains via stable rank analysis.",
+  "added": "2026-07-20"
+ },
+ {
+  "id": "arxiv:2607.16127",
+  "source": "arXiv",
+  "title": "CADAQUES: A Cost-Aware Dual Architecture for Query-Efficient Autonomous Discovery",
+  "abstract": "Autonomous discovery systems couple a resource that answers queries (a simulator, instrument, or analytic model) to an algorithm that selects what to query next. Most software frameworks for this loop inherit the control structure of numerical optimization: campaigns run for a fixed number of iterations, query costs are absent from the programming interface, and decision-making is treated as free. In practice, queries may differ in cost by orders of magnitude, and planners built on large language models or expensive surrogates consume resources of their own. Here we present CADAQUES, an open-source Python framework built on one architectural principle: cost is a first-class primitive of the discovery loop. CADAQUES separates the loop into two structural protocols, an Oracle that answers queries and a Driver that proposes them, and charges both evaluations and decisions against a common vector-valued budget spanning wall time, CPU hours, monetary cost, and language model tokens. An append-only ledger records, for each transaction, the cost declared before execution and the cost settled afterwards, making their discrepancy an observable property of the campaign. We evaluate the architecture by locating the critical temperature of the two-dimensional Ising model from noisy finite-size estimates against the exact thermodynamic-limit reference. In this noisy setting, strategies that concentrate around the best observed result can be misled by noise-induced peaks, whereas a schedule that explores with cheap low-fidelity queries and refines with higher-fidelity ones yields lower and less variable errors than high fidelity throughout, at the studied budget scale. Metering adds tens of microseconds per iteration, three orders of magnitude below the cheapest oracle query. The framework is MIT-licensed and archived at Zenodo (doi:10.5281/zenodo.21293589).",
+  "categories": [
+   "physics.comp-ph",
+   "cs.SE"
+  ],
+  "authors": [
+   "Jorge Bravo-Abad"
+  ],
+  "url": "https://arxiv.org/abs/2607.16127",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Autonomous discovery systems must balance query costs across fidelity levels. CADAQUES introduces a cost-aware framework with a vector-valued budget ledger, demonstrating efficient critical temperature estimation via low-fidelity exploration.",
+  "added": "2026-07-20"
+ },
+ {
+  "id": "arxiv:2607.15309",
+  "source": "arXiv",
+  "title": "DyneTrion: A Spatio-temporally Coherent Generative Emulator for Protein Dynamics Across Timescales",
+  "abstract": "Proteins function through coordinated motion across multiple spatial and temporal scales, underpinning processes such as ligand binding, allostery, and catalysis. However, accessing long-timescale conformational change through molecular dynamics (MD) simulations remains prohibitively expensive for systematic exploration across diverse systems. Here, we present DyneTrion, a generative protein dynamics emulator that jointly enforces geometric symmetry, structural consistency and temporal coherence within a single framework. DyneTrion uses a tri-attention architecture that integrates invariant point attention (IPA) for SE(3)-robust geometric updates, spatial attention anchored to a reference conformation to preserve structural integrity, and temporal attention to model correlated evolution across time frames. Across 100-ns MD trajectory simulation benchmarks, DyneTrion reproduces MD-derived flexibility, ensemble distributions and interaction observables while maintaining stereochemical validity during extrapolation. To evaluate long time-scale generalization, we introduce dynamicPDB, a dataset of over 10,000 proteins with up to 1-$\\mu$s all-atom trajectories at 10-ps resolution and accompanying physical annotations. On microsecond trajectories, DyneTrion preserves free-energy landscapes and metastable-state populations, and it supports large conformational propagation in apo-to-holo transitions and fast folders. Together, DyneTrion provides a scalable path from static structure prediction toward time-resolved, ensemble-faithful protein modeling. The code is publicly available at https://github.com/fudan-generative-vision/DyneTrion",
+  "categories": [
+   "q-bio.QM",
+   "cs.LG"
+  ],
+  "authors": [
+   "Kaihui Cheng",
+   "Zhiqiang Cai",
+   "Peng Tu",
+   "Yisong Yao",
+   "Limei Han",
+   "Libo Wu",
+   "Siyu Zhu",
+   "Tzuhsiung Yang",
+   "Yuan Qi"
+  ],
+  "url": "https://arxiv.org/abs/2607.15309",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Emulating long-timescale protein dynamics with MD simulations is computationally prohibitive. DyneTrion introduces a tri-attention architecture enforcing SE(3) symmetry and temporal coherence to generate ensemble-faithful trajectories.",
+  "added": "2026-07-20"
+ },
+ {
+  "id": "arxiv:2607.15560",
+  "source": "arXiv",
+  "title": "Evolutionary Algorithm-Guided LLMs for Physics-Informed Neural Network Design",
+  "abstract": "Physics-informed neural networks (PINNs) are unusually sensitive to interacting choices of architecture, activation, loss weighting, collocation, optimization, and constraint enforcement. Large language models (LLMs) can propose these choices, but independent recommendations do not accumulate experience from previously trained PINNs. We propose a closed-loop evolutionary algorithm that guides an LLM to generate complete, executable PINN configurations across generations, using measured training outcomes to determine subsequent search decisions. The algorithm maintains an evaluated population and lineage, applies parent-conditioned mutation and crossover, preserves elite and diverse solutions, rejects effective duplicates, and converts parent-relative successes and failures into the next-generation context supplied to the LLM. Every proposed configuration is executed directly under an exact optimizer-step budget. On a one-dimensional multiscale wave equation, two independent ten-generation runs trained 60 PINNs for 600,000 optimizer steps. In both runs, the best configuration appeared in the final generation, with best mean-squared error reduced by 2.97\\% and 95.38\\% relative to the initial population. The stronger run validated residual connections and increased depth on separate branches, combined them in a later generation, and then refined width and collocation density. It also revealed that low solution error can coexist with a high PDE residual. These results demonstrate the feasibility of evolutionary-algorithm-guided LLMs for PINN design on a controlled PDE while motivating broader, physics-aware evaluation.",
+  "categories": [
+   "cs.NE",
+   "cs.AI"
+  ],
+  "authors": [
+   "Xu Yang",
+   "Mingyang Yu",
+   "Jing Xu",
+   "Keqian Li"
+  ],
+  "url": "https://arxiv.org/abs/2607.15560",
+  "published": "2026-07-20",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Designing effective PINN configurations requires balancing architecture, loss terms, and optimization. The paper uses an evolutionary algorithm guided by LLMs to iteratively generate and evaluate PINN designs, improving multiscale wave equation solutions.",
+  "added": "2026-07-20"
  }
 ]
