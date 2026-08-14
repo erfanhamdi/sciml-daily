@@ -43829,5 +43829,717 @@
   ],
   "summary": "Environmental and operational variability (EOV) complicates damage detection in population-based structural health monitoring. The paper develops a Bayesian latent variable model using Gaussian processes and Kalman filters to identify and remove unmeasured EOV signals while preserving damage sensitivity.",
   "added": "2026-08-13"
+ },
+ {
+  "id": "arxiv:2608.12364",
+  "source": "arXiv",
+  "title": "Single-axis high-energy X-ray diffraction tomography for elastic residual strain: uniqueness and stability of solutions in the presence of equilibrium constraints",
+  "abstract": "It is well-established that single-axis Transverse Ray Transform tomography data from high-energy X-ray diffraction is insufficient for general reconstruction of three-dimensional elastic strain. In this paper we show that, when combined with the constraint of mechanical equilibrium, this problem becomes uniquely solvable for isotropic elastic samples with known elastic constants and non-zero Poisson's ratio. Building on the reconstruction framework of Desai and Lionheart [N.M. Desai, W.R.B. Lionheart, An explicit reconstruction algorithm for the transverse ray transform of a second rank tensor field from three axis data, Inverse Problems 32 (11) (2016) 115009], we formulate this constrained single-axis tomography problem in the Fourier domain and show that the resulting system is invertible everywhere outside a finite collection of measure zero characteristic planes. In the case of bounded samples, this is sufficient to establish uniqueness for reconstructions. We further derive conditional stability estimates that quantify the regularity requirements associated with reconstruction of the various strain components.",
+  "categories": [
+   "math.AP"
+  ],
+  "authors": [
+   "Christopher Wensrich",
+   "Sean Holman",
+   "Matias Courdurier",
+   "William Lionheart"
+  ],
+  "url": "https://arxiv.org/abs/2608.12364",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Single-axis X-ray diffraction tomography data alone cannot reconstruct 3D elastic strain. The paper combines equilibrium constraints with Fourier-domain inversion to achieve unique solvability for isotropic materials, proving uniqueness and deriving stability estimates.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12479",
+  "source": "arXiv",
+  "title": "Identifying changing partial differential equations using Sampled Local WeakIdent",
+  "abstract": "We propose Sampled Local WeakIdent (SLW-Ident), a framework for identifying changing governing equations from a single set of given data. Different from a typical approach of using finite element based approximation to represent varying coefficients, this paper explores a local approach in identification of differential equations. First, we present the power of Local WeakIdent which gives good local identification and is also computationally efficient with a small patch size, yet it can be sensitive to local perturbations. We propose SLW-Ident which stabilizes the identification process and also incorporates global information: we first sample patches in the whole given domain, identify equations for each sampled patch, then use residual error of these equations to find the transitions between different equations. We refer to a region where the support of the identified equation does not change to be a region of one equation. Within each region of one equation, we pick the most frequently identified equation as the identified equation, and find constant as well as varying coefficient PDEs within each region of one equation. This is justified by an uncertainty quantification theory that gives the relation between statistical error of dominant support selection and the number of patches. We provide various numerical experiments showing that SLW-Ident accurately recovers the regions of one equation and the governing equations for changing PDEs with varying coefficients even with noisy given data.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Wenbo Hao",
+   "Mengyi Tang",
+   "Sung Ha Kang"
+  ],
+  "url": "https://arxiv.org/abs/2608.12479",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "uq-inverse-problems"
+  ],
+  "summary": "Identifying changing partial differential equations from data is challenging due to varying coefficients. The paper introduces Sampled Local WeakIdent, which stabilizes local equation identification via patch sampling and residual-error-based region segmentation, handling noisy data.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12624",
+  "source": "arXiv",
+  "title": "Structure-preserving uncertainty quantification for GENERIC dynamics",
+  "abstract": "Structure-preserving machine learning embeds physical structure directly into model architectures, yet uncertainty quantification (UQ) for such hard-constrained models remains limited because standard UQ methods may violate the encoded admissibility conditions, require architectural modifications, or impose substantial computational costs. In this work, we propose Structure-Preserving Epistemic Neural Networks (S-PENNs), a general framework for UQ in scientific machine learning models with hard architectural constraints, and instantiate it for GENERIC (General Equation for Non-Equilibrium Reversible-Irreversible Coupling) dynamics. S-PENNs preserve the structural constraints of a pretrained model by attaching lightweight epinets to its constrained components, ensuring that every sampled realization remains physically admissible by construction. When applied to GENERIC dynamics, such a proposed framework yields thermodynamically consistent rollouts that preserve the first and second laws. Furthermore, we combine S-PENNs with split conformal prediction as a post-hoc calibration method to produce prediction intervals with finite-sample marginal coverage guarantees. We validate S-PENNs on three numerical examples: a harmonic oscillator coupled to a heat bath and an idealized chemical motor, both governed by ODEs, and a one-dimensional viscoplastic model governed by PDEs. Across all three examples, S-PENNs produce thermodynamically consistent stochastic realizations and well-calibrated prediction intervals while reducing the computational cost by about one to three orders of magnitude compared to deep ensembles. Although the present study focuses on GENERIC dynamics, S-PENNs can be extended more broadly to scientific machine learning models in computational mechanics with either hard or soft constraints.",
+  "categories": [
+   "cs.LG",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Zequn He",
+   "Celia Reina"
+  ],
+  "url": "https://arxiv.org/abs/2608.12624",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Uncertainty quantification for GENERIC dynamics must preserve thermodynamic constraints. The paper proposes Structure-Preserving Epistemic Neural Networks (S-PENNs), which attach lightweight epinets to enforce admissibility while enabling calibrated prediction intervals.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12671",
+  "source": "arXiv",
+  "title": "On the Expressive Power of Transformers",
+  "abstract": "Multi-layer transformers form the critical component of essentially all large language models (LLMs) in use today. Because of their ubiquity and computational capability, there is a rapidly growing body of work that aims to precisely calibrate the expressive power of transformers as language recognizers by comparing them against standard models of computation studied for decades by the theoretical computer science community. In this endeavor, circuit complexity has by and large emerged as the \"correct\" branch of computational complexity to analyze the expressive power of transformers; the reason is that parameterizing transformers by the various resources they use, such as attention and precision, leads to direct comparisons with different classes of circuits parameterized by resources such as type of gates, size, and depth. Here, we present an overview of selected results that delineate the expressive power of transformers using concepts and methods from circuit complexity.",
+  "categories": [
+   "cs.AI",
+   "cs.CC"
+  ],
+  "authors": [
+   "Phokion Kolaitis",
+   "Rik Sengupta"
+  ],
+  "url": "https://arxiv.org/abs/2608.12671",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The expressive power of transformers lacks precise characterization against computational models. The paper analyzes transformer architectures via circuit complexity, comparing attention and precision resources to circuit classes parameterized by gates, size, and depth.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12687",
+  "source": "arXiv",
+  "title": "Finding the Needle in a Haystack: Test-Time Analog Circuit Representation Adaptation for Bayesian Optimization",
+  "abstract": "Bayesian optimization (BO) is a sample-efficient framework for analog circuit topology search, where evaluating each candidate topology can require costly simulation. However, representation-based BO methods typically treat circuit embeddings as fixed after encoder training. This creates a mismatch between representation learning and optimization: embeddings learned to encode or reconstruct circuit structure are not necessarily organized according to the figure of merit (FoM) being optimized. This paper introduces Test-Time Analog Representation Adaptation for Bayesian Optimization (TTARO), an online deep-kernel BO framework that adapts circuit representations throughout the search process. Starting from pretrained circuit embeddings, TTARO jointly learns a nonlinear feature transformation and a Gaussian-process surrogate using the FoM labels of the circuits evaluated so far. Following each new evaluation, TTARO updates the representation and surrogate before selecting the next candidate. We compare TTARO with conventional Gaussian Process-based BO over fixed embeddings and with Deep Kernel Learning (DKL), which learns the representation only from the initial evaluated designs and keeps it fixed throughout the remainder of the search. By continually incorporating newly observed FoM labels into representation learning, TTARO aligns the search space with the optimization objective as BO progresses. In our experiments, TTARO reduces regret AUC by 15.2% on average relative to BO and by 20.7% relative to DKL across 40 encoder/kernel/acquisition settings, outperforming prior art in most settings with reductions as large as 46.7%.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Fin Amin",
+   "Sounak Dutta",
+   "Paul D. Franzon"
+  ],
+  "url": "https://arxiv.org/abs/2608.12687",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Bayesian optimization for analog circuit design struggles with fixed embeddings. The paper introduces TTARO, a deep-kernel BO framework that adapts circuit representations online by jointly learning feature transformations and Gaussian-process surrogates during optimization.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12762",
+  "source": "arXiv",
+  "title": "PROVE-RT: Generating Mechanized Theorem Prover Scripts for Real-Time Systems using LLMs",
+  "abstract": "Schedulability analysis is essential for certifying real-time systems, but existing tests are often developed through pen-and-paper proofs that are difficult to scale, validate, and maintain. Mechanized verification in PROSA/ROCQ offers a rigorous alternative, yet manually constructing such proofs requires substantial domain expertise and proof-engineering effort. Recent successes of large language models (LLMs) across a wide range of tasks make them promising candidates for generating PROSA/ROCQ scripts for mechanized theorem provers. However, state-of-the-art LLMs often lack the PROSA-specific knowledge required to correctly use its modeling abstractions and proof patterns. This paper introduces PROVE-RT, an LLM-assisted framework for generating PROSA/ROCQ scripts to mechanize schedulability analyses in real-time systems literature. PROVE-RT guides generation through dependency-aware informal sketches, retrieval from processed PROSA documentation, staged skeleton generation, and proof completion. We construct a mechanization-oriented corpus from 1, 191 real-time systems papers, containing 13, 134 informal sketches with dependency information. On a curated evaluation set, direct prompting of state-of-the-art LLMs fails to reliably generate valid PROSA mechanizations, whereas PROVE-RT achieves a success rate of 44.7%. These results show that retrieval-guided and staged LLM assistance can improve automated mechanization of schedulability analysis in PROSA/ROCQ.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Sadat Shahriyar",
+   "Shareef Ahmed",
+   "Abdullah Al Arafat"
+  ],
+  "url": "https://arxiv.org/abs/2608.12762",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Mechanizing schedulability analysis proofs for real-time systems is labor-intensive. The paper introduces PROVE-RT, an LLM-assisted framework that generates PROSA/ROCQ scripts via retrieval-augmented staged generation, improving automated theorem proving for applied mathematics in real-time systems.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12823",
+  "source": "arXiv",
+  "title": "BTF-PINN: Enforcing Dirichlet Boundary Conditions Without Boundary Training",
+  "abstract": "The homogeneous Dirichlet boundary value problem captures the core difficulty of solving Dirichlet problems with non-interpolatory methods. We propose BTF-PINN (Boundary-Training-Free Physics-Informed Neural Network), an interior-only strategy for solving homogeneous Dirichlet boundary value problems that requires no boundary training, boundary penalties, or boundary-conforming parametrizations. The key idea is to embed the essential boundary condition into a newly designed boundary-free loss function. We prove the equivalence between the proposed interior-only variational formulation and the original boundary value problem, establish a sharp threshold condition for the residual weight, and develop a convergence analysis based on the coercivity of the functional. Numerical experiments on high-dimensional problems, irregular geometries, and anisotropic elliptic equations demonstrate the effectiveness of BTF-PINN. Comparisons with standard boundary-penalty PINNs further show that BTF-PINN achieves superior boundary trace accuracy.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Wenyu Dong",
+   "Shuo Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2608.12823",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Enforcing Dirichlet boundary conditions in PINNs typically requires boundary training. The paper proposes BTF-PINN, an interior-only method that embeds boundary conditions into a variational formulation, eliminating boundary penalties while proving equivalence and convergence.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12833",
+  "source": "arXiv",
+  "title": "Finite element approximation of the linearized Cahn-Hilliard-Cook equation",
+  "abstract": "The linearized Cahn-Hilliard-Cook equation is discretized in the spatial variables by a standard finite element method. Strong convergence estimates are proved under suitable assumptions on the covariance operator of the Wiener process, which is driving the equation. The backward Euler time stepping is also studied. The analysis is set in a framework based on analytic semigroups. The main effort is spent on proving detailed error bounds for the corresponding deterministic Cahn-Hilliard equation. The results should be interpreted as results on approximation of the stochastic convolution, which is a part of the mild solution of the nonlinear Cahn-Hilliard-Cook equation.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Ali Mesforush",
+   "Stig Larsson"
+  ],
+  "url": "https://arxiv.org/abs/2608.12833",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [],
+  "summary": "The linearized Cahn-Hilliard-Cook equation requires accurate spatial discretization. The paper analyzes finite element approximations and backward Euler time stepping, proving strong convergence estimates under analytic semigroup theory.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12886",
+  "source": "arXiv",
+  "title": "A robust and optimal method for a sixth-order elliptic singular perturbation problem",
+  "abstract": "In this paper we propose a robust nonconforming finite method for a gradient-elastic Kirchhoff plate (GEKP) model with a small parameter $0<\\iota<1$. While the method employs an $H^3$ cubic finite element for the discrete space, it employs an interpolation mapping into an $H^2$ nonconforming finite element space in both the lower-order terms of the bilinear form and the right-hand side. Notably, the numerical method is robust with respect to the parameter $\\iota$ and uniformly convergent to order $h$ without any stabilized terms. Finally, some numerical experiments are performed to verify the theoretical findings.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Mingqing Chen",
+   "Jianguo Huang"
+  ],
+  "url": "https://arxiv.org/abs/2608.12886",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Solving a sixth-order elliptic singular perturbation problem for gradient-elastic Kirchhoff plates requires robust numerical methods. The paper introduces a nonconforming finite element method using H³ cubic elements and H² interpolation, achieving uniform convergence without stabilization.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13048",
+  "source": "arXiv",
+  "title": "DMDIntel: Interpreting Large Language Models via Dynamic Mode Decomposition",
+  "abstract": "In this work, we introduce DMDIntel which uses dynamic mode decomposition (DMD) to make the predictions made by LLMs in a classification task interpretable. It develops an input attribution pipeline, that first decomposes the hidden states of an LLM into prominent patterns, also known as modes, and then associates ranks to the input tokens based on the projection values on those modes. Rigorous experiments across three datasets and three model families consistently show that the ranked attribution of input tokens obtained using DMDIntel by far outperforms state-of-the-art techniques such as principal component analysis, integrated gradients and SHAP.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Amogh Joshi",
+   "Animesh Mukherjee",
+   "Sergey Utyuzhnikov"
+  ],
+  "url": "https://arxiv.org/abs/2608.13048",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Interpreting LLM hidden states for input attribution lacks rigorous methods. The paper applies dynamic mode decomposition (DMD) to decompose hidden states into modes and ranks input tokens via projection, outperforming PCA and gradient-based methods.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13079",
+  "source": "arXiv",
+  "title": "Learning Discrete Decisions for MIPs with Constraint-Aware Diffusion",
+  "abstract": "This paper proposes a novel learning-based approach to approximately solve instances of mixed-integer optimization problems. These problems are computationally challenging, as they require jointly determining discrete and continuous decisions while satisfying complex combinatorial constraints. The proposed method relies on a graph-based generative diffusion model that learns the discrete component of mixed-integer optimization problems while integrating a training-free feasibility projection operator directly into the reverse diffusion process to steer intermediate samples toward the feasible set throughout generation. Once the discrete decisions are generated, the remaining optimization reduces to a continuous problem that can be solved efficiently (relative to the original problem) using existing numerical methods. The resulting framework named Constrained Graph Diffusion (CGD), is problem-agnostic and can accommodate a broad class of mixed-integer optimization problems through suitable projection operators. We evaluate CGD on optimal transmission switching for ACOPF and discrete portfolio optimization, demonstrating substantial improvements in feasibility and solution quality over learning-based baselines while achieving speedups of up to $425\\times$ over state-of-the-art numerical solvers for MINLPs.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Vincenzo Di Vito",
+   "Mehdi Taghizadeh",
+   "Deepjyoti Deka",
+   "Kaarthik Sundar",
+   "Ferdinando Fioretto"
+  ],
+  "url": "https://arxiv.org/abs/2608.13079",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Solving mixed-integer optimization problems requires joint discrete-continuous decisions under constraints. The paper introduces a diffusion model with constraint-aware projection to generate discrete decisions, followed by continuous optimization, achieving 425× speedup over MINLP solvers.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13116",
+  "source": "arXiv",
+  "title": "Semiglobal uniqueness for the Lorentzian Calder\\'on problem",
+  "abstract": "We prove uniqueness in the Lorentzian Calder\\'on problem in a semiglobal setting, comparing a potentially large perturbation of the Minkowski metric against a small one. Our proof uses a reduced amount of data, solving a formally determined version of the problem. In contrast to traditional approaches, it employs neither control-theoretic arguments nor a reduction to a geometric inverse problem via microlocal methods or high-frequency solutions. Instead, it relies on distorted plane waves and weighted $L^2$-estimates.",
+  "categories": [
+   "math.AP",
+   "math-ph",
+   "math.DG",
+   "math.MP"
+  ],
+  "authors": [
+   "Lauri Oksanen",
+   "Rakesh",
+   "Mikko Salo"
+  ],
+  "url": "https://arxiv.org/abs/2608.13116",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "The Lorentzian Calderón problem seeks uniqueness in inverse boundary value problems for wave equations. The paper proves semiglobal uniqueness using distorted plane waves and weighted L² estimates, avoiding microlocal or geometric methods.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13121",
+  "source": "arXiv",
+  "title": "Adaptive Schauder Stochastic Mirror Descent in Banach Spaces",
+  "abstract": "In this paper, we extend stochastic mirror descent (SMD) to infinite-dimensional Banach spaces for solving a class of risk functional minimization problems, where stochastic gradient information is only available through sampling. We first choose the Bregman distance according to the uniform convexity properties of the Banach space. For the non-uniformly convex space $\\mathcal{L}_{\\rho_X}^1(\\Omega)$, we instead construct a Bregman distance induced by the entropy function. Based on a Schauder basis of the Banach space, we introduce a family of finite-dimensional subspaces that adapt to the sample size $n$. At each SMD iteration, we restrict the subproblem to the corresponding finite-dimensional subspace and project the stochastic gradient onto the associated finite-dimensional dual space, thereby introducing a new regularization strategy. This regularization strategy allows us to explicitly solve the SMD subproblem efficiently and to achieve a bias--variance trade-off. The algorithm requires $\\mathcal{O}(n^{1+\\theta})$ time and $\\mathcal{O}(n^\\theta)$ memory, where $\\theta>0$ can be chosen arbitrarily small when the minimizer has sufficient regularity. By developing a new analytical framework, we prove that the proposed algorithm achieves a convergence rate of $\\mathcal{O}\\left(n^{-1/p_1}\\right)$ up to logarithmic factors, where $p_1\\geq2$ is determined by the convexity properties of the underlying space. In the misspecified setting where the minimizer satisfies only weaker regularity conditions, we show that the proposed algorithm still converges to the minimum. We further extend the algorithm to inverse problems and validate its effectiveness in numerical experiments.",
+  "categories": [
+   "math.OC",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Jinhui Bai",
+   "Shuai Lu",
+   "Lei Shi"
+  ],
+  "url": "https://arxiv.org/abs/2608.13121",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Minimizing risk functionals in infinite-dimensional Banach spaces with stochastic gradients is challenging. The paper extends stochastic mirror descent via Schauder basis subspaces and adaptive regularization, achieving convergence rates tied to space convexity.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13123",
+  "source": "arXiv",
+  "title": "Using Diffusion Models to Estimate Uncertainties in Analytic Continuation",
+  "abstract": "Inverse problems are ubiquitous in physics, chemistry, and engineering, arising when reconstructing hidden quantities from indirect measurements. A key example is the analytic continuation of imaginary-time correlation functions (iTCFs) to the real-frequency domain. This process requires an inverse Laplace transform, which is inherently ill-posed and highly sensitive to small input variations. Recent neural network (NN)-based methods have shown promising results by learning mappings from imaginary-time to real-frequency spectra, often outperforming traditional techniques such as maximum entropy. However, because the problem is ill-posed, many spectra fit the same iTCF. Regression-based approaches output a single solution, which approximates an average over the true solution space, and therefore fail to capture the full distribution of plausible power spectra. To address this issue, we introduce a diffusion-based framework for analytic continuation that learns the distribution of spectra consistent with a given iTCF. It offers two key advantages. First, it quantifies uncertainty directly from the learned distribution. Second, by analyzing the spread and structure of this distribution, we can quantitatively assess the intrinsic hardness of each inversion problem. We measure this hardness with a new metric, the uncertainty pseudo-volume. Applying the framework to an iTCF from a path-integral molecular dynamics simulation of liquid parahydrogen, we obtain the self-diffusion coefficient with an error bar and flag a secondary high-frequency peak as a possible spurious artifact. In contrast to previous attempts at uncertainty quantification, our generative approach rests on a concrete probabilistic basis, providing a more theoretically grounded measure of confidence in the reconstructed power spectra.",
+  "categories": [
+   "physics.comp-ph",
+   "cond-mat.stat-mech"
+  ],
+  "authors": [
+   "Sagi Meir",
+   "Daniel Freedman",
+   "Barak Hirshberg"
+  ],
+  "url": "https://arxiv.org/abs/2608.13123",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Analytic continuation of imaginary-time correlation functions is ill-posed and requires uncertainty quantification. The paper introduces a diffusion model framework to learn the distribution of plausible spectra and quantify uncertainty via a pseudo-volume metric.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13132",
+  "source": "arXiv",
+  "title": "Analysis of Error Propagation in Autoencoder-Based Reduced-Order Neural Ordinary Differential Equations",
+  "abstract": "Neural ODE reduced-order models often achieve comparable local prediction accuracy, yet their long-horizon extrapolation behavior can differ substantially. To analyze this discrepancy, we develop a path-integral identity that separates local discrepancy injection from amplification in the learned latent dynamics. The associated multi-step Jacobian norms quantify transport sensitivity and distinguish different propagation regimes. Experiments on the Burgers and Gray--Scott systems exhibit two distinct patterns of error evolution. In Burgers systems, prediction errors remain bounded and are primarily associated with persistent local discrepancies. In contrast, Gray--Scott systems exhibit pronounced amplification during extrapolation, where Jacobian norms serve as sensitivity diagnostics rather than direct indicators of physical prediction accuracy.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Jingyi Zhang",
+   "Gwanghyun Jo"
+  ],
+  "url": "https://arxiv.org/abs/2608.13132",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Long-horizon error propagation in neural ODE reduced-order models varies across systems. The paper derives a path-integral identity and Jacobian norms to quantify local discrepancy injection versus amplification in latent dynamics.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13260",
+  "source": "arXiv",
+  "title": "Virtual Temperature Sensors in Power Transformers Using Neural Ordinary Differential Equations",
+  "abstract": "Accurate modeling and forecasting of power transformer thermal behavior are critical for reliability, asset lifetime, and optimized power system operation. Numerical approaches such as finite element methods (FEM) and computational fluid dynamics (CFD) offer high fidelity but are computationally expensive, require complex mesh generation, and are often impractical for real-time or large-scale applications, particularly when transformer geometries are unknown. Lumped-parameter thermal models are more practical but depend on transformer-specific thermal constants and may fail to capture dynamic responses under varying operating and environmental conditions. Purely data-driven machine learning methods, including artificial neural networks, convolutional neural networks, and long short-term memory (LSTM) networks, have shown success in forecasting transformer temperatures but typically require large volumes of high-quality training data and may produce physically inconsistent or uninterpretable results. This paper develops a physics-aware Neural Ordinary Differential Equation (Neural ODE) framework for forecasting transformer thermal behavior from real-world time-series data. Neural ODEs model system dynamics in continuous time, providing smooth trajectory prediction and a natural representation of continuously evolving thermal dynamics. A key contribution is the integration of simplified heat-transfer equations directly into the Neural ODE formulation. The model is evaluated across datasets from fifteen transformers in different regions of Norway with varying designs and cooling mechanisms. The results demonstrate that the developed Neural ODE framework provides a standardized, physics-aware, and robust forecasting approach for heterogeneous transformer units.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Berk Hadzhamolla",
+   "Alexander Johannes Stasik",
+   "Signe Riemer-S{\\o}rensen"
+  ],
+  "url": "https://arxiv.org/abs/2608.13260",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Forecasting power transformer thermal behavior requires balancing fidelity and computational cost. The paper develops a Neural ODE framework integrated with simplified heat-transfer equations for physics-aware continuous-time modeling.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13333",
+  "source": "arXiv",
+  "title": "LLM-Guided Graph Generation for Structure-Based Local Improvement Methods",
+  "abstract": "Large neighborhood search normally selects a random subset of decision variables for iterative optimization. For efficiently solving different problems, researchers tend to design variable selection strategies by taking into account structural features from different domains. In this paper, we build an automatic pipeline that is problem-agnostic to all problems in the MiniZinc format. By prompting an LLM with our semantic guidelines, we guide the LLM to produce a graph generator that maps any instance of a problem type to a uniform weighted graph, where nodes represent decision variables and edges represent constraint relationships. These problem-agnostic graphs guide our structure-based local improvement framework (SLIM) in variable selection. Meanwhile, the weighted graph enables all problem instances to share the same generic graph representation, from which the same graph features can be extracted and used for configuration selection. We evaluated our pipeline on instances across 20 MiniZinc competition problems, finding that algorithm selection achieves a 39.5% average problem-weighted win rate against a one-shot Gurobi baseline, more than doubling the best single configuration (19.3%). Configuration and feature ablation boost the performance further to 44.0%, demonstrating that LLM-based semantic generation enables effective automated structure extraction and feature extraction for constraint optimization.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Hai Xia",
+   "Vaidyanathan Peruvemba Ramaswamy",
+   "Stefan Szeider"
+  ],
+  "url": "https://arxiv.org/abs/2608.13333",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "ml-numerical-methods"
+  ],
+  "summary": "Automating variable selection in constraint optimization requires problem-agnostic structural features. The paper uses LLMs to generate weighted graphs representing decision variables and constraints, enabling structure-based local improvement and configuration selection.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13341",
+  "source": "arXiv",
+  "title": "Simulation-to-real transfer learning for infrared spectroscopic chemical sensing and analysis from molecules to complex samples",
+  "abstract": "Infrared (IR) spectroscopy is widely used for chemical sensing, but extracting reliable chemical information from spectra remains challenging. Conventional interpretation is labor-intensive, relies on prior knowledge and reference spectra, and is difficult to scale, whereas most machine-learning methods are tailored to individual tasks or datasets, require large labeled training sets, and transfer poorly across analytical objectives and experimental datasets. Here we introduce UltraIR, a foundation model for IR spectroscopy with more than 100 million parameters that enables simulation-to-real transfer learning for chemical sensing and analysis from molecules to complex samples. UltraIR is pretrained on approximately 60 million simulated IR spectra using spectral reconstruction, molecular fingerprint similarity alignment, and functional-group prediction, then adapted to downstream objectives with task-specific labels or targets. Across functional-group prediction, molecular structure elucidation, physicochemical property prediction, mixture-component identification and quantification, bacterial classification, medicinal-herb geographic origin traceability and constituent quantification, microplastics classification, and soil property prediction, UltraIR outperforms conventional machine-learning and task-specific deep-learning baselines. It performs strongly with limited labeled experimental spectra and in zero-shot inference for the same analytical task across Fourier-transform infrared spectrometers and laboratories, providing a route to adaptable, data-efficient chemical sensing from complex real-world samples.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Yusen Tan",
+   "Yixuan Chen",
+   "Zheng Fang",
+   "Pan Liu",
+   "Yifan Li",
+   "Qinyu Guo",
+   "Zhedong Lin",
+   "Yuqiang Li",
+   "Xiangxiang Zeng",
+   "Tong Wang",
+   "Jun Xia"
+  ],
+  "url": "https://arxiv.org/abs/2608.13341",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Transfer learning for IR spectroscopy faces challenges in cross-task and cross-instrument generalization. The paper introduces UltraIR, a foundation model pretrained on simulated spectra and adapted to experimental data via task-specific fine-tuning.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13472",
+  "source": "arXiv",
+  "title": "AaLLM: An End-to-End Analog Circuit Design Framework from Topology Generation to Sizing Using Large Language Models",
+  "abstract": "Analog circuit design is a time-consuming, iterative process in a nonlinear and high-dimensional design space that relies heavily on expert intuition. Among recent developments, LLMs have introduced a promising approach by bringing natural language reasoning to circuit design tasks. The majority of conventional LLM-based approaches provide fragmented solutions that focus either only on sizing or topology generation. These methods require adding specific technical knowledge manually, which is inefficient and prone to hallucinations during circuit sizing. Moreover, the inherent trade-off in meeting different specs makes current approaches iterative and tedious. Another shortcoming is the inability to create innovative topologies, which may lead to sub-optimal designs due to reliance on conventional topologies. In this paper, we present AaLLM, an open-source end-to-end multi-agent LLM workflow that takes user specs as input and outputs the appropriate netlist, encompassing both topology generation and circuit sizing. AaLLM automates the creation of a relevant knowledge base from research papers and textbooks to combat tedious manual data collection. A RAG model is implemented to emulate circuit design expertise using this knowledge base. Moreover, AaLLM uses a novel tri-agent feedback system comprising a Designer that determines circuit component values, a Critic that scrutinizes these values, and an Evaluator that minimizes circuit sizing iterations by arbitrating between the other two agents. AaLLM-generated novel topologies achieve a figure of merit (FoM) comparable to that of known topologies, and up to 3x higher for certain circuits. Testing on several circuit topologies, our results show a 3x - 4.5x decrease in the number of SPICE calls at inference when compared to SOTA multi-agent LLM pipelines. The results also show a 40x decrease in wall-clock time compared to existing approaches.",
+  "categories": [
+   "eess.SY",
+   "cs.AI",
+   "cs.SY"
+  ],
+  "authors": [
+   "Mohammed Ayman Habib",
+   "Rylan Hart",
+   "Morteza Fayazi"
+  ],
+  "url": "https://arxiv.org/abs/2608.13472",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Analog circuit design requires iterative expert intuition for topology generation and sizing. The paper introduces AaLLM, a multi-agent LLM workflow that automates netlist generation using a knowledge base and tri-agent feedback system.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13490",
+  "source": "arXiv",
+  "title": "DD-RNO: A Domain-Decomposed Routed Neural Operator for Airfoil Flow Prediction",
+  "abstract": "Deep learning surrogates for RANS flow prediction around airfoils face two persistent bottlenecks. A single neural architecture cannot simultaneously resolve sharp near-wall boundary layers and smooth far-field potential flow. Additionally, force prediction is undermined by the numerical instability of computing wall-normal velocity gradients from continuous-field approximations. Both of these points are addressed with a DD-RNO (domain-decomposed routed neural operator), combining a spectral geometry encoder with two physics-guided innovations: (a) a differentiable domain routing mechanism that partitions the flow field into inviscid, boundary-layer, and wake regimes---dispatching query points to specialized regional decoders, and (b) learned canonical quadrature (LCQ), which replaces unstable pressure integration with flow-conditioned, learned integration weights that predict lift and drag directly from surface pressure. On the AirfRANS benchmark, DD-RNO cuts velocity field mean-square error (MSE) by 17$x$ ($u_x$) and 12$x$ ($u_y$) over the strongest baseline, widening to 23$x$ under out-of-distribution Reynolds extrapolation---evidence that the routing mechanism generalizes with the physics it encodes rather than merely fitting the training distribution. LCQ reduces drag MSE by 7.5$x$ relative to conventional pressure integration and raises drag rank correlation from $\\rho = 0.250$ to $\\rho = 0.997$. Ablations confirm that both components are indispensable to performance: removing domain routing increases velocity error by 8.2$x$, and removing LCQ increases relative drag error more than 40-fold. At ~144 ms per sample---a 10,000$x$ speedup over conventional RANS solvers---DD-RNO offers a surrogate accurate and fast enough for real-time aerodynamic design and optimization loops.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "T. A. Mehta",
+   "P. S. Bhati",
+   "H. D. Akolekar"
+  ],
+  "url": "https://arxiv.org/abs/2608.13490",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "RANS flow prediction around airfoils struggles with near-wall boundary layers and force-calculation instability. The paper introduces a domain-decomposed routed neural operator (DD-RNO) with regional decoders and learned canonical quadrature (LCQ) for direct force prediction.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13505",
+  "source": "arXiv",
+  "title": "Intern-S2-Preview: Scientific Agentic Foundation Model",
+  "abstract": "Scientific discovery increasingly requires AI systems that can reason over scientific evidence of heterogeneous modalities, interact with scientific tools and environments, and sustain progress across long task horizons. We present Intern-S2-Preview, a series of scientific agentic foundation models designed to support multimodal scientific understanding, reasoning, generation, and long-horizon tasks. The training pipeline begins with scientific multimodal pre-training over rendered scientific documents, interleaved image-text data, and diverse scientific corpora. Starting from the pretrained checkpoint, we apply a unified post-training pipeline consisting of supervised fine-tuning, scalable multi-task reinforcement learning (RL), black- and white-box agentic RL, and on-policy distillation. This pipeline is supported by practical techniques that improve rollout and training stability and efficiency, including partial rollout with off-policy correction, adaptive length regularization, online speculative decoding, robust multi-task optimization, and trace-aware experience assembly for agentic tasks. At the architecture level, Intern-S2-Preview-397B extends time series modelling from efficient long-sequence understanding to numerical forecasting, while Memory Decoder is studied as a separate memory-augmented path for rapid scientific specialization without modifying the frozen 397B backbone. Evaluations across scientific, multimodal, agentic, and general-purpose benchmarks show that Intern-S2-Preview-397B achieves competitive or leading results in multiple settings. The time series modules improve scientific signal understanding and forecasting on SciTS, while the separate Intern-MemDec-4B extension improves the Biology-Instructions average score from 56.92 to 60.32 without modifying the frozen 397B backbone.",
+  "categories": [
+   "cs.LG",
+   "cs.CL",
+   "cs.CV"
+  ],
+  "authors": [
+   "Lei Bai",
+   "Jiaqi Cao",
+   "Chiyu Chen",
+   "Guanzhou Chen",
+   "Kai Chen",
+   "Guangran Cheng",
+   "Erfei Cui",
+   "Xuanlang Dai",
+   "Shengyuan Ding",
+   "Shangheng Du",
+   "Yanhui Duan",
+   "Yue Fan",
+   "Youqing Fang",
+   "Quan Gan",
+   "Yuanyuan Gao",
+   "Jiaye Ge",
+   "Lixin Gu",
+   "Yuzhe Gu",
+   "Qipeng Guo",
+   "Junjun He",
+   "Xin Hong",
+   "Ming Hu",
+   "Zhouqi Hua",
+   "Haian Huang",
+   "Junhao Huang",
+   "Zixian Huang",
+   "Minxi Jin",
+   "Lingkai Kong",
+   "Alexander Lam",
+   "Zehao Li",
+   "Zonglin Li",
+   "Tianhao Liang",
+   "Dahua Lin",
+   "Junyao Lin",
+   "Tianyang Lin",
+   "Zhouhan Lin",
+   "Jiangning Liu",
+   "Jin Liu",
+   "Kuikun Liu",
+   "Wenran Liu",
+   "Yifei Liu",
+   "Yuhong Liu",
+   "Yuhong Liu",
+   "Zhoumianze Liu",
+   "Ziyan Liu",
+   "Ziyu Liu",
+   "Haijun Lv",
+   "Han Lv",
+   "Chengqi Lyu",
+   "Le Ma",
+   "Ningsheng Ma",
+   "Zerun Ma",
+   "Haoyang Peng",
+   "Runyu Peng",
+   "Jifei Shan",
+   "Zixin Shang",
+   "Kou Shi",
+   "Xiang Shi",
+   "Qisheng Su",
+   "Xuerui Su",
+   "Hao Sun",
+   "Xiao Sun",
+   "Yanan Sun",
+   "Yu Sun",
+   "Huanze Tang",
+   "Yinghao Tang",
+   "Wenhui Tian",
+   "Zhongbo Tian",
+   "Bingli Wang",
+   "Haomin Wang",
+   "Jiarui Wang",
+   "Jingzhi Wang",
+   "Rui Wang",
+   "Xiquan Wang",
+   "Yi Wang",
+   "Zhecan Wang",
+   "Ziyi Wang",
+   "Zun Wang",
+   "Rubin Wei",
+   "Lianyi Wu",
+   "Wen Wu",
+   "Yue Wu",
+   "Yuhan Wu",
+   "Zhenyu Wu",
+   "Zijian Wu",
+   "Shuhao Xing",
+   "Jun Xu",
+   "Xingle Xu",
+   "Xuenan Xu",
+   "Xiangchao Yan",
+   "Ziang Yan",
+   "Bowen Yang",
+   "Danni Yang",
+   "Lin Yang",
+   "Zhiqi Yang",
+   "Qian Yao",
+   "Haochen Ye",
+   "Peng Ye",
+   "Jinhui Yin",
+   "Jiashuo Yu",
+   "Dingbo Yuan",
+   "Fei Yuan",
+   "Yuhang Zang",
+   "Bo Zhang",
+   "Chao Zhang",
+   "Chen Zhang",
+   "Hongjie Zhang",
+   "Junming Zhang",
+   "Wenlong Zhang",
+   "Wenwei Zhang",
+   "Yiming Zhang",
+   "Zhuo Zhang",
+   "Ziyang Zhang",
+   "Haiteng Zhao",
+   "Penghao Zhao",
+   "Yibo Zhao",
+   "Zhonghan Zhao",
+   "Zhihang Zhong",
+   "Bowen Zhou",
+   "Peiheng Zhou",
+   "Xin Zhou",
+   "Xinyu Zhou",
+   "Yunhua Zhou",
+   "Dongsheng Zhu",
+   "Yicheng Zou"
+  ],
+  "url": "https://arxiv.org/abs/2608.13505",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "foundations"
+  ],
+  "summary": "Scientific discovery requires multimodal reasoning and long-horizon task execution. The paper presents Intern-S2-Preview, a scientific agentic foundation model trained via multimodal pre-training and multi-task RL for end-to-end research workflows.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13558",
+  "source": "arXiv",
+  "title": "OmniScientist: An Omni-Modal Omni-Discipline AI Scientist",
+  "abstract": "Recent advances in foundation models have enabled AI scientists to automate increasingly complete research workflows, from hypothesis generation and code execution to manuscript preparation. Yet workflow coverage alone does not provide access to the full evidence on which scientific discovery depends. Existing systems typically reason over text, code, labels, or precomputed summaries, leaving scientifically decisive spatial, temporal, cross-channel, and procedural relations unavailable to the agent. We introduce OmniScientist, an end-to-end, omni-modal AI scientist that conducts multidisciplinary research directly from heterogeneous raw evidence. A perception layer and 3 autonomous agents for ideation, experiment, and writeup operate within a deterministic pipeline, allowing observations to shape research questions, experimental decisions, and final claims throughout the research lifecycle. By running idea, rigour, and claim checks in code, the system enforces novelty screening, statistical validity, execution provenance, and numerical traceability. We evaluate OmniScientist on 36 real-data cases spanning 5 discipline families, 4 families of scientific evidence, and modalities including images, signals, audio, video, 3-D structures, trajectories, tables, formulae, and graphs. The system completes the full path from raw data to a compiled manuscript in all 36 cases and achieves a mean overall paper score of 6.3 with the reference reasoning backbone. In paired comparisons against a blind variant that receives only precomputed scalar features, direct perception improves all 7 evaluation dimensions and wins 85% of head-to-head judgments. These results show that lifecycle-wide perception is essential for evidence-grounded scientific discovery and provides a practical path toward broadly capable AI scientists.",
+  "categories": [
+   "cs.AI",
+   "cs.CL"
+  ],
+  "authors": [
+   "Bobo Li",
+   "Hao Fei",
+   "Tianjie Ju",
+   "Mong-Li Lee",
+   "Wynne Hsu"
+  ],
+  "url": "https://arxiv.org/abs/2608.13558",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "foundations"
+  ],
+  "summary": "Multidisciplinary scientific research requires reasoning over raw heterogeneous data. The paper introduces OmniScientist, an omni-modal AI scientist with perception and autonomous agents for end-to-end research from raw evidence to manuscript.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.12751",
+  "source": "arXiv",
+  "title": "SynAct: A Reasoning-Acting Large Language Model Agent for Adaptive Synthesis Optimization",
+  "abstract": "Logic synthesis transforms RTL designs into gate-level netlists, where PPA results are highly sensitive to the choice of optimization commands, making synthesis tuning both high-dimensional and expensive. Previous approaches fall into two categories: automated methods, which perform black-box search over fixed action spaces with limited decision-level interpretability, and LLM-based methods, which typically generate static scripts upfront and cannot adapt to evolving circuit states. We present SynAct, an adaptive closed-loop LLM reasoning--acting agent that iteratively diagnoses live synthesis reports and reasons over the current circuit state, retrieved tool knowledge, and historical optimization experience to issue targeted commands. SynAct focuses on improving timing, particularly worst negative slack (WNS), while maintaining balanced area and power trade-offs. Experiments on a commercial synthesis tool across 14 designs show that SynAct reduces average WNS to 27% of that from bootstrap synthesis.",
+  "categories": [
+   "cs.AR",
+   "cs.AI"
+  ],
+  "authors": [
+   "Fangzhou Liu",
+   "Peiyi Han",
+   "Jiawei Liu",
+   "Yuan Pu",
+   "Zhuolun He",
+   "Rongliang Fu",
+   "Tsung-Yi Ho",
+   "Bei Yu"
+  ],
+  "url": "https://arxiv.org/abs/2608.12751",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "ml-numerical-methods"
+  ],
+  "summary": "Logic synthesis optimization is sensitive to high-dimensional command choices. The paper introduces SynAct, an adaptive LLM agent that iteratively diagnoses circuit states and issues targeted commands to improve timing while balancing area/power trade-offs.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13305",
+  "source": "arXiv",
+  "title": "Physics-informed distribution of relaxation times estimation and latent-space condition monitoring of solid oxide fuel and electrolysis cells from electrochemical impedance spectroscopy",
+  "abstract": "Estimating the distribution of relaxation times (DRT) fromelectrochemical impedance spectroscopy (EIS) is an ill-posed inverse problem that is highly sensitive to regularisation choices. We propose a physics-informed convolutional autoencoder that estimates DRT directly from EIS data without spectrum-specific tuning. A discretised relation between impedance and the DRT is embedded in the training process, constraining the network to produce impedance-consistent distributions. The model resolves overlapping relaxation processes in synthetic two-ZARC spectra and accurately reconstructs measurements from three independent solid oxide fuel and electrolysis cell datasets, with range-normalised errors below 1.1%. Decoder-probe analysis shows that the learned latent representation is organised according to relaxation timescale. Distances in this latent space capture operating changes, hydrogen-shortage events, and long-term degradation. The same lightweight architecture is applied across all datasets without modification, providing consistent DRT estimation and an interpretable basis for condition monitoring.",
+  "categories": [
+   "stat.AP",
+   "cs.AI"
+  ],
+  "authors": [
+   "\\v{Z}an Gorenc",
+   "\\v{Z}iga Gradi\\v{s}ar",
+   "Felix M\\\"utter",
+   "Vanja Suboti\\'c",
+   "Pavle Bo\\v{s}koski"
+  ],
+  "url": "https://arxiv.org/abs/2608.13305",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Estimating distribution of relaxation times (DRT) from electrochemical impedance spectroscopy is an ill-posed inverse problem. The paper introduces a physics-informed convolutional autoencoder that embeds a discretized impedance-DRT relation to produce impedance-consistent DRT estimates without spectrum-specific tuning.",
+  "added": "2026-08-14"
+ },
+ {
+  "id": "arxiv:2608.13510",
+  "source": "arXiv",
+  "title": "On the Structural Limits of Machine Learning Decision Systems: An Information-Theoretic, Interaction-Based, and Stochastic-Dynamical Perspective",
+  "abstract": "Machine learning procedures are commonly evaluated in terms of predictive accuracy and computational efficiency. However, their achievable performance is fundamentally constrained by structural properties of the underlying data-generating process, which are formalized in terms of informational bounds. In this work we examine intrinsic limits of data-driven decision systems from an information-theoretic and interaction-based perspective. We analyze minimal achievable error in classification through Fano-type bounds and precision limits in parametric estimation via the Cram\\'er-Rao inequality, emphasizing that such limits depend on the underlying model rather than on algorithmic sophistication alone. We further discuss how implicit assumptions, such as independence, ergodicity, and distributional stability, affect the validity of inferential procedures. Building on interaction-based modeling principles, we review typical frameworks such as Markov Random Fields and potential based representations for encoding dependence mechanisms. We also describe decision systems, including LLM-integrated agent architectures, as feedback-driven stochastic processes where state-dependent dynamics may induce emergent macroscopic behavior. This perspective highlights the importance of having adequate models for the data as a prerequi- site for expanding predictive capability, and situates algorithmic learning within the informational limits imposed by the models.",
+  "categories": [
+   "math.ST",
+   "cs.LG",
+   "stat.TH"
+  ],
+  "authors": [
+   "Nestor R. Barraza",
+   "Gabriel Pena"
+  ],
+  "url": "https://arxiv.org/abs/2608.13510",
+  "published": "2026-08-14",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm",
+   "foundations"
+  ],
+  "summary": "Structural limits of ML systems are analyzed through information-theoretic bounds and interaction-based models. The paper formalizes decision systems as feedback-driven stochastic processes and reviews Fano bounds/Cramér-Rao inequalities to highlight informational constraints on predictive capability.",
+  "added": "2026-08-14"
  }
 ]
