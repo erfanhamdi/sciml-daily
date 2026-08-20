@@ -46988,5 +46988,702 @@
   ],
   "summary": "Chaotic itinerancy in dynamical systems involves transitions between quasi-attractors. The paper analyzes such systems using a set-oriented graph approach to identify invariant sets and measure instability via Markov chains and entropy.",
   "added": "2026-08-19"
+ },
+ {
+  "id": "arxiv:2608.18084",
+  "source": "arXiv",
+  "title": "Compiler-Guided Adaptive Proof Search with Cross-Model Synergy on Context-Dependent Theorem Proving",
+  "abstract": "Theorem proving in real-world Lean 4 projects is challenging because proofs often depend on project-specific context. While iterative refinement can use compiler errors to repair failed proofs, reusing failed attempts requires careful search control: some proofs provide better starting points than others, and later revisions may degrade a partially correct proof. We propose a compiler-guided proof search framework that balances exploration and exploitation. It explores diverse starting points through dual-model generation and stagnation-triggered resampling, while exploiting promising proof states through current-best refinement guided by compiler-grounded pairwise comparison. Experiments on seven real-world Lean 4 projects from miniCTX-v2 show that our method achieves a better effectiveness--efficiency tradeoff than pass@k baselines. Within the pass@32 budget, our method improves average pass rate by 12.8 percentage points while reducing LLM calls by 21.9%.",
+  "categories": [
+   "cs.CL",
+   "cs.PL"
+  ],
+  "authors": [
+   "Zhuo Liu",
+   "Ding Yu",
+   "Hangfeng He"
+  ],
+  "url": "https://arxiv.org/abs/2608.18084",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Theorem proving in Lean 4 requires context-dependent proof repair. The paper introduces a compiler-guided proof search framework with dual-model generation and stagnation-triggered resampling to balance exploration and exploitation.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18090",
+  "source": "arXiv",
+  "title": "Nine Emotion Centroids: A Label-Free Valence Axis That Transfers Across Four Modalities",
+  "abstract": "Inside a modern language model sits a single internal direction that tracks how positive or negative a sentence feels. We show how to find this valence axis (V-axis) from just 9 emotion category names plus 50 short narrative paragraphs per emotion -- about 1,500 fewer labels than the usual supervised approach -- and that the same direction appears in vision, audio, and human-brain encoders never jointly trained. The recipe: embed nine emotion-anchored story sets in a frozen encoder, take the top principal direction of the nine averaged embeddings. Projecting new inputs onto it captures 93% of supervised performance on SST-2 (Llama-3-8B-Instruct, AUC 0.772 vs. 0.828), correlates with human valence ratings on 11,811 EmoSet images at r=0.636, reaches AUC 0.906 on ESC-50 audio (p<2.2e-15), and AUC 0.720+/-0.055 on EEG from 123 subjects (p<3.65e-8). The direction is mechanistically active: ablating it collapses sentiment accuracy by 5.5-37.2 pp across three LLMs vs. at most 0.88 pp for matched random directions (z>12). A 2-parameter classifier trained on text labels transfers to images (AUC 0.961), audio (0.764), and brain recordings (0.828) without target-modality labels; a generic 16-D subspace stays at chance (0.525). The recipe is bounded to continuous attributes -- seven tests on categorical concepts return near-chance -- and steering is family-specific (Llama/Mistral yes, Qwen/Gemma no).",
+  "categories": [
+   "cs.CL",
+   "cs.AI"
+  ],
+  "authors": [
+   "Yousef Radwan"
+  ],
+  "url": "https://arxiv.org/abs/2608.18090",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Identifying valence axes in LLMs across modalities lacks a unified method. The paper extracts a valence direction via PCA on nine emotion-anchored story embeddings and shows it transfers to vision/audio/brain encoders.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18106",
+  "source": "arXiv",
+  "title": "Different Facets of Verbalised Overconfidence: an Interpretability Study",
+  "abstract": "Large language models tend to overconfidence, giving assertive answers when the evidence suggests hedging or abstention. Using controlled reasoning scenarios that manipulate logical necessity and possibility, we study this behavior in Qwen3-4B, across three ways to express uncertainty: verbal epistemic markers, abstention, and numeric confidence scores. Our results confirm this tendency toward overconfidence, particularly when the model is prompted to output a numeric confidence score. At the interpretability level, we propose a method that differentially identifies transcoder features responsible for uncertainty and certainty. Our analysis reveals Qwen3-4B's default mechanism favors certainty generation through a broad coalition of shared features, while uncertainty is implemented as a sparse override mediated by a small set of dedicated features. Intervening on these uncertainty features both causally proves this imbalance underlying overconfidence and also mitigate overconfident errors. The same set of features generalise across the three uncertainty-expression settings, languages, and an out-of-distribution modality task.",
+  "categories": [
+   "cs.CL",
+   "cs.AI"
+  ],
+  "authors": [
+   "Davide Mazzaccara",
+   "Leonardo Bertolazzi",
+   "Raffaella Bernardi"
+  ],
+  "url": "https://arxiv.org/abs/2608.18106",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "LLM overconfidence in uncertainty expression lacks mechanistic understanding. The paper identifies sparse uncertainty features in Qwen3-4B and shows intervention reduces overconfident errors via causal analysis.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18118",
+  "source": "arXiv",
+  "title": "Formal Safety Verification for Nonlinear Systems with Generative Barrier Certificate",
+  "abstract": "Safety verification is a fundamental problem in control theory. Barrier certificates (BCs) provide a powerful formal mechanism, yet deriving BCs is computationally intensive. This paper introduces a generative framework that leverages large language models (LLMs) to synthesize BCs through reasoning. Based on the classical Sum-of-Squares (SOS) approach, we train a domain-specific LLM capable of generating high-quality BC candidates for nonlinear systems. Then, the LLM-generated BCs transform the intractable Bilinear Matrix Inequality (BMI) solving problems into convex Linear Matrix Inequality (LMI) feasibility test, significantly improving efficiency while preserving correctness. Experimental results show that our generative method achieves several orders of magnitude speedup over traditional numerical BC approaches and, perhaps surprisingly, surpasses the state-of-the-art dedicated neural BC model. These findings mark a substantive step toward integrating generative AI with formal safety verification for dynamical systems.",
+  "categories": [
+   "math.OC",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Mengxin Ren",
+   "Hanrui Zhao"
+  ],
+  "url": "https://arxiv.org/abs/2608.18118",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Deriving barrier certificates for nonlinear system safety verification is computationally intensive. The paper introduces a generative framework using a domain-specific LLM to synthesize barrier certificates via reasoning, transforming Bilinear Matrix Inequalities into convex Linear Matrix Inequalities for efficiency.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18262",
+  "source": "arXiv",
+  "title": "Inverse Born series based neural operators",
+  "abstract": "The inverse Born series provides a general perturbative framework for representing nonlinear inverse maps between infinite-dimensional function spaces and has found numerous applications in inverse problems governed by partial differential equations and integral equations. Motivated by its operator-theoretic structure, we develop a systematic framework for constructing neural operators that approximate the operator expansions arising in the inverse Born series. Our approach combines the analytical representation of the inverse Born series with the expressive power of neural operators, yielding data-driven approximations of the nonlinear inverse map while preserving the underlying operator structure. The proposed framework is applicable to a broad class of inverse problems and is presented in a general functional-analytic setting. To demonstrate its practical performance, we consider two representative examples: inverse scattering and the Calder\\'on (electrical impedance tomography) problem. Numerical experiments show that the constructed neural operators accurately approximate the inverse Born expansions and produce high-quality reconstructions across a range of test cases. These results indicate that the proposed methodology provides an effective and computationally efficient approach for learning nonlinear inverse operators and suggests a promising direction for integrating classical operator expansions with modern neural operator architectures.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "John C Schotland",
+   "Aseel Titi",
+   "Jenn-Nan Wang"
+  ],
+  "url": "https://arxiv.org/abs/2608.18262",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "uq-inverse-problems"
+  ],
+  "summary": "Solving inverse scattering and Calderón problems requires nonlinear operator approximations. The paper combines inverse Born series with neural operators to learn nonlinear inverse maps while preserving operator structure, validated on PDE-based inverse problems.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18282",
+  "source": "arXiv",
+  "title": "Self-supervised In-context Operator Learning for Stochastic Mean-Field Control",
+  "abstract": "Stochastic mean-field control (MFC) provides a fundamental framework for coordinating large populations of interacting agents under uncertainty, with a wide range of applications. Existing numerical and deep-learning methods solve one MFC problem instance at a time and must be re-optimized whenever the task changes. In this work, we formulate stochastic MFC as an operator-learning problem and develop, to the best of our knowledge, the first mesh-free, self-supervised neural operator for stochastic MFC. The main challenge is that the diffusion term in the controlled Fokker--Planck equation precludes deterministic transport-map representations. We address this challenge by combining the probability-flow ODE with an invertible normalizing-flow-based transformer, which recasts the dynamics as a deterministic continuity equation and enables closed-form score evaluation through the exact inverse and analytical log-determinant of the normalizing flow, with $\\mathcal{O}(d)$ cost per particle for networks of fixed size. Through transformer-based in-context learning, task prompts, represented by compact distribution parameters or raw particle clouds, condition the transport map, enabling a single pretrained operator to solve unseen tasks in one forward pass. The resulting \\emph{Normalizing Flow Invertible Solution Transformer} (NFIST) is trained end-to-end by minimizing the stochastic control objective directly, requiring no precomputed numerical solutions for training. We further prove the consistency of the proposed operator-learning formulation with task-by-task optimization. Numerical experiments on stochastic optimal control, Schr\\\"odinger bridge, systemic-risk control, and obstacle-avoiding path planning demonstrate effective zero-shot generalization while substantially reducing the computational cost of solving large families of stochastic MFC problems.",
+  "categories": [
+   "math.OC",
+   "cs.LG",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Suyi Gao",
+   "Mo Zhou",
+   "Rongjie Lai"
+  ],
+  "url": "https://arxiv.org/abs/2608.18282",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Solving stochastic mean-field control requires task-specific re-optimization. The paper develops a neural operator combining normalizing flows and transformers for in-context learning of transport maps, enabling zero-shot generalization across MFC tasks.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18365",
+  "source": "arXiv",
+  "title": "Posterior Convergence without Force Convergence: Resolution-Stable Sampling for Rough Bayesian Inverse Problems",
+  "abstract": "Bayesian posteriors can converge under model refinement even when the exact sensitivities used by gradient-based samplers do not. We study this mismatch for discretely scale-invariant rough potentials and its consequences for Metropolized Hamiltonian proposals. For Weierstrass truncations, adjacent classical-force increments grow geometrically in the rough regime, whereas fixed additive quotients converge uniformly and fixed multiplicative quotients converge locally away from the origin. The matched Jackson quotient is distinguished not by convergence alone but by dilation covariance and exact finite closure at the intrinsic scale. Uniform negative-log-likelihood approximation is shown to imply explicit total-variation, Hellinger, and bounded quantity-of-interest convergence, with a Gaussian forward-map criterion for Bayesian inverse problems. At the algorithmic level, measurable kick--drift--kick maps are triangular shears, so exact Metropolis correction does not require differentiability of the proposal field. Local uniform field convergence yields convergence of fixed-length proposals, acceptance functions, and bounded-Lipschitz kernels on common compact sets, while the first classical HMC half-kick has no fixed-step refinement limit. Numerical experiments verify the predicted force-refinement rates, show that posterior stabilization can coexist with severe resolution-dependent retuning of exact-gradient HMC, and demonstrate forward convergence without sensitivity convergence in two-dimensional Darcy flow. The computations are used to assess refinement consistency rather than to claim a universal efficiency ordering among proposal fields.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "stat.ME"
+  ],
+  "authors": [
+   "Zhiliang Deng",
+   "Xiaomei Yang"
+  ],
+  "url": "https://arxiv.org/abs/2608.18365",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Bayesian posterior convergence under model refinement lacks analysis for rough potentials. The paper establishes total-variation and Hellinger convergence for Weierstrass-truncated potentials, with numerical validation on Darcy flow inverse problems.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18374",
+  "source": "arXiv",
+  "title": "Inference and Uncertainty Quantification for Streaming $r$-PCA",
+  "abstract": "We address two open questions in streaming PCA via Oja's algorithm: sharp operator-norm convergence for general rank under sub-Gaussian data, and distributional inference for the resulting subspace estimator. Existing convergence analyses, even in the rank-one case, either assume bounded data or leave non-vanishing remainder terms that prevent adaptation to a polynomially vanishing tail spectrum, while existing distributional results are confined to the rank-one case. Our convergence theory removes these remainder terms and yields a sharp rate. In the dense-tail spiked covariance regime, this rate matches the minimax rate up to logarithmic factors. More generally, we prove a matching lower bound, up to logarithmic factors, across both dense-tail and sparse-tail regimes under a mild nondegeneracy condition. The analysis yields a linearization of Oja's iterates, which in turn enables a high-dimensional Gaussian approximation for the general-rank subspace estimation error with an explicit limiting covariance. We also establish a row-wise Gaussian approximation over convex sets for the aligned difference, recovering prior rank-one results as special cases. For practical inference, we develop an online multiplier bootstrap algorithm and prove its consistency. Beyond streaming PCA, our techniques contribute to Gaussian approximation and bootstrap inference for nonconvex stochastic approximation.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Haoshu Xu",
+   "Hongzhe Li"
+  ],
+  "url": "https://arxiv.org/abs/2608.18374",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Streaming PCA via Oja’s algorithm lacks sharp convergence and inference guarantees. The paper proves parameter-robust operator-norm rates and develops a Gaussian approximation for subspace error, enabling online bootstrap inference.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18419",
+  "source": "arXiv",
+  "title": "Mechanistic Interpretability of Structure-Aware Numerical Reasoning in LLaMA 3.1 8B",
+  "abstract": "Recent work has shown that large language models (LLMs) exhibit strong numerical sequence modeling capabilities and show promise in time-series prediction. While LLMs display in-context learning capabilities, the mechanisms with which they accomplish time-series prediction remain unclear. Specifically, whether they truly understand the underlying structure, which at a minimum requires reasoning over first differences in the sequence of numbers. To study this, we investigate Llama 3.1-8B from a mechanistic interpretability point of view. Mechanistic interpretability is an emerging field concerned with the reverse engineering of the algorithms learned by neural networks such as LLMs. To assess Llamas' numerical sequence modeling capabilities and to facilitate our mechanistic interpretability analysis, we create a sequence modeling task that cannot be solved without picking up structural cues. Specifically, we sample n random numbers and repeat them with an offset. We find that Llama displays strong performance on our tasks suggesting that it can pick up on the underlying structure. To understand the mechanisms that allow it to do so, we perform probing experiments and activation patching based counterfactual analysis. Probing reveals that the model computes and stores first differences in its internal representations without explicit supervision, indicating that it tracks structural information about the sequence. Activation patching reveals that Llama retrieves the relevant first-difference with a mechanism similar to an induction circuit and subsequently adds it to the current value. Notably, our work represents one of the first studies to identify this form of concept induction in LLMs.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Rahul Chowdhury",
+   "Timothy A Rupprecht",
+   "Senhao Cao",
+   "Jiahao Liu",
+   "Octavia Camps",
+   "David Bau",
+   "Pu Zhao",
+   "Yanzhi Wang"
+  ],
+  "url": "https://arxiv.org/abs/2608.18419",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Understanding how LLMs perform numerical sequence modeling with structural reasoning remains unclear. The paper uses mechanistic interpretability methods (probing and activation patching) to show that LLaMA computes first differences internally via induction-like circuits, revealing concept induction in LLMs.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18431",
+  "source": "arXiv",
+  "title": "Process Optimization Under Uncertainty for Improving the Bond Quality of Polymer Filaments in Fused Filament Fabrication",
+  "abstract": "This paper develops a computational framework to optimize the process parameters such that the bond quality between extruded polymer filaments is maximized in fused filament fabrication (FFF). A transient heat transfer analysis providing an estimate of the temperature profile of the filaments is coupled with a sintering neck growth model to assess the bond quality that occurs at the interfaces between adjacent filaments. Predicting the variability in the FFF process is essential for achieving proactive quality control of the manufactured part; however, the models used to predict the variability are affected by assumptions and approximations. This paper systematically quantifies the uncertainty in the bond quality model prediction due to various sources of uncertainty, both aleatory and epistemic, and includes the uncertainty and the model discrepancy in the process parameter optimization. Variance-based sensitivity analysis based on Sobol indices is used to quantify the relative contributions of the different uncertainty sources to the uncertainty in the bond quality. A Gaussian process (GP) surrogate model is constructed to compute and include the model discrepancy within the optimization. Physical experiments are conducted for calibration and validation of the physics model and also for validation of the optimum solution. The results show that the proposed formulation for process parameter optimization under uncertainty results in high bond quality between adjoining filaments of the FFF product.",
+  "categories": [
+   "cs.CE",
+   "cs.LG",
+   "cs.NA",
+   "math.NA",
+   "math.PR"
+  ],
+  "authors": [
+   "Berkcan Kapusuzoglu",
+   "Matthew Sato",
+   "Sankaran Mahadevan",
+   "Paul Witherell"
+  ],
+  "url": "https://arxiv.org/abs/2608.18431",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Optimizing fused filament fabrication process parameters under model uncertainty. The paper quantifies aleatory/epistemic uncertainties via Sobol indices and integrates Gaussian process surrogates with model discrepancy into the optimization.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18495",
+  "source": "arXiv",
+  "title": "Physics-Unrolled Neural Operator for Wireless Field Modeling",
+  "abstract": "Radio maps are essential for wireless decision-making tasks such as access-point placement, coverage planning, and localization, but their fine spatial details are governed by complex propagation effects and are costly to simulate accurately. Machine learning offers a path to high-fidelity radio-map prediction without running expensive high-fidelity simulations for every scene. However, generating high-quality training labels at scale is also difficult: the affordable labels come from finite-ray simulations, which are richer than low-fidelity inputs but carry residual Monte Carlo noise. We address this challenge with Physics-Unrolled Hybrid Neural Operator (PU-HNO), a three-stage cascade that predicts high-fidelity indoor radio maps from low-fidelity ray-tracing outputs and scene priors by progressively capturing reflection, diffraction, and scattering effects, rather than treating radio maps as generic images. We prove that, under conditionally unbiased label noise, the model can learn stable propagation structure and outperform its own training labels. Experiments across diverse floorplans show that PU-HNO outperforms image-to-image baselines, wireless learning models, and monolithic neural operators across both image-quality and wireless deployment metrics.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Rafid Umayer Murshed",
+   "Saif Ur Rahman",
+   "Mingyue Tang",
+   "Elahe Soltanaghai"
+  ],
+  "url": "https://arxiv.org/abs/2608.18495",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Predicting high-fidelity indoor radio maps from low-fidelity simulations. The paper introduces a physics-unrolled neural operator that progressively captures reflection, diffraction, and scattering effects in three stages.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18539",
+  "source": "arXiv",
+  "title": "Evaluating and Explaining Prompt Sensitivity of LLMs Using Interactions",
+  "abstract": "The remarkable capabilities of large language models (LLMs) are often undermined by their instability. Even subtle and semantically irrelevant changes in prompts can cause dramatic fluctuations in performance, a phenomenon known as prompt sensitivity. Previous studies typically evaluate prompt sensitivity by comparing the LLM's final outputs when prompts change. However, such coarse-grained metrics fail to explain the internal reasons for prompt sensitivity. In this paper, we introduce interactions as a fine-grained tool to analyze prompt sensitivity of LLMs. Specifically, we decompose the output score of the LLM into a set of interactions. Each interaction represents a nonlinear relationship involving a set of input variables. We discover that subtle changes to prompts can trigger severe instability in interactions, even when the outputs of the LLM remain the same. To this end, we propose an Interaction-based Prompt Sensitivity (IPS) metric by quantifying changes in interactions when we introduce subtle changes to prompts. We apply the IPS metric to 50 open-source LLMs and uncover four factors that reduce the prompt sensitivity of LLMs, including supervised fine-tuning, increased model scales, dense architectures, and few-shot learning. More crucially, we discover a common mechanism by which these four factors reduce prompt sensitivity: all four factors tend to reduce the prompt sensitivity of low-order interactions (i.e., interactions involving few input variables).",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "cs.CL"
+  ],
+  "authors": [
+   "Ruiyang Qin",
+   "Qingzhuo Wang",
+   "Tian Wang",
+   "Zhihua Wei",
+   "Wen Shen"
+  ],
+  "url": "https://arxiv.org/abs/2608.18539",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Assessing LLM prompt sensitivity via interaction decomposition. The paper quantifies instability in nonlinear input-variable interactions caused by prompt changes, linking it to model architecture factors.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18549",
+  "source": "arXiv",
+  "title": "Symmetry of Solutions and Domain-Reduction Finite Element Method for Second-Order Linear Elliptic Dirichlet Boundary Value Problems on Bounded Domains",
+  "abstract": "Combining classical group theory and partial differential equation theory, this paper investigates the symmetry group $\\operatorname{Sym}(u)$ of the unique solution $u$ to the second-order linear elliptic boundary value problem on an $n$-dimensional bounded domain $\\Omega$ $-\\sum_{i,j=1}^{n} a_{ij}(x)u_{x_ix_j} + \\sum_{i=1}^{n} b_i(x)u_{x_i} + c(x)u = f(x), x\\in \\Omega$, $u(x) = h(x), x\\in \\partial \\Omega$, The following symmetry groups are defined and characterized respectively: the symmetry group $\\operatorname{Sym}(A)$ of the second-order coefficient matrix function $A(x)=(a_{ij}(x))_{n\\times n}$; the symmetry group $\\operatorname{Sym}(b)$ of the first-order coefficient column vector function $b(x)=(b_{1}(x),b_{2}(x),\\cdots,b_{n}(x))^{T}$; the symmetry group $\\operatorname{Sym}(c)$ of the zero-order coefficient function $c(x)$; the symmetry group $\\operatorname{Sym}(f)$ of the internal source function $f(x)$; and the symmetry group $\\operatorname{Sym}(h)$ of the boundary source function $h(x)$. This paper rigorously proves that the common symmetry group $\\operatorname{Sym}(A)\\cap\\operatorname{Sym}(b) \\cap\\operatorname{Sym}(c) \\cap\\operatorname{Sym}(f) \\cap\\operatorname{Sym}(h)$ is a subgroup of $\\operatorname{Sym}(u)$. In addition, if the common symmetry group contains several mirror symmetry elements, the original second-order linear elliptic boundary value problem on the entire domain $\\Omega$ can be reduced to the corresponding boundary value problem on a certain subdomain. It is strictly proven in this paper that the new boundary condition imposed on the boundary of the subdomain is the homogeneous generalized Neumann boundary condition. The linear finite element method is used to numerically solve the second-order linear elliptic boundary value problem on the subdomain, thereby achieving domain reduction and significantly reducing the computational cost.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "math.AP"
+  ],
+  "authors": [
+   "Xianlong Pan",
+   "Wei Jiang"
+  ],
+  "url": "https://arxiv.org/abs/2608.18549",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [],
+  "summary": "Reducing computational cost for elliptic PDEs via symmetry-based domain reduction. The paper proves symmetry inheritance from coefficients to solutions and implements a FEM on subdomains with homogeneous generalized Neumann BCs.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18558",
+  "source": "arXiv",
+  "title": "MorphoGP: A Nonparametric Framework for Predicting Equilibrium Beach Profiles Under Tidal Influence",
+  "abstract": "The prediction of equilibrium beach profiles under tidal influence is of fundamental importance for sustainable coastal development, informing shoreline protection strategies and managing coastal ecosystems under changing environmental conditions. However, it remains challenging due to the highly nonlinear interactions among wave, tide, and sedimentary processes. Traditional empirical and numerical models often exhibit limited adaptability across diverse coastal environments, with especially pronounced limitations in beach systems where tidal processes are important . To improve data-driven prediction under these conditions, this study proposes MorphoGP, a unified category-specific Gaussian process framework for predicting equilibrium beach profiles (EBPs) under tidal influence. The framework first introduces a ContourCluster model based on contrastive learning to classify tide-influenced beach morphologies automatically. Within each morphological category, a specialized Gaussian process expert learns statistical associations between environmental descriptors including waves, tides, and sediments and the beach profile's shape. A Gating Net then integrates the outputs of all experts through a probabilistic weighting mechanism to produce the final prediction. Evaluated on data from over 180 beach profiles from tide-influenced coasts along the Chinese coast, MorphoGP achieves improved predictive performance compared with conventional and deep learning models, reducing the test RMSE by about 59.3\\% compared with the best baseline and achieving a final RMSE of 0.297 m. The proposed framework provides a physically informed, data-driven tool for equilibrium beach-profile prediction under tidal influence and coastal management, while stronger process-level physical coupling remains an important direction for future development.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "physics.geo-ph"
+  ],
+  "authors": [
+   "Xi Wu",
+   "Yanqing Wei",
+   "Hang Yin",
+   "Pengze Li",
+   "Hongshuai Qi",
+   "Xi Chen"
+  ],
+  "url": "https://arxiv.org/abs/2608.18558",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Predicting equilibrium beach profiles under tidal influence with data-driven models. The paper develops MorphoGP, a Gaussian process framework combining contrastive clustering and category-specific experts for coastal morphology.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18578",
+  "source": "arXiv",
+  "title": "Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs",
+  "abstract": "Proactive interference (PI) is a documented failure mode in large language models in which retrieval of a repeatedly overwritten value degrades as prior overwrites accumulate, mirroring a classical phenomenon in human working memory. Post-training quantization (PTQ) is now the default deployment path for open-weight models, yet its effect on this failure mode has not been tested. We evaluate three precision levels (FP16, INT8, INT4/NF4, via bitsandbytes) across three architecturally distinct instruction-tuned models (Qwen2.5-7B-Instruct, Mistral-7B-Instruct-v0.3, Phi-3.5-mini-instruct), holding the retrieval task fixed. INT4 quantization significantly reduces accuracy under high interference in every model (e.g., from 81.0% to 68.3% for Qwen), confirmed by paired McNemar's tests ($p \\le 2.6 \\times 10^{-6}$) and a mixed-effects regression spanning all interference levels; INT8, often assumed safe, also carries a smaller but real penalty in two of three models. The effect is specific to semantically similar (word-type) distractors and reverses sign under a numeric control condition, and is mechanistically linked to a rise in same-key intrusion errors under INT4 (from 21.5% to 24.6% of trials, $p = 4.8 \\times 10^{-7}$). A follow-up ablation shows the effect originates in the quantized transformer backbone rather than the output projection layer. These results suggest that bitsandbytes 4-bit quantization can impose an additional cost on applications relying on long, updatable, semantically dense contexts, even when aggregate benchmark accuracy appears largely unaffected. We release our code and tokenizer-verified vocabulary construction method at https://github.com/ShayanShahrabi/compress-and-forget",
+  "categories": [
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Shayan Shahrabi-Farahani (Shahid Beheshti University",
+   "Tehran",
+   "Iran)",
+   "Dara Rahmati (Shahid Beheshti University",
+   "Tehran",
+   "Iran)"
+  ],
+  "url": "https://arxiv.org/abs/2608.18578",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Quantifying how 4-bit quantization amplifies proactive interference in LLMs. The paper links INT4/NF4 precision to increased same-key intrusion errors via controlled experiments and ablation.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18641",
+  "source": "arXiv",
+  "title": "Physics-informed neural network for inverse modeling of granular flows",
+  "abstract": "Granular flows are ubiquitous in natural and industrial systems, yet their complex dynamics remain difficult to characterize. For inverse problems involving unknown inlet, outlet, and wall boundary conditions, where CFD simulations are challenging, reconstructing complete flow fields from sparse observations constitutes a challenging inverse problem. In this study, a physics-informed neural network framework driven by both physical mechanisms and measurement data is developed to reconstruct the steady-state full-field distribution of granular flows in a pipe. The proposed approach integrates sparse measurement data with governing equations and constitutive relations and is trained using high-fidelity datasets generated by CFD solutions of a continuum model. The framework incorporates a dimensionless loss formulation, physics-informed initialization, dynamic global weighting, and a locally weighted granular temperature data-loss strategy. These treatments enable accurate reconstruction of the complete flow-field evolution. This work establishes a robust methodological framework for flow-field reconstruction in complex granular flow systems.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Bing Wan",
+   "Bidan Zhao",
+   "Junwu Wang"
+  ],
+  "url": "https://arxiv.org/abs/2608.18641",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Reconstructing full-field granular flow distributions from sparse observations poses a challenging inverse problem. The paper develops a physics-informed neural network framework that integrates governing equations, constitutive relations, and strategies like dimensionless loss formulation and dynamic global weighting to enable accurate flow-field reconstruction.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18766",
+  "source": "arXiv",
+  "title": "A shifted energy barrier approach for phase-field modeling of tensile-dominated brittle fracture",
+  "abstract": "The classical AT1 phase-field model contains an intrinsic energy barrier for crack nucle ation, which makes the predicted strength depend on the fracture toughness and the regularization length. For tensile-dominated brittle fracture, this barrier is shifted by mapping the Rankine criterion, evaluated on the effective stress, onto a state-dependent active-energy threshold. The prescribed tensile strength then controls crack nucleation, while the AT1 crack-density functional, stiffness degradation, and degraded stress response remain unchanged. Since the threshold depends on the current stress state, the field equations are derived from a restricted variational principle. A microforce formulation identifies the barrier shift as a dissipative resistance and provides the corresponding lower bound on the regularization length. In one-dimensional tension, closed-form solutions recover the prescribed peak strength and give a cosine-type localization profile that ap proaches the classical AT1 profile as the shift vanishes. Numerical examples show that, within the admissible range, the nucleation load is nearly insensitive to the regularization length and the predicted multiaxial nucleation states follow the Rankine envelope. Under overall compression, crack nucleation remains associated with local tensile stress concen trations. The formulation also captures the transition from strength-controlled failure for small flaws to the LEFM limit for large cracks.",
+  "categories": [
+   "math.NA",
+   "cond-mat.mtrl-sci",
+   "cs.NA"
+  ],
+  "authors": [
+   "Yaode Yina",
+   "Luigi Greco",
+   "Hongjun Yua",
+   "Simone Morganti"
+  ],
+  "url": "https://arxiv.org/abs/2608.18766",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [],
+  "summary": "The classical AT1 phase-field model's intrinsic energy barrier causes predicted strength to depend on regularization length. The paper introduces a shifted energy barrier approach that maps the Rankine criterion to a state-dependent threshold, enabling tensile-strength-controlled crack nucleation while preserving the AT1 formulation's structure.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18851",
+  "source": "arXiv",
+  "title": "Multi-stage neural operator learning with application for convolutions",
+  "abstract": "Convolution integrals widely exist in applications, and to enable fast and accurate computations, this paper introduces two general multi-stage neural operator learning frameworks. The first, Deep Collocation Neural Operator (DCNO), is a supervised approach that iteratively refines the operator approximation by learning residuals from input-output data pairs. The second, Deep Galerkin Neural Operator (DGNO), is an unsupervised framework applicable when the target operator can be represented by a PDE, leveraging the weak form of the PDE residual for training. Both methods progressively construct basis operators through multiple training stages to enrich the approximation space, leading to significantly improved accuracy over standard one-shot operator learning. We provide theoretical analysis for their approximation capabilities and implement them for learning convolutions. Extensive numerical experiments demonstrate that both DCNO and DGNO achieve high accuracy, approaching machine precision under single float for convolution problems, and offer substantial efficiency gains for numerous queries or parametric variations compared to traditional solvers. We also extend these frameworks to handle multi-input operator learning scenarios involving variations in both the density and kernel of a convolution.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Zhiping Mao",
+   "Zhenye Wen",
+   "Yong Zhang",
+   "Xiaofei Zhao"
+  ],
+  "url": "https://arxiv.org/abs/2608.18851",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Fast computation of convolution integrals is challenging for traditional solvers. The paper introduces multi-stage neural operator frameworks (DCNO and DGNO) that iteratively refine operator approximations using data or PDE residuals, achieving high accuracy and efficiency.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18903",
+  "source": "arXiv",
+  "title": "A FEM-Based Surrogate Modelling and Optimization Framework for Physics-Constrained Electromagnetic Coil Design",
+  "abstract": "This work evaluates surrogate-assisted optimization of a seven-parameter current-excited coil--core benchmark subject to geometric, manufacturing, and separate core and copper mass constraints. A Python--MPh--COMSOL workflow couples a two-dimensional axisymmetric finite-element method (FEM) model to a Matern 5/2 Gaussian-process (GP) probabilistic surrogate. Here, physics-constrained denotes a design problem evaluated by a governing-equation FEM model and restricted by explicit physical, geometric, manufacturing, and material-allocation constraints; it does not denote a physics-informed GP architecture. Sequential Bayesian optimization (BO) ranks candidates using expected improvement (EI), and every reported incumbent is verified by FEM. Five paired runs show that optimizer ranking depends on the available FEM-evaluation budget: EI--BO improves rapidly at small continuation budgets, COBYLA is stronger at the earliest checkpoint, and BOBYQA attains the highest mean terminal response. A retrospective finite-pool study further finds no robust endpoint advantage of EI over posterior-mean ranking on this smooth response surface. The broader result is that early progress, terminal response, information use, and wall-clock cost can favor different methods in simulation-driven design. A selected-design check at a common total current preserves the observed BOBYQA--COBYLA--EI-BO ordering. The conclusions nevertheless remain conditional on this axisymmetric benchmark and do not establish a fixed-current optimum, fixed-power performance, or electrical-efficiency superiority.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Yucheng Liu"
+  ],
+  "url": "https://arxiv.org/abs/2608.18903",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Optimizing physics-constrained electromagnetic coil designs requires costly FEM simulations. The paper couples FEM with a Gaussian-process surrogate and Bayesian optimization to accelerate design exploration while respecting geometric, manufacturing, and material constraints.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18974",
+  "source": "arXiv",
+  "title": "Modeling of an ODE-constrained optimization problem describing tumor dynamics, and numerical approximation via sequential physics-informed neural networks",
+  "abstract": "In this paper, we study an optimal control problem related to an ODE model of glioblastoma growth influenced by the oxygen. The model considers a couple of controls describing the chemotherapy and antiangiogenic therapies. The cost functional aims to reduce the tumor growth, bring the oxygen concentration close to a desired value, and penalize the use of therapies. We solve the optimal control problem, proving the existence of a global optimal control and deriving first-order necessary optimality conditions through the Pontryagin Minimum Principle. For the numerical approximation, we use Physics-Informed Neural Networks (PINNs) to solve the state and adjoint systems, together with a gradient descent method with Armijo line search for the controls. To address the strategy of PINNs we consider the methodology proposed in [15], making a decomposition of the time domain into several subintervals, using different neural networks in each subinterval and enforcing continuity conditions between successive time subintervals. This strategy, called sequential PINN formulations in time, including soft and hard-constrained versions, is compared with the corresponding approximation results of classical solvers and traditional PINNs counterparts.",
+  "categories": [
+   "math.OC"
+  ],
+  "authors": [
+   "Juan J. Forero-Hern\\'andez",
+   "\\'Elder J. Villamizar-Roa"
+  ],
+  "url": "https://arxiv.org/abs/2608.18974",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Optimal control of glioblastoma growth via chemotherapy and antiangiogenic therapy requires solving ODE-constrained optimization. The paper uses sequential physics-informed neural networks (PINNs) to approximate state and adjoint systems, enabling gradient-based control updates with domain decomposition for numerical stability.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.19193",
+  "source": "arXiv",
+  "title": "A Localized Fourier Extension Method for Piecewise-Smooth Inverse Source Reconstruction",
+  "abstract": "We reconstruct a piecewise-smooth source in a Poisson equation on a semi-infinite strip from noisy solution values measured along an interior line. Applying the one-dimensional Dirichlet Laplacian to the observation reduces the inverse problem to regularized second-order differentiation followed by a boundedly invertible correction. The differentiated trace and the source differ by an analytic smoothing term and therefore have the same interior singular support and jump data. This structure motivates a localized Fourier extension method that combines two staggered detection partitions, GTSVD-regularized local derivative coefficients, mollified conjugate Fourier sums, and structure-aligned numerical differentiation. The source is then recovered by an exponentially decaying spectral correction. For an exact partition, the reconstruction inherits the piecewise differentiation rate $\\mathcal O(\\delta^{(\\bar s-2)/\\bar s})$; local peak and partition perturbation estimates describe the additional effect of breakpoint errors. Comparisons with full-grid total-variation regularization and truncated Fourier inversion show competitive high-noise performance and a pronounced low-noise advantage of the localized method. Repeated Gaussian-noise tests confirm robustness in the moderate- and low-noise regimes.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Zhihong Dou",
+   "Zhenyu Zhao"
+  ],
+  "url": "https://arxiv.org/abs/2608.19193",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Reconstructing a piecewise-smooth source in a Poisson equation from noisy interior measurements poses challenges due to analytic smoothing effects. The paper introduces a localized Fourier extension method combining GTSVD-regularized differentiation, mollified conjugate Fourier sums, and spectral correction to recover jump data and singular support.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18141",
+  "source": "arXiv",
+  "title": "Mitigating Spectral Bias in Neural Operators for Underwater Transmission Loss Prediction",
+  "abstract": "Predicting underwater acoustic transmission loss rapidly and accurately is crucial for real-time ocean acoustic applications. While Fourier Neural Operators (FNO) have emerged as powerful surrogate models due to their global receptive fields, they suffer from spectral bias. The frequency truncation mechanism in FNO filters out high-frequency components, resulting in over-smoothed predictions that fail to capture fine-grained interference patterns. To overcome this limitation, this paper proposes a Spectral-Spatial Residual Learning (S2RL) framework. S2RL decomposes the prediction task into a coarse-to-fine process: a spectral Global Propagator first generates a globally consistent prediction, and a spatial Local Refiner subsequently recovers the high-frequency residuals. Experimental results on a South China Sea dataset show that the proposed method significantly outperforms FNO baselines while maintaining millisecond-level inference speeds.",
+  "categories": [
+   "cs.SD",
+   "cs.LG"
+  ],
+  "authors": [
+   "Yifan Sun",
+   "Shikai Fang",
+   "Chao Zhang",
+   "Lei Cheng",
+   "Jianlong Li",
+   "Peter Gerstoft"
+  ],
+  "url": "https://arxiv.org/abs/2608.18141",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Fourier Neural Operators (FNOs) suffer from spectral bias when predicting underwater acoustic transmission loss. The paper proposes a Spectral-Spatial Residual Learning framework that decomposes prediction into global propagation and local refinement to recover high-frequency residuals.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18148",
+  "source": "arXiv",
+  "title": "Flux-form spatiotemporal neural operators for coarse-grained dynamics of multiscale PDEs",
+  "abstract": "We study data-driven prediction of coarse-grained dynamics in multiscale PDE systems. Adopting a closure-free operator-learning viewpoint, we apply a linear coarse-graining map and learn a surrogate evolution operator for the resolved field directly from filtered high-fidelity trajectories. Motivated by the Mori-Zwanzig formalism, we propose a spatiotemporal neural operator mapping a resolved history slab on $\\Omega\\times[-T_{\\mathrm{in}},0]$ to a resolved future slab on $\\Omega\\times[0,T_{\\mathrm{out}}]$. Spatial mixing uses Fourier convolution, while temporal mixing uses a causal kernel operator with position-attention weights on time lags. This causal temporal operator encodes finite-memory effects in the resolved dynamics while preserving the directionality of the history-to-future map. To improve rollout robustness and suppress nonconservative artifacts, we embed a flux-form inductive bias by parameterizing the windowed update in explicit divergence form. We also provide a data-driven guideline for selecting the memory length $T_{\\mathrm{in}}$ via the decorrelation time of a closure-injection diagnostic computed from filtered trajectories. We validate on the coarse-grained viscous Burgers' equation, the Kuramoto-Sivashinsky equation, and two-dimensional turbulent flows, obtaining stable autoregressive rollouts with improved long-horizon accuracy and statistical fidelity.",
+  "categories": [
+   "nlin.CD",
+   "cs.LG",
+   "math.AP",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Junfeng Chen"
+  ],
+  "url": "https://arxiv.org/abs/2608.18148",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Coarse-grained dynamics prediction in multiscale PDEs requires closure-free surrogate operators. The paper introduces a spatiotemporal neural operator with causal temporal kernels and flux-form divergence parameterization to enforce conservation and improve rollout stability.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18272",
+  "source": "arXiv",
+  "title": "SeisEvo: Evolution of Seismic Data Reconstruction Algorithms by Agents",
+  "abstract": "Classical seismic data reconstruction relies on manually designed structural priors and iterative operators, whose coupled design space is far larger than manual trial and error can explore systematically. Deep-learning methods encode the reconstruction rules in learned weights rather than in an explicit operator that can be inspected and modified. We propose SeisEvo (Seismic Algorithm Evolution), which does not optimize a single reconstruction result but searches for the algorithm that produces it. Starting from a classical reconstruction algorithm, an LLM-driven multi-agent search modifies only the components that the user has opened for editing, without prescribing the mechanism to be discovered. Candidates that violate the physical constraints of the task are rejected outright, and the remaining ones are scored by execution. The output is neither an agent system nor a neural network, but a standalone white-box algorithm that requires no agent or neural network at inference time. For interpolation without added noise, the search discovered a residual-gated, phase-aligned dip-consistency projection; Evo-POCS improves the SNR over classic POCS by 3.49 dB on average across missing ratios from 30% to 70%. For simultaneous interpolation and denoising, it discovered a reliability-grouped singular-value shrinkage; Evo-MSSA improves the average reconstruction SNR by more than 7 dB over classic MSSA and by more than 3 dB over a stronger rank-reduction baseline. Both operators retain their gains on data not used during the search. To the best of our knowledge, this is the first study to formulate the design of a seismic reconstruction operator as a constrained, LLM-driven program evolution task. Agentic algorithm evolution can thus complement deep learning in discovering explicit, inspectable, and deployable seismic processing algorithms.",
+  "categories": [
+   "physics.geo-ph",
+   "cs.AI",
+   "cs.NE",
+   "eess.SP"
+  ],
+  "authors": [
+   "Yingjie Xu",
+   "Siwei Yu",
+   "Jianwei Ma"
+  ],
+  "url": "https://arxiv.org/abs/2608.18272",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Designing seismic reconstruction algorithms manually or via deep learning limits interpretability and adaptability. The paper uses LLM-driven multi-agent search to evolve white-box algorithms like residual-gated POCS and reliability-grouped MSSA, validated on interpolation and denoising tasks.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18279",
+  "source": "arXiv",
+  "title": "A Comprehensive Review of Large Language Models for Nanophotonics: From Surrogate Modeling to Autonomous Design",
+  "abstract": "Metasurfaces have revolutionized the development of photonic devices by enabling unprecedented precision in light manipulation. However, their design processes are often constrained by computationally expensive simulations and complex high-dimensional design spaces. Although deep learning has accelerated the design process by serving as a surrogate model, it remains constrained by task-specific architectures and lacks universal reasoning capabilities. This review surveys how Large Language Models (LLMs) are adding semantic interfaces, code generation, and tool orchestration to established numerical nanophotonic workflows. We first outline the development from classical neural networks to transformer-based models and their applications in nanophotonic design. We then review the emergence of LLM-related methods in nanophotonics and organize them into two operational modes: surrogate models that treat structure-spectrum mapping as a language task, and agentic systems that have been demonstrated to generate code, orchestrate selected simulation steps, and support closed-loop optimization. Furthermore, to identify future cross-disciplinary opportunities, we briefly explore applications of LLMs in research fields such as materials science and wireless communications. This review concludes by looking ahead to the next generation of multimodal foundation models with physical perception capabilities. In this vision, artificial intelligence is evolving from passive tools into active collaborators, participating in autonomous scientific discovery.",
+  "categories": [
+   "physics.optics",
+   "cs.LG"
+  ],
+  "authors": [
+   "Huanshu Zhang",
+   "Kegeng Tang",
+   "Lei Kang",
+   "Sawyer D. Campbell",
+   "Zihao Wang",
+   "Douglas H. Werner"
+  ],
+  "url": "https://arxiv.org/abs/2608.18279",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLMs are increasingly used to automate nanophotonic design workflows via code generation and tool orchestration. The review surveys LLM-based surrogate modeling and agentic systems for metasurface design, framing them as steps toward autonomous scientific discovery.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18294",
+  "source": "arXiv",
+  "title": "Debiased Inference for AI-Generated Data without Gold-Standard Labels: Identification via Multiple Imperfect Measurements",
+  "abstract": "An increasing number of scholars use AI to measure variables they subsequently include in downstream analyses. Although AI-measured variables are often analyzed as if observed without error, ignoring prediction errors in automated measurement leads to substantial bias and invalid confidence intervals in downstream analyses, even if AI measurement accuracy is high, e.g., above 90%. Existing solutions, such as design-based supervised learning and prediction-powered inference, combine error-prone AI-based measurements with gold-standard labels, which may be costly and difficult to obtain in some application areas. In this paper, we propose debiased inference with multiple imperfect measurements (DMM), a framework that combines multiple error-prone AI measurements to enable valid downstream inference without gold-standard labels. Building on the established results on CP decomposition, DMM assumes that these measurements are independent conditional on the latent true label and observed unit-level features, such as text features represented by embeddings. This framework allows for unknown misclassification rates to vary across annotation methods (e.g., large language models) and across units of annotation (e.g., texts). Under this assumption, we use semiparametric inference theory to prove that the DMM estimator is consistent and asymptotically normal, enabling valid inference for a wide range of downstream statistical analyses common in the social sciences. Our simulation results show that DMM yields valid inference and that adding accurate, though imperfect, measurements can improve efficiency. Focusing on common applications of large language model annotations, we also develop diagnostics to assess the conditional independence assumption.",
+  "categories": [
+   "stat.ME",
+   "cs.AI",
+   "cs.CL",
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Naoki Egami",
+   "Sooahn Shin"
+  ],
+  "url": "https://arxiv.org/abs/2608.18294",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "AI-generated measurements introduce bias in downstream analyses due to misclassification errors. The paper proposes DMM, a debiased inference framework that combines multiple imperfect AI measurements under conditional independence to enable valid statistical inference without gold-standard labels.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18522",
+  "source": "arXiv",
+  "title": "GCNO: Gramian Chebyshev Neural Operator for Physics-Based Compression of Wireless Channels",
+  "abstract": "Large antenna arrays allow wireless systems to serve more users and achieve higher data rates, but they also make channel feedback expensive: the receiving device must repeatedly report a large complex-valued channel matrix to the base station. Most neural compressors treat this matrix like an image and replace it with a fixed-length code that only a matched neural decoder can interpret. The message therefore does not adapt to channel complexity, and changing the antenna count typically requires retraining. We ask whether a device can instead report only the few dominant propagation paths underlying each channel. We introduce the Gramian Chebyshev Neural Operator (GCNO), a physics-based, variable-rate compressor that identifies a sample-dependent set of path directions. GCNO uses receive-transmit channel structure to locate paths, a first-order Taylor correction to refine directions that fall between grid points, and least squares to recover their complex strengths. It is trained without path labels, and the base station reconstructs the channel analytically from the transmitted path tuples rather than through a learned decoder. Across three ray-traced environments, GCNO achieves better reconstruction accuracy at the same payload - or lower payload at the same accuracy - than neural feedback baselines, and transfers to unseen antenna counts without retraining.",
+  "categories": [
+   "cs.IT",
+   "cs.AI",
+   "cs.LG",
+   "math.IT"
+  ],
+  "authors": [
+   "Rafid Umayer Murshed",
+   "Shahab Hamidi-Rad",
+   "Elahe Soltanaghai",
+   "Akshay Malhotra"
+  ],
+  "url": "https://arxiv.org/abs/2608.18522",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Compressing wireless channel feedback via dominant path identification requires physics-aware neural operators. The paper introduces GCNO, which uses Gramian structure and Taylor correction to recover path directions and strengths, enabling analytic reconstruction without a learned decoder.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.18879",
+  "source": "arXiv",
+  "title": "Adaptive resolution frames: A multilevel framework in Hilbert spaces",
+  "abstract": "We introduce adaptive resolution frames (AR-frames), a class of weighted frames equipped with a partitioned index structure that models multiple resolution levels in Hilbert spaces. We establish a block-triangular representation of the associated operators and prove the convergence of an iterative reconstruction method with explicit error estimates. We further derive optimal block-diagonal preconditioners that minimize the iteration error and obtain stability results showing that AR-frames and their canonical reconstruction operators remain stable under sufficiently small weighted perturbations. These results provide a unified framework for efficient reconstruction and perturbation analysis of AR-frames.",
+  "categories": [
+   "math.FA",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Jahangir Cheshmavar"
+  ],
+  "url": "https://arxiv.org/abs/2608.18879",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Developing efficient reconstruction methods for multilevel frames in Hilbert spaces. The paper introduces adaptive resolution frames (AR-frames) with block-triangular operator representations, iterative reconstruction convergence guarantees, and optimal preconditioners.",
+  "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.19070",
+  "source": "arXiv",
+  "title": "Function-On-Function Regression Through Separable Neural Operators",
+  "abstract": "This paper investigates the estimation of the regression operator in function-on-function regression models. While traditional research has predominantly focused on linear models or their immediate nonlinear extensions, we propose a neural operator approach to accommodate general regression operators under mild smoothness assumptions. Operator learning has emerged as an active area of machine learning, particularly for solving physical models governed by partial differential equations. Using this paradigm, our methodology introduces the separable neural operator, a neural-operator architecture that represents the regression operator through input-dependent coefficient functions and output-dependent basis functions. Beyond adapting this architecture to the regression operator estimation problem, we establish the consistency of the estimator under relatively mild smoothness and sampling conditions, allowing functional data to be observed on dense, possibly irregular, discrete grids. We also apply the proposed approach to the BGC Argo data and demonstrate its potential for oceanographic research.",
+  "categories": [
+   "math.ST",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Tailen Hsing",
+   "Su-Yun Huang",
+   "Toshinari Morimoto"
+  ],
+  "url": "https://arxiv.org/abs/2608.19070",
+  "published": "2026-08-20",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Estimating regression operators in function-on-function models with neural operators. The paper proposes a separable neural operator architecture combining input-dependent coefficients and output-dependent basis functions, analyzed under mild smoothness assumptions.",
+  "added": "2026-08-20"
  }
 ]
