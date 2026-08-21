@@ -47685,5 +47685,298 @@
   ],
   "summary": "Estimating regression operators in function-on-function models with neural operators. The paper proposes a separable neural operator architecture combining input-dependent coefficients and output-dependent basis functions, analyzed under mild smoothness assumptions.",
   "added": "2026-08-20"
+ },
+ {
+  "id": "arxiv:2608.19209",
+  "source": "arXiv",
+  "title": "Physics-Informed Neural Networks as Fast Surrogate Models for Electrochemical Flow Reactors",
+  "abstract": "This work presents a physics-informed neural network (PINN) for modeling a transient two-dimensional electrochemical flow reactor with diffusion, migration, convection, and nonlinear anodic Butler--Volmer kinetics. The model is trained without labeled concentration data by embedding the governing transport equation and all initial and boundary conditions into a composite loss function. Spatial and temporal coordinates together with anodic overpotential, temperature, inlet concentration, maximum flow velocity, and diffusivity are used as inputs, allowing the network to predict concentration fields over a broad operating domain. Validation against finite-difference-based solutions shows strong agreement for representative transient and near-steady cases, with a mean relative space--time error of $(9.99 \\pm 0.65)\\times10^{-3}$ (sub-percent level) across the conditioning domain. PINN inference is faster than a traditional finite difference solver by a factor of $5.34$, thus reducing runtime by $81.3\\%$. Generalization tests further show that the surrogate remains robust under in-domain boundary-focused sampling and controlled extrapolation, although anodic overpotential is the most challenging parameter due to its exponential effect on interfacial kinetics. The results indicate that physics-informed neural networks can serve as accurate and efficient parametric surrogates for electrochemical transport problems and provide a foundation for low-computational-cost digital-twin modeling of electrochemical flow reactors.",
+  "categories": [
+   "physics.comp-ph",
+   "physics.chem-ph"
+  ],
+  "authors": [
+   "Eric Fern\\'andez-Garc\\'ia",
+   "Miguel Modestino",
+   "Sergio Maldonado"
+  ],
+  "url": "https://arxiv.org/abs/2608.19209",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Modeling transient electrochemical flow reactors with nonlinear kinetics is computationally expensive. The paper develops a physics-informed neural network (PINN) that embeds governing transport equations into a loss function to predict concentration fields parametrically, achieving sub-percent error and 5.34× speedup over finite-difference solvers.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.19579",
+  "source": "arXiv",
+  "title": "Enforcing LLM Safety through DMD-based Classification of Prompt-Response Embedding Dynamics",
+  "abstract": "Large Language Models (LLMs) are increasingly deployed in high-stakes applications, yet their tendency to generate toxic, harmful, or policy-violating content poses significant risks. Detecting these unsafe outputs efficiently in a black-box manner remains an open challenge. In this paper, we extend a recently proposed dynamical systems framework designed for hallucination detection to LLM safety classification. By projecting both prompts and responses into high-dimensional embedding spaces and fitting separate Koopman-based predictive models for safe and unsafe regimes, we classify new outputs using a new differential residual score that compares prediction errors of the safe and unsafe regimes. A key contribution is the incorporation of the prompt and response embedding dynamics, yielding fitted Koopman operators that capture crucial interaction patterns. We evaluate our black-box method across three safety benchmarks using three embedding models. Our results show that incorporating prompt embeddings yields consistent improvements, particularly for interaction-dependent violations when paired with causal decoders (e.g., in Llama-3), while response-only violations benefit more from dense semantic embedding representations. These findings opens the door for using dynamical systems to analyze AI systems rather than the dominant paradigm of using AI to model dynamical systems.",
+  "categories": [
+   "cs.AI",
+   "math.DS"
+  ],
+  "authors": [
+   "Mohamed Akrout",
+   "Olivera Kotevska",
+   "Dan Wilson"
+  ],
+  "url": "https://arxiv.org/abs/2608.19579",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Detecting unsafe LLM outputs efficiently in a black-box setting remains challenging. The paper extends a dynamical systems framework using Koopman operators to model prompt-response embedding dynamics, introducing a differential residual score for safety classification.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.19632",
+  "source": "arXiv",
+  "title": "Complementary, Not Cumulative: Interaction Effects in Physics-Informed Neural Networks for Navier-Stokes Vortex Shedding",
+  "abstract": "Physics-informed neural networks (PINNs) embed governing partial differential equations directly into the training loss, offering a promising alternative to costly CFD solvers for unsteady flows. Yet the growing list of techniques proposed to improve PINN training is typically validated one at a time, leaving open whether these techniques actually compose. We study this question in depth on the DFG/Schafer-Turek unsteady cylinder wake benchmark. In isolation, nearly every technique performs no better than an untreated baseline. However, combining periodic (SIREN) activations with causal weighting unlocks a previously inaccessible regime, reconstructing velocity and pressure fields to within 4.1% average relative L2 error against an OpenFOAM reference solution. Adding further techniques instead causes catastrophic performance degradation, demonstrating that individually effective PINN interventions can interact nonlinearly and that more elaborate training recipes are not necessarily better.",
+  "categories": [
+   "cs.LG",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Devesh Shah"
+  ],
+  "url": "https://arxiv.org/abs/2608.19632",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Training physics-informed neural networks (PINNs) for unsteady Navier-Stokes flows often suffers from non-composable techniques. The paper identifies that combining SIREN activations with causal weighting unlocks accurate vortex shedding reconstruction, while further additions degrade performance.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.19658",
+  "source": "arXiv",
+  "title": "Rationally Enriched Chebyshev Trunk Bases for DeepONet Surrogates of High P\\'eclet Entrance Transport",
+  "abstract": "This study demonstrates a rationally enriched Chebyshev (REC) trunk for deep operator network (DeepONet) surrogate models of singularly perturbed and high-P\\'eclet transport problems whose solution profiles are characterized by thin localized boundary or wall layers. The REC trunk combines Chebyshev polynomial dictionary elements with rational dictionary elements constructed using the adaptive Antoulas-Anderson (AAA) algorithm. Over five independent training runs, the resulting REC-trunk DeepONet is evaluated against a vanilla DeepONet and a Chebyshev-trunk DeepONet whose prescribed dictionary consists only of Chebyshev polynomials across three problems whose singular perturbation parameters are diffusion-to-advection ratios: a singularly perturbed scalar boundary-value problem (BVP), the thermal entrance problem with a prescribed wall temperature, and the concentration entrance problem with an absorbing wall. Across the held-out test profiles, the REC-trunk DeepONet improves over the vanilla DeepONet and remains comparable to the Chebyshev-trunk DeepONet in predicting the scalar profile, with its clearest advantage over the Chebyshev-trunk DeepONet appearing when the perturbation parameter lies between $1.00\\times10^{-4}$ and $1.78\\times10^{-4}$, where it reduces the profile-error metrics by up to $19.5\\,\\%$ relative to the Chebyshev-trunk DeepONet. In predicting the wall-normal temperature and concentration profiles, the REC-trunk DeepONet reduces the profile-error metrics by up to $60.2\\,\\%$ and $32.2\\,\\%$ relative to the vanilla and Chebyshev-trunk DeepONets, respectively, while suppressing artificial near-wall oscillations as the P\\'eclet or mass-transfer P\\'eclet number ranges from $10^{2}$ to $10^{4}$.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Mingeun Choi",
+   "Satish Kumar"
+  ],
+  "url": "https://arxiv.org/abs/2608.19658",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "High-Péclet transport problems with thin boundary layers challenge standard DeepONet surrogates. The paper introduces a rationally enriched Chebyshev (REC) trunk combining Chebyshev polynomials and AAA-derived rational functions to reduce errors and suppress oscillations.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.19993",
+  "source": "arXiv",
+  "title": "Optimal Skill Selection for LLM Agents with Provable Bicriteria Guarantees",
+  "abstract": "Loading reusable skill documents into a bounded context window is now the primary way large language model (LLM) agents acquire task-specific capabilities, which makes skill selection a first-order determinant of task performance and token cost. Yet current agents score skills independently by semantic relevance and assemble the set by top-$k$ or greedy packing, with no quality guarantee or cost awareness on the selected set. As a result, redundant or poorly chosen skills waste scarce context tokens and can even degrade performance. We give the first model of how the selected skill set shapes execution outcomes and cast skill selection as an optimization problem: choose a skill set under a hard token budget to maximize a monotone submodular benefit minus context penalty. For this problem, we develop Best Prefix Selection (BPS), a polynomial-time algorithm, and prove, to our knowledge, the first performance guarantee for skill selection: a bicriteria $(1-1/e,1)$ approximation whose benefit coefficient is optimal in polynomial time. On a contamination-controlled BigCodeBench variant, BPS outperforms all the baselines, reaching $0.73$ measured task success versus $0.20$--$0.52$ for released skill routers, text retrievers, and the executor's own selection, on $28\\%$ fewer tokens than the strongest released router.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Yu Chen",
+   "Ruishuo Chen",
+   "Xun Wang",
+   "Zhuoran Li",
+   "Longbo Huang"
+  ],
+  "url": "https://arxiv.org/abs/2608.19993",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Skill selection for LLM agents under token budgets lacks quality guarantees. The paper formulates skill selection as a submodular optimization problem and proposes Best Prefix Selection, a polynomial-time algorithm with bicriteria (1-1/e,1) approximation guarantees.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.20061",
+  "source": "arXiv",
+  "title": "Let's Scale Step by Step: Compute-Efficient Hyperparameter Transfer for Large-Scale Mixture-of-Experts",
+  "abstract": "Mixture-of-Experts (MoE) architectures significantly expand model capacity without a proportional increase in computational cost. However, optimizing their hyperparameters---particularly the learning rate---at extreme scales of both model size and token budget via sweeping remains computationally prohibitive. In this paper, we propose a compute-efficient, two-step hyperparameter transfer framework that estimates optimal learning rates for training large MoE models by transferring them across scaling model widths, and subsequently extrapolating to trillion-token horizons. First, we formulate a Maximal Update Parameterization ($\\mu$P) adaptation for MoE architectures utilizing Multi-head Latent Attention (MLA) and the Muon optimizer, demonstrating that optimal learning rates transfer consistently across width-scaled models. Second, we extend this transferability along the token dimension by establishing a predictive scaling law. By applying linear regression to the optimal values derived from small proxy models on limited budgets, we successfully extrapolate the ideal learning rate to massive training horizons (e.g., 10 trillion tokens) with high fidelity ($R^2=0.95$). Consequently, this indicates that proxy training on small models is sufficient to determine the optimal learning rate for the extensive training of large-scale MoEs. We apply the proposed methodology to pretrain our foundation model (155B total, 17B active parameters) from scratch, and the stable training and evaluation results validate that optimal configurations for full-scale target models can be accurately predicted with minimal ablation costs.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "cs.CL"
+  ],
+  "authors": [
+   "Nayeon Kim",
+   "Hojin Lee",
+   "Yunju Bak",
+   "Jaesun Park",
+   "Boseop Kim"
+  ],
+  "url": "https://arxiv.org/abs/2608.20061",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Hyperparameter optimization for large-scale MoE training is computationally prohibitive. The paper develops a compute-efficient framework that transfers learning rates across model widths and extrapolates them via predictive scaling laws validated on trillion-token horizons.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.20089",
+  "source": "arXiv",
+  "title": "Backstepping-Guided Reinforcement Learning for Wide-Range Saint-Venant Canal Regulation",
+  "abstract": "Backstepping control provides local stability guarantees for nonlinear Saint-Venant systems, but its regulation performance may degrade when the system operates far from the nominal equilibrium. This letter proposes a backstepping-guided soft actor-critic (SAC) controller framework that incorporates model-based control knowledge into reinforcement learning (RL). The nominal backstepping control law is first learned by deep operator network (DeepONet) and embedded into the actor and critic networks as prior informed feature representations. The learned prior is further combined with the SAC policy to generate the final control input, while a transfer-learning strategy preserves the useful backstepping knowledge during adaptation to the nonlinear dynamics. Simulation results on the Sambre River model demonstrate that the proposed method improves learning efficiency and maintains effective regulation over larger initial deviations than backstepping control.",
+  "categories": [
+   "math.AP",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Chenchen Wang",
+   "Jie Qi"
+  ],
+  "url": "https://arxiv.org/abs/2608.20089",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Backstepping control for Saint-Venant systems degrades under large deviations from equilibrium. The paper integrates a DeepONet-learned backstepping prior into SAC reinforcement learning, enabling stable wide-range canal regulation with transfer-learning preservation of control knowledge.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.20153",
+  "source": "arXiv",
+  "title": "FormalTCS: Benchmarking End-to-End Frontier Formal Theoretical Computer Science Research of Large Language Models",
+  "abstract": "Large language models (LLMs) have shown growing potential for automated theoretical computer science (TCS) research, yet existing benchmarks remain far from realistic research settings. We introduce \\ourbenchmark, an expert-validated benchmark for evaluating LLMs on frontier, end-to-end TCS research. \\ourbenchmark contains $175$ instances drawn from papers accepted to STOC, FOCS, SODA, and COLT in 2025-2026, preserving paper-specific definitions, assumptions, and proof dependencies, with expert-verified Lean formalizations and proofs. Evaluations of leading LLMs reveal that current models remain far from reliably completing the full research pipeline. In particular, autoformalization is the sharpest bottleneck: the best model achieves only $11.5$ on translating natural-language claims into formal theorem statements, compared with $28.6$ Pass@8 when proving human-provided formal statements. Building on \\ourbenchmark, we further develop an automated TCS research framework that generates, formalizes, filters, and proves new claims. Of $64$ generated claims, only $6$ ultimately pass expert evaluation and proof verification, indicating that beyond formalization, limited research taste remains another major barrier to autonomous TCS research.",
+  "categories": [
+   "cs.CL"
+  ],
+  "authors": [
+   "Dingzirui Wang",
+   "Xuanliang Zhang",
+   "Keyan Xu",
+   "Qingfu Zhu",
+   "Wanxiang Che"
+  ],
+  "url": "https://arxiv.org/abs/2608.20153",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Automated theoretical computer science research requires end-to-end formalization and proof verification. The paper introduces a benchmark with Lean-formalized TCS problems and evaluates LLMs on autoformalization and theorem proving, revealing parametric-recall ceilings.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.19224",
+  "source": "arXiv",
+  "title": "Causal Inference under Interference with Learned Exposure Mappings",
+  "abstract": "Exposure mappings are often assumed to be known in causal spillover analyses. In environmental settings, however, they are typically induced by transport processes that are not directly observed and must instead be learned from pollution data. We study how uncertainty in learned transport processes propagates into exposure mappings and downstream spillover inference under interference. We compare mechanistic transport models with modern operator-learning approaches, including PDE, PINO, FNO, and GeoPT, using both simulation studies and an empirical analysis of California PM$_{2.5}$ data. In simulations, all four transport models achieved nearly identical pollution prediction accuracy, yet estimated spillover effects ranged from 1.78 to 2.27. Models that more accurately recovered the induced exposure mapping also produced spillover estimates closer to the true effect. Disagreement was modest for regional interventions but substantially larger for localized point-source interventions. The California analysis showed the same pattern: competing transport models produced similar predictions of observed PM${2.5}$ concentrations while implying different spillover effects under hypothetical pollution-control interventions. Our findings suggest that predictive agreement alone is insufficient for reliable causal inference when exposure mappings are learned rather than directly observed.",
+  "categories": [
+   "stat.ME",
+   "cs.AI",
+   "cs.CY",
+   "cs.LG",
+   "stat.AP"
+  ],
+  "authors": [
+   "Cong Cao"
+  ],
+  "url": "https://arxiv.org/abs/2608.19224",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "uq-inverse-problems"
+  ],
+  "summary": "Causal spillover analysis under interference requires exposure mappings induced by unobserved transport processes. The paper compares mechanistic and operator-learning models (PINO, FNO) for exposure mapping, showing predictive agreement insufficient for reliable causal inference when mappings are learned.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.19306",
+  "source": "arXiv",
+  "title": "Quantum Gaussian processes for prediction of channel observations",
+  "abstract": "Given a set of input states, we consider the task of predicting the expectation value of a Pauli observable at the output of an unknown quantum evolution, using only a limited number of measurements. Recently, quantum Gaussian process (QGP) regression was introduced for this task across various classes of unitary evolution. Here, we extend the QGP framework beyond unitary dynamics. In particular, we prove convergence of the channel's outputs to a QGP and derive the associated closed-form kernel under a uniform (Lebesgue measure) prior over quantum channels. The kernel's dimensional factor, however, dictates the required observation precision. While manageable when the channel and observable are restricted to small subsystems, exponential suppression precludes learning when the subsystem grows extensively with the system size. Since the Lebesgue prior is overly broad for many applications, we propose an empirical Bayes heuristic that replaces the dimensional factor with a learnable scale parameter while retaining the kernel's state-overlap correlation structure. In numerical simulations of up to 64 qubits, channel QGP regression with the Lebesgue kernel exhibits a strong inductive bias for local channels, enabling faithful extrapolation. For global 64-qubit channels, the rescaled kernel restores learnability, with predictions improving systematically with the shot budget. Results from a noisy quantum computer further demonstrate the robustness of QGP regression under experimental conditions. Beyond regression, we validate QGPs as Bayesian-optimization surrogates for state preparation under noisy XXZ dynamics.",
+  "categories": [
+   "quant-ph",
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Jonas J\\\"ager",
+   "Yaroslav Khmelnitskiy",
+   "Paolo Braccia",
+   "Artur Miroszewski",
+   "Diego Garc\\'ia-Mart\\'in",
+   "M. Cerezo",
+   "Piotr Czarnik"
+  ],
+  "url": "https://arxiv.org/abs/2608.19306",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "uq-inverse-problems"
+  ],
+  "summary": "Predicting Pauli observable expectation values for unknown quantum channels requires robust regression. The paper extends quantum Gaussian processes (QGPs) to channel dynamics, derives a closed-form kernel under Lebesgue priors, and proposes an empirical Bayes heuristic to overcome dimensional suppression.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.19774",
+  "source": "arXiv",
+  "title": "Kerr Quasinormal Modes without Variable Separation: A Two-Dimensional Hyperboloidal Teukolsky Solver with Physics-Informed Neural Networks",
+  "abstract": "We use physics-informed neural networks (PINNs) to solve the gravitational quasinormal-mode (QNM) eigenvalue problem for Kerr spacetime directly in the two-dimensional hyperboloidal formulation of the Teukolsky equation. This formulation does not require separation of variables and thus retains the coupled radial--angular structure. Such a scheme provides a prototype for calculating the QNMs of beyond-Kerr black holes for which the perturbation equations are non-separable. Sequences with increasing angular momentum are constructed, reaching close to the extremal limit. We focus on the fundamental modes $(\\ell,m,n)=(2,0,0)$, $(2,1,0)$, $(2,2,0)$, $(3,3,0)$ and $(4,4,0)$, together with the first overtone $(2,2,1)$. Independent benchmark evaluation shows that every reported real and imaginary frequency component remains below $0.5\\%$ error, with a median deviation of $0.1\\%$. This accuracy is maintained in the near-extremal regime, where the damping rate becomes small and the modes are longest-lived. The results establish a non-spectral numerical route to multidimensional black-hole perturbation eigenproblems which does not match the substantially higher precision of dedicated Kerr solvers but offers greater flexibility and requires less analytical pre-processing. Non-separable rotating backgrounds and coupled systems, such as gravitational--electromagnetic Kerr--Newman perturbations, are natural extensions of the same construction.",
+  "categories": [
+   "gr-qc",
+   "hep-ph",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Antonio Ferrer-S\\'anchez",
+   "Daniela D. Doneva",
+   "Jos\\'e D. Mart\\'in-Guerrero",
+   "Stoytcho S. Yazadjiev",
+   "Roberto Ruiz de Austri-Bazan",
+   "Yolanda Vives-Gilabert",
+   "Jos\\'e A. Font"
+  ],
+  "url": "https://arxiv.org/abs/2608.19774",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Solving the Kerr quasinormal-mode eigenvalue problem without variable separation in 2D. The paper uses physics-informed neural networks (PINNs) to directly solve the coupled radial–angular Teukolsky equation on hyperboloidal coordinates, enabling QNM calculations for non-separable systems.",
+  "added": "2026-08-21"
+ },
+ {
+  "id": "arxiv:2608.19793",
+  "source": "arXiv",
+  "title": "Constitutive modelling of open-porous neo-Hookean solids",
+  "abstract": "Open-porous materials exhibit pronounced compressibility, nonlinear densification, and power-law scaling of stiffness with density. In this work, we propose a thermodynamically consistent compressible neo-Hookean constitutive model for open-porous solids in which porosity serves as the primary governing variable. The strain-energy density is formulated to couple distortional elasticity of the solid skeleton with a volumetric response governed by deformation-induced porosity evolution, including a bounded representation of pore collapse. The formulation introduces a minimal set of parameters, namely the initial porosity, intrinsic skeleton moduli, and a scalar parameter controlling the onset of densification. A key feature of the model is a modified volumetric term in which the response is normalised by the current porosity, ensuring a physically consistent transition from a porous to a densified state without artificial stiffening. In the small-strain limit, the model recovers classical linear elasticity with effective moduli that may be chosen either from homogenisation bounds, such as the Hashin-Shtrikman estimates, or from Gibson-Ashby-type power-law scaling to capture topology-dependent behaviour. At finite strains, the formulation captures the characteristic nonlinear stiffening and convex stress-stretch response associated with progressive pore collapse. The proposed framework thus provides a compact, flexible, and extensible constitutive description that unifies effective-medium consistency with experimentally observed scaling behaviour, and is well suited for finite element implementation and multiscale modelling of highly compressible open-porous materials. The model is finally validated against available experimental data.",
+  "categories": [
+   "cond-mat.mtrl-sci",
+   "cond-mat.soft",
+   "math-ph",
+   "math.MP",
+   "physics.class-ph"
+  ],
+  "authors": [
+   "Ameya Rege"
+  ],
+  "url": "https://arxiv.org/abs/2608.19793",
+  "published": "2026-08-21",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Modeling nonlinear compressible behavior of open-porous materials at finite strains. The paper develops a thermodynamically consistent neo-Hookean constitutive model with porosity evolution and power-law scaling, unifying homogenization bounds with topology-dependent behavior for multiscale simulations.",
+  "added": "2026-08-21"
  }
 ]
