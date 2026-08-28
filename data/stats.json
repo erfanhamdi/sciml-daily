@@ -1129,5 +1129,18 @@
   "balance_before": "tokens in=0 out=0",
   "balance_after": "tokens in=75191 out=20381",
   "total_papers": 2090
+ },
+ {
+  "date": "2026-08-28",
+  "fetched": 586,
+  "new": 586,
+  "candidates": 193,
+  "classified": 193,
+  "in_scope": 37,
+  "deferred": 0,
+  "requests": 10,
+  "balance_before": "tokens in=0 out=0",
+  "balance_after": "tokens in=86587 out=23809",
+  "total_papers": 2127
  }
 ]
